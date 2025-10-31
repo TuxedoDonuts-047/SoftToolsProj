@@ -1,0 +1,165 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\T00233163\\Downloads\\LogibForm\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|c:\\users\\t00233163\\downloads\\logibform\\logibform\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\Downloads\\LogibForm\\logibform\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\Downloads\\LogibForm\\logibform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\Downloads\\LogibForm\\logibform\\registrationform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\registrationform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\Downloads\\LogibForm\\logibform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\Downloads\\LogibForm\\logibform\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\Downloads\\LogibForm\\logibform\\logintextbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\logintextbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\Downloads\\LogibForm\\logibform\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\Downloads\\LogibForm\\logibform\\gradientpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\gradientpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegistrationForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\RegistrationForm.cs",
+              "RelativeDocumentMoniker": "LogibForm\\RegistrationForm.cs",
+              "ToolTip": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\RegistrationForm.cs [Design]",
+              "RelativeToolTip": "LogibForm\\RegistrationForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T11:20:33.55Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\LoginForm.Designer.cs",
+              "RelativeDocumentMoniker": "LogibForm\\LoginForm.Designer.cs",
+              "ToolTip": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\LoginForm.Designer.cs",
+              "RelativeToolTip": "LogibForm\\LoginForm.Designer.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAhwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T12:12:31.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LogibForm\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\LoginForm.cs",
+              "RelativeToolTip": "LogibForm\\LoginForm.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAIA9wBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T12:10:39.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegistrationForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\RegistrationForm.Designer.cs",
+              "RelativeDocumentMoniker": "LogibForm\\RegistrationForm.Designer.cs",
+              "ToolTip": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\RegistrationForm.Designer.cs",
+              "RelativeToolTip": "LogibForm\\RegistrationForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T11:20:31.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "loginTextBox.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\loginTextBox.cs",
+              "RelativeDocumentMoniker": "LogibForm\\loginTextBox.cs",
+              "ToolTip": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\loginTextBox.cs [Design]",
+              "RelativeToolTip": "LogibForm\\loginTextBox.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T11:57:58.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "gradientPanel.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\gradientPanel.cs",
+              "RelativeDocumentMoniker": "LogibForm\\gradientPanel.cs",
+              "ToolTip": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\gradientPanel.cs [Design]",
+              "RelativeToolTip": "LogibForm\\gradientPanel.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T11:57:59.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\Program.cs",
+              "RelativeDocumentMoniker": "LogibForm\\Program.cs",
+              "ToolTip": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\Program.cs",
+              "RelativeToolTip": "LogibForm\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T11:23:37.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegistrationForm.cs",
+              "DocumentMoniker": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\RegistrationForm.cs",
+              "RelativeDocumentMoniker": "LogibForm\\RegistrationForm.cs",
+              "ToolTip": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\RegistrationForm.cs",
+              "RelativeToolTip": "LogibForm\\RegistrationForm.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAADgvzIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T12:17:57.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LogibForm\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\T00233163\\Downloads\\LogibForm\\LogibForm\\LoginForm.cs [Design]",
+              "RelativeToolTip": "LogibForm\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T12:12:43.015Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
