@@ -31,12 +31,36 @@ namespace LogibForm
 
             btnLogout.CheckedBackground = Color.Transparent;
             btnLogout.NormalBackground = Color.Transparent;
-
         }
 
         private void StaffDashBoard_Load(object sender, EventArgs e)
         {
 
         }
+        
+        private void btnOverView_MouseHover(object sender, EventArgs e)
+        {
+            btnOverView.Cursor = Cursors.Hand;
+        }
+
+        private void btnCart_MouseHover(object sender, EventArgs e)
+        {
+            btnCart.Cursor = Cursors.Hand;
+        }
+
+        private void btnLogout_MouseHover(object sender, EventArgs e)
+        {
+            btnLogout.Cursor= Cursors.Hand;
+        }
+
+        private void btnWishlist_MouseHover(object sender, EventArgs e)
+        {
+            btnWishlist.Cursor= Cursors.Hand;
+        }
+
+        private void btnLibrary_MouseHover(object sender, EventArgs e)
+        {
+            btnLibrary.Cursor = Cursors.Hand;
+        }        
     }
 }

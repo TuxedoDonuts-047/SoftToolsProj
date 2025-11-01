@@ -132,5 +132,38 @@
   <ItemGroup>
     <None Include="Resources\favourite.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kindpng_793803 copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_stack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping_cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping_cart2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookmark-Heart--Streamline-Rounded-Material-Symbols.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

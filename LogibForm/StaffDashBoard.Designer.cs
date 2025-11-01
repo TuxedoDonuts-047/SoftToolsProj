@@ -62,6 +62,7 @@
             this.StaffGradienrPanel.Name = "StaffGradienrPanel";
             this.StaffGradienrPanel.Size = new System.Drawing.Size(229, 842);
             this.StaffGradienrPanel.TabIndex = 0;
+            this.StaffGradienrPanel.MouseHover += new System.EventHandler(this.btnCart_MouseHover);
             // 
             // btnLogout
             // 
@@ -73,12 +74,12 @@
             this.btnLogout.CheckedOutline = System.Drawing.Color.Goldenrod;
             this.btnLogout.CustomDialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnLogout.HoverBackground = System.Drawing.Color.DodgerBlue;
             this.btnLogout.HoverForeColor = System.Drawing.Color.White;
             this.btnLogout.HoverImage = null;
             this.btnLogout.HoverImageTint = System.Drawing.Color.White;
             this.btnLogout.HoverOutline = System.Drawing.Color.Empty;
-            this.btnLogout.Image = global::LogibForm.Properties.Resources.bookPainted;
+            this.btnLogout.Image = global::LogibForm.Properties.Resources.logout_2;
             this.btnLogout.ImageAutoCenter = false;
             this.btnLogout.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnLogout.ImageOffset = new System.Drawing.Point(20, 0);
@@ -100,7 +101,8 @@
             this.btnLogout.Size = new System.Drawing.Size(201, 48);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.TextAutoCenter = false;
-            this.btnLogout.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnLogout.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnLogout.MouseHover += new System.EventHandler(this.btnLogout_MouseHover);
             // 
             // btnCart
             // 
@@ -112,12 +114,12 @@
             this.btnCart.CheckedOutline = System.Drawing.Color.Goldenrod;
             this.btnCart.CustomDialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnCart.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCart.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCart.HoverBackground = System.Drawing.Color.DodgerBlue;
             this.btnCart.HoverForeColor = System.Drawing.Color.White;
             this.btnCart.HoverImage = null;
             this.btnCart.HoverImageTint = System.Drawing.Color.White;
             this.btnCart.HoverOutline = System.Drawing.Color.Empty;
-            this.btnCart.Image = global::LogibForm.Properties.Resources.bookPainted;
+            this.btnCart.Image = global::LogibForm.Properties.Resources.logout_4;
             this.btnCart.ImageAutoCenter = false;
             this.btnCart.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnCart.ImageOffset = new System.Drawing.Point(20, 0);
@@ -139,7 +141,8 @@
             this.btnCart.Size = new System.Drawing.Size(201, 48);
             this.btnCart.TabIndex = 5;
             this.btnCart.TextAutoCenter = false;
-            this.btnCart.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnCart.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnCart.MouseHover += new System.EventHandler(this.btnLogout_MouseHover);
             // 
             // btnLibrary
             // 
@@ -151,7 +154,7 @@
             this.btnLibrary.CheckedOutline = System.Drawing.Color.Goldenrod;
             this.btnLibrary.CustomDialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnLibrary.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLibrary.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnLibrary.HoverBackground = System.Drawing.Color.DodgerBlue;
             this.btnLibrary.HoverForeColor = System.Drawing.Color.White;
             this.btnLibrary.HoverImage = null;
             this.btnLibrary.HoverImageTint = System.Drawing.Color.White;
@@ -178,7 +181,8 @@
             this.btnLibrary.Size = new System.Drawing.Size(201, 48);
             this.btnLibrary.TabIndex = 4;
             this.btnLibrary.TextAutoCenter = false;
-            this.btnLibrary.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnLibrary.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnLibrary.MouseHover += new System.EventHandler(this.btnLibrary_MouseHover);
             // 
             // btnWishlist
             // 
@@ -190,12 +194,12 @@
             this.btnWishlist.CheckedOutline = System.Drawing.Color.Goldenrod;
             this.btnWishlist.CustomDialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnWishlist.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWishlist.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnWishlist.HoverBackground = System.Drawing.Color.DodgerBlue;
             this.btnWishlist.HoverForeColor = System.Drawing.Color.White;
             this.btnWishlist.HoverImage = null;
             this.btnWishlist.HoverImageTint = System.Drawing.Color.White;
             this.btnWishlist.HoverOutline = System.Drawing.Color.Empty;
-            this.btnWishlist.Image = global::LogibForm.Properties.Resources.favourite;
+            this.btnWishlist.Image = ((System.Drawing.Image)(resources.GetObject("btnWishlist.Image")));
             this.btnWishlist.ImageAutoCenter = false;
             this.btnWishlist.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnWishlist.ImageOffset = new System.Drawing.Point(20, 0);
@@ -217,7 +221,8 @@
             this.btnWishlist.Size = new System.Drawing.Size(201, 48);
             this.btnWishlist.TabIndex = 3;
             this.btnWishlist.TextAutoCenter = false;
-            this.btnWishlist.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnWishlist.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnWishlist.MouseHover += new System.EventHandler(this.btnWishlist_MouseHover);
             // 
             // btnOverView
             // 
@@ -229,7 +234,7 @@
             this.btnOverView.CheckedOutline = System.Drawing.Color.Goldenrod;
             this.btnOverView.CustomDialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnOverView.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOverView.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnOverView.HoverBackground = System.Drawing.Color.DodgerBlue;
             this.btnOverView.HoverForeColor = System.Drawing.Color.White;
             this.btnOverView.HoverImage = null;
             this.btnOverView.HoverImageTint = System.Drawing.Color.White;
@@ -257,7 +262,8 @@
             this.btnOverView.Size = new System.Drawing.Size(201, 48);
             this.btnOverView.TabIndex = 1;
             this.btnOverView.TextAutoCenter = false;
-            this.btnOverView.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnOverView.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnOverView.MouseHover += new System.EventHandler(this.btnOverView_MouseHover);
             // 
             // pictureBox1
             // 
