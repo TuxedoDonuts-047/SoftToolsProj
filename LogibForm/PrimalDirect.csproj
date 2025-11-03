@@ -165,5 +165,8 @@
   <ItemGroup>
     <None Include="Resources\Bookmark-Heart--Streamline-Rounded-Material-Symbols.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,7 +19,10 @@ namespace LogibForm
             // Makes the SATA UI Button transparent to match the gradient panel
             btnOverView.CheckedBackground = Color.Transparent;
             btnOverView.NormalBackground = Color.Transparent;
-            
+
+            btnGenre.CheckedBackground = Color.Transparent;
+            btnGenre.NormalBackground = Color.Transparent;
+
             btnWishlist.CheckedBackground = Color.Transparent;
             btnWishlist.NormalBackground = Color.Transparent;
 
@@ -41,6 +44,7 @@ namespace LogibForm
         private void btnOverView_MouseHover(object sender, EventArgs e)
         {
             btnOverView.Cursor = Cursors.Hand;
+
         }
 
         private void btnCart_MouseHover(object sender, EventArgs e)
@@ -61,6 +65,77 @@ namespace LogibForm
         private void btnLibrary_MouseHover(object sender, EventArgs e)
         {
             btnLibrary.Cursor = Cursors.Hand;
-        }        
+        }
+
+        private void btnGenre_MouseHover(object sender, EventArgs e)
+        {
+            btnGenre.Cursor= Cursors.Hand;
+        }
+
+        private void btnOverView_MouseEnter(object sender, EventArgs e)
+        {
+            overViewPanel.Visible = true;
+        }
+
+        private void btnOverView_MouseLeave(object sender, EventArgs e)
+        {
+            if (!overViewPanel.Bounds.Contains(PointToClient(Cursor.Position)))
+                overViewPanel.Visible = false;
+
+        }
+
+        private void btnGenre_MouseEnter(object sender, EventArgs e)
+        {
+            SelectedGamePanel.Visible = true;
+        }
+
+        private void btnGenre_MouseLeave(object sender, EventArgs e)
+        {
+            SelectedGamePanel.Visible = false;
+
+        }
+
+        private void btnWishlist_MouseEnter(object sender, EventArgs e)
+        {
+            WishListPanel.Visible = true;
+        }
+
+        private void btnWishlist_MouseLeave(object sender, EventArgs e)
+        {
+            WishListPanel.Visible = false;
+
+        }
+
+        private void btnLibrary_MouseEnter(object sender, EventArgs e)
+        {
+            LibraryPanel.Visible = true;
+        }
+
+        private void btnLibrary_MouseLeave(object sender, EventArgs e)
+        {
+            LibraryPanel.Visible = false;
+
+        }
+
+        private void btnCart_MouseEnter(object sender, EventArgs e)
+        {
+            CartPanel.Visible = true;
+        }
+
+        private void btnCart_MouseLeave(object sender, EventArgs e)
+        {
+            CartPanel.Visible = false;
+
+        }
+
+        private void btnLogout_MouseEnter(object sender, EventArgs e)
+        {
+            LogoutPanel.Visible = true;
+        }
+
+        private void btnLogout_MouseLeave(object sender, EventArgs e)
+        {
+            LogoutPanel.Visible = false;
+        }
     }
 }
