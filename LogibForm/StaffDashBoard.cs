@@ -34,6 +34,9 @@ namespace LogibForm
 
             btnLogout.CheckedBackground = Color.Transparent;
             btnLogout.NormalBackground = Color.Transparent;
+
+            btnInventory.CheckedBackground = Color.Transparent;
+            btnInventory.NormalBackground = Color.Transparent;
         }
 
         private void StaffDashBoard_Load(object sender, EventArgs e)
@@ -70,72 +73,6 @@ namespace LogibForm
         private void btnGenre_MouseHover(object sender, EventArgs e)
         {
             btnGenre.Cursor= Cursors.Hand;
-        }
-
-        private void btnOverView_MouseEnter(object sender, EventArgs e)
-        {
-            overViewPanel.Visible = true;
-        }
-
-        private void btnOverView_MouseLeave(object sender, EventArgs e)
-        {
-            if (!overViewPanel.Bounds.Contains(PointToClient(Cursor.Position)))
-                overViewPanel.Visible = false;
-
-        }
-
-        private void btnGenre_MouseEnter(object sender, EventArgs e)
-        {
-            SelectedGamePanel.Visible = true;
-        }
-
-        private void btnGenre_MouseLeave(object sender, EventArgs e)
-        {
-            SelectedGamePanel.Visible = false;
-
-        }
-
-        private void btnWishlist_MouseEnter(object sender, EventArgs e)
-        {
-            WishListPanel.Visible = true;
-        }
-
-        private void btnWishlist_MouseLeave(object sender, EventArgs e)
-        {
-            WishListPanel.Visible = false;
-
-        }
-
-        private void btnLibrary_MouseEnter(object sender, EventArgs e)
-        {
-            LibraryPanel.Visible = true;
-        }
-
-        private void btnLibrary_MouseLeave(object sender, EventArgs e)
-        {
-            LibraryPanel.Visible = false;
-
-        }
-
-        private void btnCart_MouseEnter(object sender, EventArgs e)
-        {
-            CartPanel.Visible = true;
-        }
-
-        private void btnCart_MouseLeave(object sender, EventArgs e)
-        {
-            CartPanel.Visible = false;
-
-        }
-
-        private void btnLogout_MouseEnter(object sender, EventArgs e)
-        {
-            LogoutPanel.Visible = true;
-        }
-
-        private void btnLogout_MouseLeave(object sender, EventArgs e)
-        {
-            LogoutPanel.Visible = false;
         }
     }
 }

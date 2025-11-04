@@ -74,3 +74,4 @@ C:\Users\T00233163\Source\Repos\SoftToolsProj\LogibForm\obj\Debug\PrimalDirect.c
 C:\Users\T00233163\Source\Repos\SoftToolsProj\LogibForm\obj\Debug\PrimalDi.77E83963.Up2Date
 C:\Users\T00233163\Source\Repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.exe
 C:\Users\T00233163\Source\Repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.pdb
+C:\Users\T00233163\Source\Repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.exe.config
