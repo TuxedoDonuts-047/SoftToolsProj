@@ -57,7 +57,7 @@
             // 
             // overviewPanel
             // 
-            this.overviewPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.overviewPanel.BackColor = System.Drawing.Color.Transparent;
             this.overviewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.overviewPanel.Location = new System.Drawing.Point(229, 0);
             this.overviewPanel.Name = "overviewPanel";
@@ -66,7 +66,7 @@
             // 
             // inventoryPanel
             // 
-            this.inventoryPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.inventoryPanel.BackColor = System.Drawing.Color.Transparent;
             this.inventoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inventoryPanel.Location = new System.Drawing.Point(229, 0);
             this.inventoryPanel.Name = "inventoryPanel";
@@ -75,7 +75,7 @@
             // 
             // selectGenrePanel
             // 
-            this.selectGenrePanel.BackColor = System.Drawing.Color.Black;
+            this.selectGenrePanel.BackColor = System.Drawing.Color.Transparent;
             this.selectGenrePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.selectGenrePanel.Location = new System.Drawing.Point(229, 0);
             this.selectGenrePanel.Name = "selectGenrePanel";
@@ -84,6 +84,7 @@
             // 
             // wishListPanel
             // 
+            this.wishListPanel.BackColor = System.Drawing.Color.Transparent;
             this.wishListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wishListPanel.Location = new System.Drawing.Point(229, 0);
             this.wishListPanel.Name = "wishListPanel";
@@ -92,7 +93,7 @@
             // 
             // libraryPanel
             // 
-            this.libraryPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.libraryPanel.BackColor = System.Drawing.Color.Transparent;
             this.libraryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.libraryPanel.Location = new System.Drawing.Point(229, 0);
             this.libraryPanel.Name = "libraryPanel";
@@ -101,7 +102,7 @@
             // 
             // cartPanel
             // 
-            this.cartPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cartPanel.BackColor = System.Drawing.Color.Transparent;
             this.cartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cartPanel.Location = new System.Drawing.Point(229, 0);
             this.cartPanel.Name = "cartPanel";
