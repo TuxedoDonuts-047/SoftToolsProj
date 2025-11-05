@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\logibform\\staffdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|c:\\users\\t00233163\\source\\repos\\softtoolsproj\\logibform\\staffdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\staffdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\logibform\\staffdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\staffdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\logibform\\staffdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\staffdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\logibform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\logibform\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,18 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\logibform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\logibform\\staffdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\staffdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|c:\\users\\t00233163\\source\\repos\\softtoolsproj\\logibform\\staffdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\staffdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\logibform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B840ABA3-6E25-4D6D-9EDA-E9176B3B484F}|LogibForm\\PrimalDirect.csproj|solutionrelative:logibform\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,58 +46,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "StaffDashBoard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\StaffDashBoard.cs",
+              "RelativeDocumentMoniker": "LogibForm\\StaffDashBoard.cs",
+              "ToolTip": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\StaffDashBoard.cs [Design]*",
+              "RelativeToolTip": "LogibForm\\StaffDashBoard.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T15:17:15.704Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "StaffDashBoard.cs",
               "DocumentMoniker": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\StaffDashBoard.cs",
               "RelativeDocumentMoniker": "LogibForm\\StaffDashBoard.cs",
-              "ToolTip": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\StaffDashBoard.cs",
-              "RelativeToolTip": "LogibForm\\StaffDashBoard.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAA+AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\StaffDashBoard.cs*",
+              "RelativeToolTip": "LogibForm\\StaffDashBoard.cs*",
+              "ViewState": "AgIAAA8AAAAAAAAAAIA9wCsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-01T20:50:02.661Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StaffDashBoard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\StaffDashBoard.cs",
-              "RelativeDocumentMoniker": "LogibForm\\StaffDashBoard.cs",
-              "ToolTip": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\StaffDashBoard.cs [Design]",
-              "RelativeToolTip": "LogibForm\\StaffDashBoard.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:48:03.679Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\LoginForm.cs",
               "RelativeDocumentMoniker": "LogibForm\\LoginForm.cs",
               "ToolTip": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\LoginForm.cs",
               "RelativeToolTip": "LogibForm\\LoginForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-01T20:49:35.378Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "StaffDashBoard.Designer.cs",
               "DocumentMoniker": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\StaffDashBoard.Designer.cs",
               "RelativeDocumentMoniker": "LogibForm\\StaffDashBoard.Designer.cs",
               "ToolTip": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\StaffDashBoard.Designer.cs",
               "RelativeToolTip": "LogibForm\\StaffDashBoard.Designer.cs",
-              "ViewState": "AgIAALMAAAAAAAAAAAASwMcAAABIAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAiwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-31T14:17:25.546Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\LoginForm.cs",
               "RelativeDocumentMoniker": "LogibForm\\LoginForm.cs",
@@ -109,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\Program.cs",
               "RelativeDocumentMoniker": "LogibForm\\Program.cs",
@@ -117,12 +117,11 @@
               "RelativeToolTip": "LogibForm\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T11:28:40.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-31T11:28:40.862Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Resources.resx",
               "DocumentMoniker": "C:\\Users\\T00233163\\source\\repos\\SoftToolsProj\\LogibForm\\Properties\\Resources.resx",
               "RelativeDocumentMoniker": "LogibForm\\Properties\\Resources.resx",

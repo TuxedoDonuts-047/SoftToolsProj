@@ -41,7 +41,7 @@ namespace LogibForm
 
         private void StaffDashBoard_Load(object sender, EventArgs e)
         {
-
+            showPanel(overviewPanel);
         }
         
         private void btnOverView_MouseHover(object sender, EventArgs e)
@@ -73,6 +73,48 @@ namespace LogibForm
         private void btnGenre_MouseHover(object sender, EventArgs e)
         {
             btnGenre.Cursor= Cursors.Hand;
+        }
+        private void showPanel(Panel panelToShow)
+        {
+            overviewPanel.Visible = false;
+            inventoryPanel.Visible = false;
+            selectGenrePanel.Visible = false;
+            wishListPanel.Visible = false;
+            libraryPanel.Visible = false;
+            cartPanel.Visible = false;
+
+            panelToShow.Visible = true;
+            panelToShow.BringToFront();
+        }
+
+        private void btnOverView_Click(object sender, EventArgs e)
+        {
+            showPanel(overviewPanel);
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            showPanel(inventoryPanel);
+        }
+
+        private void btnGenre_Click(object sender, EventArgs e)
+        {
+            showPanel(selectGenrePanel);
+        }
+
+        private void btnWishlist_Click(object sender, EventArgs e)
+        {
+            showPanel(wishListPanel);
+        }
+
+        private void btnLibrary_Click(object sender, EventArgs e)
+        {
+            showPanel(libraryPanel);
+        }
+
+        private void btnCart_Click(object sender, EventArgs e)
+        {
+            showPanel(cartPanel);
         }
     }
 }

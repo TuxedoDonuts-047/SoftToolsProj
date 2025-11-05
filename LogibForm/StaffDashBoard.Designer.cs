@@ -30,8 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDashBoard));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
+            this.overviewPanel = new System.Windows.Forms.Panel();
+            this.inventoryPanel = new System.Windows.Forms.Panel();
+            this.selectGenrePanel = new System.Windows.Forms.Panel();
+            this.wishListPanel = new System.Windows.Forms.Panel();
+            this.libraryPanel = new System.Windows.Forms.Panel();
+            this.cartPanel = new System.Windows.Forms.Panel();
             this.StaffGradienrPanel = new LogibForm.gradientPanel();
-            this.overViewPanel = new System.Windows.Forms.Panel();
             this.btnInventory = new FrameworkTest.SATAButton();
             this.btnGenre = new FrameworkTest.SATAButton();
             this.btnLogout = new FrameworkTest.SATAButton();
@@ -40,6 +45,7 @@
             this.btnWishlist = new FrameworkTest.SATAButton();
             this.btnOverView = new FrameworkTest.SATAButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.overViewSidePanel = new System.Windows.Forms.Panel();
             this.StaffGradienrPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +54,59 @@
             // 
             this.sataEllipseControl1.CornerRadius = 36;
             this.sataEllipseControl1.TargetControl = this;
+            // 
+            // overviewPanel
+            // 
+            this.overviewPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.overviewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overviewPanel.Location = new System.Drawing.Point(229, 0);
+            this.overviewPanel.Name = "overviewPanel";
+            this.overviewPanel.Size = new System.Drawing.Size(1095, 842);
+            this.overviewPanel.TabIndex = 1;
+            // 
+            // inventoryPanel
+            // 
+            this.inventoryPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.inventoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inventoryPanel.Location = new System.Drawing.Point(229, 0);
+            this.inventoryPanel.Name = "inventoryPanel";
+            this.inventoryPanel.Size = new System.Drawing.Size(1095, 842);
+            this.inventoryPanel.TabIndex = 2;
+            // 
+            // selectGenrePanel
+            // 
+            this.selectGenrePanel.BackColor = System.Drawing.Color.Black;
+            this.selectGenrePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.selectGenrePanel.Location = new System.Drawing.Point(229, 0);
+            this.selectGenrePanel.Name = "selectGenrePanel";
+            this.selectGenrePanel.Size = new System.Drawing.Size(1095, 842);
+            this.selectGenrePanel.TabIndex = 3;
+            // 
+            // wishListPanel
+            // 
+            this.wishListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wishListPanel.Location = new System.Drawing.Point(229, 0);
+            this.wishListPanel.Name = "wishListPanel";
+            this.wishListPanel.Size = new System.Drawing.Size(1095, 842);
+            this.wishListPanel.TabIndex = 4;
+            // 
+            // libraryPanel
+            // 
+            this.libraryPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.libraryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.libraryPanel.Location = new System.Drawing.Point(229, 0);
+            this.libraryPanel.Name = "libraryPanel";
+            this.libraryPanel.Size = new System.Drawing.Size(1095, 842);
+            this.libraryPanel.TabIndex = 5;
+            // 
+            // cartPanel
+            // 
+            this.cartPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cartPanel.Location = new System.Drawing.Point(229, 0);
+            this.cartPanel.Name = "cartPanel";
+            this.cartPanel.Size = new System.Drawing.Size(1095, 842);
+            this.cartPanel.TabIndex = 6;
             // 
             // StaffGradienrPanel
             // 
@@ -60,7 +119,7 @@
             this.StaffGradienrPanel.Controls.Add(this.btnWishlist);
             this.StaffGradienrPanel.Controls.Add(this.btnOverView);
             this.StaffGradienrPanel.Controls.Add(this.pictureBox1);
-            this.StaffGradienrPanel.Controls.Add(this.overViewPanel);
+            this.StaffGradienrPanel.Controls.Add(this.overViewSidePanel);
             this.StaffGradienrPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.StaffGradienrPanel.gradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
             this.StaffGradienrPanel.gradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(158)))));
@@ -69,15 +128,6 @@
             this.StaffGradienrPanel.Size = new System.Drawing.Size(229, 842);
             this.StaffGradienrPanel.TabIndex = 0;
             this.StaffGradienrPanel.MouseHover += new System.EventHandler(this.btnCart_MouseHover);
-            // 
-            // overViewPanel
-            // 
-            this.overViewPanel.BackColor = System.Drawing.Color.White;
-            this.overViewPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.overViewPanel.Location = new System.Drawing.Point(24, 225);
-            this.overViewPanel.Name = "overViewPanel";
-            this.overViewPanel.Size = new System.Drawing.Size(5, 25);
-            this.overViewPanel.TabIndex = 8;
             // 
             // btnInventory
             // 
@@ -118,6 +168,7 @@
             this.btnInventory.TabIndex = 9;
             this.btnInventory.TextAutoCenter = false;
             this.btnInventory.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // btnGenre
             // 
@@ -158,6 +209,7 @@
             this.btnGenre.TabIndex = 7;
             this.btnGenre.TextAutoCenter = false;
             this.btnGenre.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnGenre.Click += new System.EventHandler(this.btnGenre_Click);
             this.btnGenre.MouseHover += new System.EventHandler(this.btnGenre_MouseHover);
             // 
             // btnLogout
@@ -238,6 +290,7 @@
             this.btnCart.TabIndex = 5;
             this.btnCart.TextAutoCenter = false;
             this.btnCart.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnCart.Click += new System.EventHandler(this.btnCart_Click);
             this.btnCart.MouseHover += new System.EventHandler(this.btnLogout_MouseHover);
             // 
             // btnLibrary
@@ -278,6 +331,7 @@
             this.btnLibrary.TabIndex = 4;
             this.btnLibrary.TextAutoCenter = false;
             this.btnLibrary.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnLibrary.Click += new System.EventHandler(this.btnLibrary_Click);
             this.btnLibrary.MouseHover += new System.EventHandler(this.btnLibrary_MouseHover);
             // 
             // btnWishlist
@@ -318,6 +372,7 @@
             this.btnWishlist.TabIndex = 3;
             this.btnWishlist.TextAutoCenter = false;
             this.btnWishlist.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnWishlist.Click += new System.EventHandler(this.btnWishlist_Click);
             this.btnWishlist.MouseHover += new System.EventHandler(this.btnWishlist_MouseHover);
             // 
             // btnOverView
@@ -359,6 +414,7 @@
             this.btnOverView.TabIndex = 1;
             this.btnOverView.TextAutoCenter = false;
             this.btnOverView.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnOverView.Click += new System.EventHandler(this.btnOverView_Click);
             this.btnOverView.MouseHover += new System.EventHandler(this.btnOverView_MouseHover);
             // 
             // pictureBox1
@@ -371,11 +427,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // overViewSidePanel
+            // 
+            this.overViewSidePanel.BackColor = System.Drawing.Color.White;
+            this.overViewSidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.overViewSidePanel.Location = new System.Drawing.Point(24, 225);
+            this.overViewSidePanel.Name = "overViewSidePanel";
+            this.overViewSidePanel.Size = new System.Drawing.Size(5, 25);
+            this.overViewSidePanel.TabIndex = 8;
+            // 
             // StaffDashBoard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1324, 842);
+            this.Controls.Add(this.cartPanel);
+            this.Controls.Add(this.wishListPanel);
+            this.Controls.Add(this.selectGenrePanel);
+            this.Controls.Add(this.inventoryPanel);
+            this.Controls.Add(this.overviewPanel);
+            this.Controls.Add(this.libraryPanel);
             this.Controls.Add(this.StaffGradienrPanel);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -400,7 +471,13 @@
         private FrameworkTest.SATAButton btnLogout;
         private FrameworkTest.SATAButton btnGenre;
         private FrameworkTest.SATAButton btnOverView;
-        private System.Windows.Forms.Panel overViewPanel;
+        private System.Windows.Forms.Panel overViewSidePanel;
         private FrameworkTest.SATAButton btnInventory;
+        private System.Windows.Forms.Panel overviewPanel;
+        private System.Windows.Forms.Panel cartPanel;
+        private System.Windows.Forms.Panel libraryPanel;
+        private System.Windows.Forms.Panel wishListPanel;
+        private System.Windows.Forms.Panel selectGenrePanel;
+        private System.Windows.Forms.Panel inventoryPanel;
     }
 }
