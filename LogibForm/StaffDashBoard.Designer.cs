@@ -31,19 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDashBoard));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.overviewPanel = new System.Windows.Forms.Panel();
-            this.inventoryPanel = new System.Windows.Forms.Panel();
-            this.selectGenrePanel = new System.Windows.Forms.Panel();
-            this.wishListPanel = new System.Windows.Forms.Panel();
-            this.libraryPanel = new System.Windows.Forms.Panel();
-            this.cartPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblOverview = new System.Windows.Forms.Label();
+            this.inventoryPanel = new System.Windows.Forms.Panel();
             this.lblInventory = new System.Windows.Forms.Label();
+            this.selectGenrePanel = new System.Windows.Forms.Panel();
             this.lblGenre = new System.Windows.Forms.Label();
+            this.wishListPanel = new System.Windows.Forms.Panel();
             this.lblWishlist = new System.Windows.Forms.Label();
+            this.libraryPanel = new System.Windows.Forms.Panel();
             this.lblLibrary = new System.Windows.Forms.Label();
+            this.cartPanel = new System.Windows.Forms.Panel();
             this.lblCart = new System.Windows.Forms.Label();
             this.StaffGradienrPanel = new LogibForm.gradientPanel();
-            this.overViewSidePanel = new System.Windows.Forms.Panel();
             this.btnInventory = new FrameworkTest.SATAButton();
             this.btnGenre = new FrameworkTest.SATAButton();
             this.btnLogout = new FrameworkTest.SATAButton();
@@ -52,12 +55,11 @@
             this.btnWishlist = new FrameworkTest.SATAButton();
             this.btnOverView = new FrameworkTest.SATAButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.overViewSidePanel = new System.Windows.Forms.Panel();
+            this.customNumericUpdown1 = new LogibForm.CustomNumericUpdown();
             this.overviewPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.inventoryPanel.SuspendLayout();
             this.selectGenrePanel.SuspendLayout();
             this.wishListPanel.SuspendLayout();
@@ -65,9 +67,6 @@
             this.cartPanel.SuspendLayout();
             this.StaffGradienrPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // sataEllipseControl1
@@ -86,6 +85,57 @@
             this.overviewPanel.Size = new System.Drawing.Size(1196, 842);
             this.overviewPanel.TabIndex = 1;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.customNumericUpdown1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(36, 109);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(411, 374);
+            this.panel1.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(228, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(178, 34);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Add to Cart";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 314);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 40);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Uncharted";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::LogibForm.Properties.Resources.uncharted;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(155, 241);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblOverview
+            // 
+            this.lblOverview.AutoSize = true;
+            this.lblOverview.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverview.Location = new System.Drawing.Point(32, 48);
+            this.lblOverview.Name = "lblOverview";
+            this.lblOverview.Size = new System.Drawing.Size(192, 44);
+            this.lblOverview.TabIndex = 0;
+            this.lblOverview.Text = "Overview";
+            // 
             // inventoryPanel
             // 
             this.inventoryPanel.BackColor = System.Drawing.Color.Transparent;
@@ -95,6 +145,16 @@
             this.inventoryPanel.Name = "inventoryPanel";
             this.inventoryPanel.Size = new System.Drawing.Size(1196, 842);
             this.inventoryPanel.TabIndex = 2;
+            // 
+            // lblInventory
+            // 
+            this.lblInventory.AutoSize = true;
+            this.lblInventory.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInventory.Location = new System.Drawing.Point(32, 48);
+            this.lblInventory.Name = "lblInventory";
+            this.lblInventory.Size = new System.Drawing.Size(185, 44);
+            this.lblInventory.TabIndex = 1;
+            this.lblInventory.Text = "Inventory";
             // 
             // selectGenrePanel
             // 
@@ -106,6 +166,16 @@
             this.selectGenrePanel.Size = new System.Drawing.Size(1196, 842);
             this.selectGenrePanel.TabIndex = 3;
             // 
+            // lblGenre
+            // 
+            this.lblGenre.AutoSize = true;
+            this.lblGenre.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenre.Location = new System.Drawing.Point(32, 48);
+            this.lblGenre.Name = "lblGenre";
+            this.lblGenre.Size = new System.Drawing.Size(252, 44);
+            this.lblGenre.TabIndex = 2;
+            this.lblGenre.Text = "Select Genre";
+            // 
             // wishListPanel
             // 
             this.wishListPanel.BackColor = System.Drawing.Color.Transparent;
@@ -115,6 +185,16 @@
             this.wishListPanel.Name = "wishListPanel";
             this.wishListPanel.Size = new System.Drawing.Size(1196, 842);
             this.wishListPanel.TabIndex = 4;
+            // 
+            // lblWishlist
+            // 
+            this.lblWishlist.AutoSize = true;
+            this.lblWishlist.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWishlist.Location = new System.Drawing.Point(32, 48);
+            this.lblWishlist.Name = "lblWishlist";
+            this.lblWishlist.Size = new System.Drawing.Size(139, 44);
+            this.lblWishlist.TabIndex = 3;
+            this.lblWishlist.Text = "Wishlist";
             // 
             // libraryPanel
             // 
@@ -126,6 +206,16 @@
             this.libraryPanel.Size = new System.Drawing.Size(1196, 842);
             this.libraryPanel.TabIndex = 5;
             // 
+            // lblLibrary
+            // 
+            this.lblLibrary.AutoSize = true;
+            this.lblLibrary.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibrary.Location = new System.Drawing.Point(32, 48);
+            this.lblLibrary.Name = "lblLibrary";
+            this.lblLibrary.Size = new System.Drawing.Size(135, 44);
+            this.lblLibrary.TabIndex = 4;
+            this.lblLibrary.Text = "Library";
+            // 
             // cartPanel
             // 
             this.cartPanel.BackColor = System.Drawing.Color.Transparent;
@@ -136,63 +226,13 @@
             this.cartPanel.Size = new System.Drawing.Size(1196, 842);
             this.cartPanel.TabIndex = 6;
             // 
-            // lblOverview
-            // 
-            this.lblOverview.AutoSize = true;
-            this.lblOverview.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOverview.Location = new System.Drawing.Point(32, 48);
-            this.lblOverview.Name = "lblOverview";
-            this.lblOverview.Size = new System.Drawing.Size(109, 24);
-            this.lblOverview.TabIndex = 0;
-            this.lblOverview.Text = "Overview";
-            // 
-            // lblInventory
-            // 
-            this.lblInventory.AutoSize = true;
-            this.lblInventory.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInventory.Location = new System.Drawing.Point(32, 48);
-            this.lblInventory.Name = "lblInventory";
-            this.lblInventory.Size = new System.Drawing.Size(106, 24);
-            this.lblInventory.TabIndex = 1;
-            this.lblInventory.Text = "Inventory";
-            // 
-            // lblGenre
-            // 
-            this.lblGenre.AutoSize = true;
-            this.lblGenre.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.Location = new System.Drawing.Point(32, 48);
-            this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(145, 24);
-            this.lblGenre.TabIndex = 2;
-            this.lblGenre.Text = "Select Genre";
-            // 
-            // lblWishlist
-            // 
-            this.lblWishlist.AutoSize = true;
-            this.lblWishlist.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWishlist.Location = new System.Drawing.Point(32, 48);
-            this.lblWishlist.Name = "lblWishlist";
-            this.lblWishlist.Size = new System.Drawing.Size(76, 24);
-            this.lblWishlist.TabIndex = 3;
-            this.lblWishlist.Text = "Wishlist";
-            // 
-            // lblLibrary
-            // 
-            this.lblLibrary.AutoSize = true;
-            this.lblLibrary.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLibrary.Location = new System.Drawing.Point(32, 48);
-            this.lblLibrary.Name = "lblLibrary";
-            this.lblLibrary.Size = new System.Drawing.Size(74, 24);
-            this.lblLibrary.TabIndex = 4;
-            this.lblLibrary.Text = "Library";
-            // 
             // lblCart
             // 
             this.lblCart.AutoSize = true;
             this.lblCart.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCart.Location = new System.Drawing.Point(32, 48);
             this.lblCart.Name = "lblCart";
-            this.lblCart.Size = new System.Drawing.Size(110, 24);
+            this.lblCart.Size = new System.Drawing.Size(195, 44);
             this.lblCart.TabIndex = 5;
             this.lblCart.Text = "View Cart";
             // 
@@ -216,15 +256,6 @@
             this.StaffGradienrPanel.Size = new System.Drawing.Size(229, 842);
             this.StaffGradienrPanel.TabIndex = 0;
             this.StaffGradienrPanel.MouseHover += new System.EventHandler(this.btnCart_MouseHover);
-            // 
-            // overViewSidePanel
-            // 
-            this.overViewSidePanel.BackColor = System.Drawing.Color.White;
-            this.overViewSidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.overViewSidePanel.Location = new System.Drawing.Point(24, 225);
-            this.overViewSidePanel.Name = "overViewSidePanel";
-            this.overViewSidePanel.Size = new System.Drawing.Size(5, 25);
-            this.overViewSidePanel.TabIndex = 8;
             // 
             // btnInventory
             // 
@@ -524,54 +555,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel1
+            // overViewSidePanel
             // 
-            this.panel1.Controls.Add(this.numericUpDown1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(36, 109);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(337, 345);
-            this.panel1.TabIndex = 8;
+            this.overViewSidePanel.BackColor = System.Drawing.Color.White;
+            this.overViewSidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.overViewSidePanel.Location = new System.Drawing.Point(24, 225);
+            this.overViewSidePanel.Name = "overViewSidePanel";
+            this.overViewSidePanel.Size = new System.Drawing.Size(5, 25);
+            this.overViewSidePanel.TabIndex = 8;
             // 
-            // pictureBox2
+            // customNumericUpdown1
             // 
-            this.pictureBox2.Image = global::LogibForm.Properties.Resources.uncharted;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(225, 302);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 314);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 22);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Uncharted";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(228, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 21);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Add to Cart";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown1.Location = new System.Drawing.Point(254, 68);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(37, 17);
-            this.numericUpDown1.TabIndex = 9;
+            this.customNumericUpdown1.Location = new System.Drawing.Point(222, 104);
+            this.customNumericUpdown1.Name = "customNumericUpdown1";
+            this.customNumericUpdown1.Size = new System.Drawing.Size(151, 45);
+            this.customNumericUpdown1.TabIndex = 9;
+            this.customNumericUpdown1.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
             // StaffDashBoard
             // 
@@ -593,6 +596,9 @@
             this.Load += new System.EventHandler(this.StaffDashBoard_Load);
             this.overviewPanel.ResumeLayout(false);
             this.overviewPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.inventoryPanel.ResumeLayout(false);
             this.inventoryPanel.PerformLayout();
             this.selectGenrePanel.ResumeLayout(false);
@@ -605,10 +611,6 @@
             this.cartPanel.PerformLayout();
             this.StaffGradienrPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -641,7 +643,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label2;
+        private CustomNumericUpdown customNumericUpdown1;
     }
 }

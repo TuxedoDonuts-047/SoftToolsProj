@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomNumericUpdown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomNumericUpdown.Designer.cs">
+      <DependentUpon>CustomNumericUpdown.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,6 +89,9 @@
     <Compile Include="StaffDashBoard.Designer.cs">
       <DependentUpon>StaffDashBoard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomNumericUpdown.resx">
+      <DependentUpon>CustomNumericUpdown.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
