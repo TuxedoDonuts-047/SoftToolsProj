@@ -31,18 +31,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblLoginHere = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnRegister = new System.Windows.Forms.Label();
-            this.gradientPanel1 = new LogibForm.gradientPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new LogibForm.loginTextBox();
             this.txtConfirmPassword = new LogibForm.loginTextBox();
             this.txtUsername = new LogibForm.loginTextBox();
             this.txtEmail = new LogibForm.loginTextBox();
             this.txtFirstName = new LogibForm.loginTextBox();
             this.txtLastName = new LogibForm.loginTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnRegister = new System.Windows.Forms.Label();
+            this.gradientPanel1 = new LogibForm.gradientPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,6 +90,74 @@
             this.panel1.Size = new System.Drawing.Size(391, 425);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
+            this.txtPassword.isPassword = true;
+            this.txtPassword.label = "Password";
+            this.txtPassword.Location = new System.Drawing.Point(31, 285);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.txtPassword.Size = new System.Drawing.Size(335, 61);
+            this.txtPassword.TabIndex = 11;
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
+            this.txtConfirmPassword.isPassword = true;
+            this.txtConfirmPassword.label = "Conform Password";
+            this.txtConfirmPassword.Location = new System.Drawing.Point(31, 355);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(335, 61);
+            this.txtConfirmPassword.TabIndex = 12;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
+            this.txtUsername.isPassword = false;
+            this.txtUsername.label = "Username";
+            this.txtUsername.Location = new System.Drawing.Point(31, 145);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.txtUsername.Size = new System.Drawing.Size(335, 61);
+            this.txtUsername.TabIndex = 9;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
+            this.txtEmail.isPassword = false;
+            this.txtEmail.label = "Email";
+            this.txtEmail.Location = new System.Drawing.Point(31, 215);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.txtEmail.Size = new System.Drawing.Size(335, 61);
+            this.txtEmail.TabIndex = 10;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
+            this.txtFirstName.isPassword = false;
+            this.txtFirstName.label = "First Name";
+            this.txtFirstName.Location = new System.Drawing.Point(31, 5);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.txtFirstName.Size = new System.Drawing.Size(335, 61);
+            this.txtFirstName.TabIndex = 7;
+            this.txtFirstName.Load += new System.EventHandler(this.loginTextBox1_Load);
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
+            this.txtLastName.isPassword = false;
+            this.txtLastName.label = "Last Name";
+            this.txtLastName.Location = new System.Drawing.Point(31, 75);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.txtLastName.Size = new System.Drawing.Size(335, 61);
+            this.txtLastName.TabIndex = 8;
+            this.txtLastName.Load += new System.EventHandler(this.loginTextBox2_Load);
             // 
             // label4
             // 
@@ -161,74 +229,6 @@
             this.label1.Size = new System.Drawing.Size(179, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "WELCOME to";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtPassword.isPassword = true;
-            this.txtPassword.label = "Password";
-            this.txtPassword.Location = new System.Drawing.Point(31, 285);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.txtPassword.Size = new System.Drawing.Size(335, 61);
-            this.txtPassword.TabIndex = 11;
-            // 
-            // txtConfirmPassword
-            // 
-            this.txtConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtConfirmPassword.isPassword = true;
-            this.txtConfirmPassword.label = "Conform Password";
-            this.txtConfirmPassword.Location = new System.Drawing.Point(31, 355);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.txtConfirmPassword.Size = new System.Drawing.Size(335, 61);
-            this.txtConfirmPassword.TabIndex = 12;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtUsername.isPassword = false;
-            this.txtUsername.label = "Username";
-            this.txtUsername.Location = new System.Drawing.Point(31, 145);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.txtUsername.Size = new System.Drawing.Size(335, 61);
-            this.txtUsername.TabIndex = 9;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtEmail.isPassword = false;
-            this.txtEmail.label = "Email";
-            this.txtEmail.Location = new System.Drawing.Point(31, 215);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.txtEmail.Size = new System.Drawing.Size(335, 61);
-            this.txtEmail.TabIndex = 10;
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtFirstName.isPassword = false;
-            this.txtFirstName.label = "First Name";
-            this.txtFirstName.Location = new System.Drawing.Point(31, 5);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.txtFirstName.Size = new System.Drawing.Size(335, 61);
-            this.txtFirstName.TabIndex = 7;
-            this.txtFirstName.Load += new System.EventHandler(this.loginTextBox1_Load);
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtLastName.isPassword = false;
-            this.txtLastName.label = "Last Name";
-            this.txtLastName.Location = new System.Drawing.Point(31, 75);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.txtLastName.Size = new System.Drawing.Size(335, 61);
-            this.txtLastName.TabIndex = 8;
-            this.txtLastName.Load += new System.EventHandler(this.loginTextBox2_Load);
             // 
             // RegistrationForm
             // 
