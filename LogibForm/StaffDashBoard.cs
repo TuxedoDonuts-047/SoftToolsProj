@@ -1,12 +1,19 @@
-﻿using System;
+﻿using FrameworkTest;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LogibForm
 {
-    public partial class CustomerDashBoard : Form
+    public partial class StaffDashBoard : Form
     {
-        public CustomerDashBoard()
+        public StaffDashBoard()
         {
             InitializeComponent();
             // Makes the SATA UI Button transparent to match the gradient panel
@@ -108,11 +115,6 @@ namespace LogibForm
         private void btnCart_Click(object sender, EventArgs e)
         {
             showPanel(cartPanel);
-        }
-
-        private void lblUser_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
