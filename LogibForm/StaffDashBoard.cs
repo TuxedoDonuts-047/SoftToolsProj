@@ -42,6 +42,7 @@ namespace LogibForm
         private void StaffDashBoard_Load(object sender, EventArgs e)
         {
             showPanel(overviewPanel);
+
         }
         
         private void btnOverView_MouseHover(object sender, EventArgs e)
@@ -116,10 +117,39 @@ namespace LogibForm
         {
             showPanel(cartPanel);
         }
-
-        private void label13_Click(object sender, EventArgs e)
+        private void loadInventoryGrid()
         {
+            dgvInventory.Rows.Clear();
+            dgvInventory.Columns.Clear();
 
+            // Create Columns
+            dgvInventory.Columns.Add("GameID", "Game ID");
+            dgvInventory.Columns.Add("GameName", "Name");
+            dgvInventory.Columns.Add("GameGenre", "Genre");
+            dgvInventory.Columns.Add("GameDescription", "Description");
+            dgvInventory.Columns.Add("GameStorage", "Storage (GB)");
+            dgvInventory.Columns.Add("GameBuyPrice", "Price (€)");
+            dgvInventory.Columns.Add("GameInventory", "Stock");
+
+            // Get all inventory items from DB
+            List<Inventory> items = Inventory.getAllInventory();
+
+            // Populate Grid
+            foreach (Inventory item in items)
+            {
+                dgvInventory.Rows.Add(
+                    item.getGameID(),
+                    item.getGameName(),
+                    item.getGameGenre(),
+                    item.getGameDescription(),
+                    item.getGameStorage(),
+                    item.getGameBuyPrice(),
+                    item.getGameInventory()
+                );
+            }
+
+            // Make ID uneditable
+            dgvInventory.Columns["GameID"].ReadOnly = true;
         }
     }
 }

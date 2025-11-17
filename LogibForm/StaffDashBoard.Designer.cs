@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDashBoard));
-            SATAUiFramework.BorderRadius borderRadius7 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius8 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius7 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius9 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius10 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius11 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius12 = new SATAUiFramework.BorderRadius();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDashBoard));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.overviewPanel = new System.Windows.Forms.Panel();
+            this.pnlOverviewUser = new SATAUiFramework.SATAPanel();
             this.lblOverviewUser = new System.Windows.Forms.Label();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.lblOverview = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.sataButton12 = new FrameworkTest.SATAButton();
             this.sataButton13 = new FrameworkTest.SATAButton();
@@ -100,11 +102,32 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.inventoryPanel = new System.Windows.Forms.Panel();
+            this.dgvInventory = new System.Windows.Forms.DataGridView();
+            this.pnlnventoryUser = new SATAUiFramework.SATAPanel();
+            this.lblIventoryUser = new System.Windows.Forms.Label();
+            this.sataPictureBox6 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.lblInventory = new System.Windows.Forms.Label();
             this.selectGenrePanel = new System.Windows.Forms.Panel();
+            this.pnlGenreUser = new SATAUiFramework.SATAPanel();
+            this.lblGenreUser = new System.Windows.Forms.Label();
+            this.sataPictureBox5 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.wishListPanel = new System.Windows.Forms.Panel();
+            this.pnlWishListUser = new SATAUiFramework.SATAPanel();
+            this.lblWishListUser = new System.Windows.Forms.Label();
+            this.sataPictureBox4 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.libraryPanel = new System.Windows.Forms.Panel();
+            this.pnlLibraryUser = new SATAUiFramework.SATAPanel();
+            this.lblLibraryUser = new System.Windows.Forms.Label();
+            this.sataPictureBox3 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.cartPanel = new System.Windows.Forms.Panel();
+            this.pnlCartUser = new SATAUiFramework.SATAPanel();
+            this.lblCartUser = new System.Windows.Forms.Label();
+            this.sataPictureBox2 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.StaffGradienrPanel = new LogibForm.gradientPanel();
             this.btnInventory = new FrameworkTest.SATAButton();
             this.btnGenre = new FrameworkTest.SATAButton();
@@ -115,29 +138,9 @@
             this.btnOverView = new FrameworkTest.SATAButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.overViewSidePanel = new System.Windows.Forms.Panel();
-            this.lblOverview = new System.Windows.Forms.Label();
-            this.pnlOverviewUser = new SATAUiFramework.SATAPanel();
-            this.pnlLibraryUser = new SATAUiFramework.SATAPanel();
-            this.lblLibraryUser = new System.Windows.Forms.Label();
-            this.sataPictureBox3 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.pnlCartUser = new SATAUiFramework.SATAPanel();
-            this.lblCartUser = new System.Windows.Forms.Label();
-            this.sataPictureBox2 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.pnlWishListUser = new SATAUiFramework.SATAPanel();
-            this.lblWishListUser = new System.Windows.Forms.Label();
-            this.sataPictureBox4 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.pnlGenreUser = new SATAUiFramework.SATAPanel();
-            this.lblGenreUser = new System.Windows.Forms.Label();
-            this.sataPictureBox5 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.pnlnventoryUser = new SATAUiFramework.SATAPanel();
-            this.lblIventoryUser = new System.Windows.Forms.Label();
-            this.sataPictureBox6 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.btnUpdateInventory = new FrameworkTest.SATAButton();
             this.overviewPanel.SuspendLayout();
+            this.pnlOverviewUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -164,23 +167,23 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.inventoryPanel.SuspendLayout();
-            this.selectGenrePanel.SuspendLayout();
-            this.wishListPanel.SuspendLayout();
-            this.libraryPanel.SuspendLayout();
-            this.cartPanel.SuspendLayout();
-            this.StaffGradienrPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlOverviewUser.SuspendLayout();
-            this.pnlLibraryUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox3)).BeginInit();
-            this.pnlCartUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).BeginInit();
-            this.pnlWishListUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox4)).BeginInit();
-            this.pnlGenreUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.pnlnventoryUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox6)).BeginInit();
+            this.selectGenrePanel.SuspendLayout();
+            this.pnlGenreUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox5)).BeginInit();
+            this.wishListPanel.SuspendLayout();
+            this.pnlWishListUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox4)).BeginInit();
+            this.libraryPanel.SuspendLayout();
+            this.pnlLibraryUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox3)).BeginInit();
+            this.cartPanel.SuspendLayout();
+            this.pnlCartUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).BeginInit();
+            this.StaffGradienrPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sataEllipseControl1
@@ -210,6 +213,24 @@
             this.overviewPanel.Size = new System.Drawing.Size(1196, 842);
             this.overviewPanel.TabIndex = 1;
             // 
+            // pnlOverviewUser
+            // 
+            this.pnlOverviewUser.BackColor2 = System.Drawing.Color.Transparent;
+            this.pnlOverviewUser.BorderColor = System.Drawing.Color.DarkGray;
+            borderRadius8.BottomLeft = 10;
+            borderRadius8.BottomRight = 10;
+            borderRadius8.TopLeft = 10;
+            borderRadius8.TopRight = 10;
+            this.pnlOverviewUser.BorderRadius = borderRadius8;
+            this.pnlOverviewUser.BorderThickness = 0;
+            this.pnlOverviewUser.Controls.Add(this.lblOverviewUser);
+            this.pnlOverviewUser.Controls.Add(this.sataPictureBox1);
+            this.pnlOverviewUser.Controls.Add(this.lblOverview);
+            this.pnlOverviewUser.Location = new System.Drawing.Point(32, 23);
+            this.pnlOverviewUser.Name = "pnlOverviewUser";
+            this.pnlOverviewUser.Size = new System.Drawing.Size(1134, 54);
+            this.pnlOverviewUser.TabIndex = 23;
+            // 
             // lblOverviewUser
             // 
             this.lblOverviewUser.AutoSize = true;
@@ -219,7 +240,6 @@
             this.lblOverviewUser.Size = new System.Drawing.Size(74, 24);
             this.lblOverviewUser.TabIndex = 21;
             this.lblOverviewUser.Text = "user_1";
-            this.lblOverviewUser.Click += new System.EventHandler(this.label13_Click);
             // 
             // sataPictureBox1
             // 
@@ -237,6 +257,16 @@
             this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.sataPictureBox1.TabIndex = 20;
             this.sataPictureBox1.TabStop = false;
+            // 
+            // lblOverview
+            // 
+            this.lblOverview.AutoSize = true;
+            this.lblOverview.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverview.Location = new System.Drawing.Point(81, 14);
+            this.lblOverview.Name = "lblOverview";
+            this.lblOverview.Size = new System.Drawing.Size(133, 24);
+            this.lblOverview.TabIndex = 22;
+            this.lblOverview.Text = "Hello there, ";
             // 
             // panel7
             // 
@@ -1525,6 +1555,8 @@
             // inventoryPanel
             // 
             this.inventoryPanel.BackColor = System.Drawing.Color.Transparent;
+            this.inventoryPanel.Controls.Add(this.btnUpdateInventory);
+            this.inventoryPanel.Controls.Add(this.dgvInventory);
             this.inventoryPanel.Controls.Add(this.pnlnventoryUser);
             this.inventoryPanel.Controls.Add(this.lblInventory);
             this.inventoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1532,6 +1564,69 @@
             this.inventoryPanel.Name = "inventoryPanel";
             this.inventoryPanel.Size = new System.Drawing.Size(1196, 842);
             this.inventoryPanel.TabIndex = 2;
+            // 
+            // dgvInventory
+            // 
+            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventory.Location = new System.Drawing.Point(32, 114);
+            this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.Size = new System.Drawing.Size(1134, 593);
+            this.dgvInventory.TabIndex = 25;
+            // 
+            // pnlnventoryUser
+            // 
+            this.pnlnventoryUser.BackColor2 = System.Drawing.Color.Transparent;
+            this.pnlnventoryUser.BorderColor = System.Drawing.Color.DarkGray;
+            borderRadius7.BottomLeft = 10;
+            borderRadius7.BottomRight = 10;
+            borderRadius7.TopLeft = 10;
+            borderRadius7.TopRight = 10;
+            this.pnlnventoryUser.BorderRadius = borderRadius7;
+            this.pnlnventoryUser.BorderThickness = 0;
+            this.pnlnventoryUser.Controls.Add(this.lblIventoryUser);
+            this.pnlnventoryUser.Controls.Add(this.sataPictureBox6);
+            this.pnlnventoryUser.Controls.Add(this.label22);
+            this.pnlnventoryUser.Location = new System.Drawing.Point(32, 23);
+            this.pnlnventoryUser.Name = "pnlnventoryUser";
+            this.pnlnventoryUser.Size = new System.Drawing.Size(1134, 54);
+            this.pnlnventoryUser.TabIndex = 24;
+            // 
+            // lblIventoryUser
+            // 
+            this.lblIventoryUser.AutoSize = true;
+            this.lblIventoryUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIventoryUser.Location = new System.Drawing.Point(205, 14);
+            this.lblIventoryUser.Name = "lblIventoryUser";
+            this.lblIventoryUser.Size = new System.Drawing.Size(74, 24);
+            this.lblIventoryUser.TabIndex = 21;
+            this.lblIventoryUser.Text = "user_1";
+            // 
+            // sataPictureBox6
+            // 
+            this.sataPictureBox6.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.sataPictureBox6.BorderColor = System.Drawing.Color.Empty;
+            this.sataPictureBox6.BorderColor2 = System.Drawing.Color.Empty;
+            this.sataPictureBox6.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.sataPictureBox6.BorderSize = 1;
+            this.sataPictureBox6.GradientAngle = 50F;
+            this.sataPictureBox6.Image = global::LogibForm.Properties.Resources.user;
+            this.sataPictureBox6.Location = new System.Drawing.Point(22, 3);
+            this.sataPictureBox6.Name = "sataPictureBox6";
+            this.sataPictureBox6.Padding = new System.Windows.Forms.Padding(90);
+            this.sataPictureBox6.Size = new System.Drawing.Size(46, 46);
+            this.sataPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.sataPictureBox6.TabIndex = 20;
+            this.sataPictureBox6.TabStop = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(81, 14);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(133, 24);
+            this.label22.TabIndex = 22;
+            this.label22.Text = "Hello there, ";
             // 
             // lblInventory
             // 
@@ -1553,6 +1648,61 @@
             this.selectGenrePanel.Size = new System.Drawing.Size(1196, 842);
             this.selectGenrePanel.TabIndex = 3;
             // 
+            // pnlGenreUser
+            // 
+            this.pnlGenreUser.BackColor2 = System.Drawing.Color.Transparent;
+            this.pnlGenreUser.BorderColor = System.Drawing.Color.DarkGray;
+            borderRadius9.BottomLeft = 10;
+            borderRadius9.BottomRight = 10;
+            borderRadius9.TopLeft = 10;
+            borderRadius9.TopRight = 10;
+            this.pnlGenreUser.BorderRadius = borderRadius9;
+            this.pnlGenreUser.BorderThickness = 0;
+            this.pnlGenreUser.Controls.Add(this.lblGenreUser);
+            this.pnlGenreUser.Controls.Add(this.sataPictureBox5);
+            this.pnlGenreUser.Controls.Add(this.label20);
+            this.pnlGenreUser.Location = new System.Drawing.Point(32, 23);
+            this.pnlGenreUser.Name = "pnlGenreUser";
+            this.pnlGenreUser.Size = new System.Drawing.Size(1134, 54);
+            this.pnlGenreUser.TabIndex = 24;
+            // 
+            // lblGenreUser
+            // 
+            this.lblGenreUser.AutoSize = true;
+            this.lblGenreUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenreUser.Location = new System.Drawing.Point(205, 14);
+            this.lblGenreUser.Name = "lblGenreUser";
+            this.lblGenreUser.Size = new System.Drawing.Size(74, 24);
+            this.lblGenreUser.TabIndex = 21;
+            this.lblGenreUser.Text = "user_1";
+            // 
+            // sataPictureBox5
+            // 
+            this.sataPictureBox5.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.sataPictureBox5.BorderColor = System.Drawing.Color.Empty;
+            this.sataPictureBox5.BorderColor2 = System.Drawing.Color.Empty;
+            this.sataPictureBox5.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.sataPictureBox5.BorderSize = 1;
+            this.sataPictureBox5.GradientAngle = 50F;
+            this.sataPictureBox5.Image = global::LogibForm.Properties.Resources.user;
+            this.sataPictureBox5.Location = new System.Drawing.Point(22, 3);
+            this.sataPictureBox5.Name = "sataPictureBox5";
+            this.sataPictureBox5.Padding = new System.Windows.Forms.Padding(90);
+            this.sataPictureBox5.Size = new System.Drawing.Size(46, 46);
+            this.sataPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.sataPictureBox5.TabIndex = 20;
+            this.sataPictureBox5.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(81, 14);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(133, 24);
+            this.label20.TabIndex = 22;
+            this.label20.Text = "Hello there, ";
+            // 
             // wishListPanel
             // 
             this.wishListPanel.BackColor = System.Drawing.Color.Transparent;
@@ -1562,6 +1712,61 @@
             this.wishListPanel.Name = "wishListPanel";
             this.wishListPanel.Size = new System.Drawing.Size(1196, 842);
             this.wishListPanel.TabIndex = 4;
+            // 
+            // pnlWishListUser
+            // 
+            this.pnlWishListUser.BackColor2 = System.Drawing.Color.Transparent;
+            this.pnlWishListUser.BorderColor = System.Drawing.Color.DarkGray;
+            borderRadius10.BottomLeft = 10;
+            borderRadius10.BottomRight = 10;
+            borderRadius10.TopLeft = 10;
+            borderRadius10.TopRight = 10;
+            this.pnlWishListUser.BorderRadius = borderRadius10;
+            this.pnlWishListUser.BorderThickness = 0;
+            this.pnlWishListUser.Controls.Add(this.lblWishListUser);
+            this.pnlWishListUser.Controls.Add(this.sataPictureBox4);
+            this.pnlWishListUser.Controls.Add(this.label18);
+            this.pnlWishListUser.Location = new System.Drawing.Point(32, 23);
+            this.pnlWishListUser.Name = "pnlWishListUser";
+            this.pnlWishListUser.Size = new System.Drawing.Size(1134, 54);
+            this.pnlWishListUser.TabIndex = 26;
+            // 
+            // lblWishListUser
+            // 
+            this.lblWishListUser.AutoSize = true;
+            this.lblWishListUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWishListUser.Location = new System.Drawing.Point(205, 14);
+            this.lblWishListUser.Name = "lblWishListUser";
+            this.lblWishListUser.Size = new System.Drawing.Size(74, 24);
+            this.lblWishListUser.TabIndex = 21;
+            this.lblWishListUser.Text = "user_1";
+            // 
+            // sataPictureBox4
+            // 
+            this.sataPictureBox4.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.sataPictureBox4.BorderColor = System.Drawing.Color.Empty;
+            this.sataPictureBox4.BorderColor2 = System.Drawing.Color.Empty;
+            this.sataPictureBox4.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.sataPictureBox4.BorderSize = 1;
+            this.sataPictureBox4.GradientAngle = 50F;
+            this.sataPictureBox4.Image = global::LogibForm.Properties.Resources.user;
+            this.sataPictureBox4.Location = new System.Drawing.Point(22, 3);
+            this.sataPictureBox4.Name = "sataPictureBox4";
+            this.sataPictureBox4.Padding = new System.Windows.Forms.Padding(90);
+            this.sataPictureBox4.Size = new System.Drawing.Size(46, 46);
+            this.sataPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.sataPictureBox4.TabIndex = 20;
+            this.sataPictureBox4.TabStop = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(81, 14);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(133, 24);
+            this.label18.TabIndex = 22;
+            this.label18.Text = "Hello there, ";
             // 
             // libraryPanel
             // 
@@ -1573,6 +1778,61 @@
             this.libraryPanel.Size = new System.Drawing.Size(1196, 842);
             this.libraryPanel.TabIndex = 5;
             // 
+            // pnlLibraryUser
+            // 
+            this.pnlLibraryUser.BackColor2 = System.Drawing.Color.Transparent;
+            this.pnlLibraryUser.BorderColor = System.Drawing.Color.DarkGray;
+            borderRadius11.BottomLeft = 10;
+            borderRadius11.BottomRight = 10;
+            borderRadius11.TopLeft = 10;
+            borderRadius11.TopRight = 10;
+            this.pnlLibraryUser.BorderRadius = borderRadius11;
+            this.pnlLibraryUser.BorderThickness = 0;
+            this.pnlLibraryUser.Controls.Add(this.lblLibraryUser);
+            this.pnlLibraryUser.Controls.Add(this.sataPictureBox3);
+            this.pnlLibraryUser.Controls.Add(this.label16);
+            this.pnlLibraryUser.Location = new System.Drawing.Point(32, 23);
+            this.pnlLibraryUser.Name = "pnlLibraryUser";
+            this.pnlLibraryUser.Size = new System.Drawing.Size(1134, 54);
+            this.pnlLibraryUser.TabIndex = 24;
+            // 
+            // lblLibraryUser
+            // 
+            this.lblLibraryUser.AutoSize = true;
+            this.lblLibraryUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibraryUser.Location = new System.Drawing.Point(205, 14);
+            this.lblLibraryUser.Name = "lblLibraryUser";
+            this.lblLibraryUser.Size = new System.Drawing.Size(74, 24);
+            this.lblLibraryUser.TabIndex = 21;
+            this.lblLibraryUser.Text = "user_1";
+            // 
+            // sataPictureBox3
+            // 
+            this.sataPictureBox3.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.sataPictureBox3.BorderColor = System.Drawing.Color.Empty;
+            this.sataPictureBox3.BorderColor2 = System.Drawing.Color.Empty;
+            this.sataPictureBox3.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.sataPictureBox3.BorderSize = 1;
+            this.sataPictureBox3.GradientAngle = 50F;
+            this.sataPictureBox3.Image = global::LogibForm.Properties.Resources.user;
+            this.sataPictureBox3.Location = new System.Drawing.Point(22, 3);
+            this.sataPictureBox3.Name = "sataPictureBox3";
+            this.sataPictureBox3.Padding = new System.Windows.Forms.Padding(90);
+            this.sataPictureBox3.Size = new System.Drawing.Size(46, 46);
+            this.sataPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.sataPictureBox3.TabIndex = 20;
+            this.sataPictureBox3.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(81, 14);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(133, 24);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Hello there, ";
+            // 
             // cartPanel
             // 
             this.cartPanel.BackColor = System.Drawing.Color.Transparent;
@@ -1582,6 +1842,61 @@
             this.cartPanel.Name = "cartPanel";
             this.cartPanel.Size = new System.Drawing.Size(1196, 842);
             this.cartPanel.TabIndex = 6;
+            // 
+            // pnlCartUser
+            // 
+            this.pnlCartUser.BackColor2 = System.Drawing.Color.Transparent;
+            this.pnlCartUser.BorderColor = System.Drawing.Color.DarkGray;
+            borderRadius12.BottomLeft = 10;
+            borderRadius12.BottomRight = 10;
+            borderRadius12.TopLeft = 10;
+            borderRadius12.TopRight = 10;
+            this.pnlCartUser.BorderRadius = borderRadius12;
+            this.pnlCartUser.BorderThickness = 0;
+            this.pnlCartUser.Controls.Add(this.lblCartUser);
+            this.pnlCartUser.Controls.Add(this.sataPictureBox2);
+            this.pnlCartUser.Controls.Add(this.label15);
+            this.pnlCartUser.Location = new System.Drawing.Point(32, 23);
+            this.pnlCartUser.Name = "pnlCartUser";
+            this.pnlCartUser.Size = new System.Drawing.Size(1134, 54);
+            this.pnlCartUser.TabIndex = 25;
+            // 
+            // lblCartUser
+            // 
+            this.lblCartUser.AutoSize = true;
+            this.lblCartUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCartUser.Location = new System.Drawing.Point(205, 14);
+            this.lblCartUser.Name = "lblCartUser";
+            this.lblCartUser.Size = new System.Drawing.Size(74, 24);
+            this.lblCartUser.TabIndex = 21;
+            this.lblCartUser.Text = "user_1";
+            // 
+            // sataPictureBox2
+            // 
+            this.sataPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.sataPictureBox2.BorderColor = System.Drawing.Color.Empty;
+            this.sataPictureBox2.BorderColor2 = System.Drawing.Color.Empty;
+            this.sataPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.sataPictureBox2.BorderSize = 1;
+            this.sataPictureBox2.GradientAngle = 50F;
+            this.sataPictureBox2.Image = global::LogibForm.Properties.Resources.user;
+            this.sataPictureBox2.Location = new System.Drawing.Point(22, 3);
+            this.sataPictureBox2.Name = "sataPictureBox2";
+            this.sataPictureBox2.Padding = new System.Windows.Forms.Padding(90);
+            this.sataPictureBox2.Size = new System.Drawing.Size(46, 46);
+            this.sataPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.sataPictureBox2.TabIndex = 20;
+            this.sataPictureBox2.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(81, 14);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(133, 24);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Hello there, ";
             // 
             // StaffGradienrPanel
             // 
@@ -1911,316 +2226,51 @@
             this.overViewSidePanel.Size = new System.Drawing.Size(5, 25);
             this.overViewSidePanel.TabIndex = 8;
             // 
-            // lblOverview
+            // btnUpdateInventory
             // 
-            this.lblOverview.AutoSize = true;
-            this.lblOverview.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOverview.Location = new System.Drawing.Point(81, 14);
-            this.lblOverview.Name = "lblOverview";
-            this.lblOverview.Size = new System.Drawing.Size(133, 24);
-            this.lblOverview.TabIndex = 22;
-            this.lblOverview.Text = "Hello there, ";
-            // 
-            // pnlOverviewUser
-            // 
-            this.pnlOverviewUser.BackColor2 = System.Drawing.Color.Transparent;
-            this.pnlOverviewUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius7.BottomLeft = 10;
-            borderRadius7.BottomRight = 10;
-            borderRadius7.TopLeft = 10;
-            borderRadius7.TopRight = 10;
-            this.pnlOverviewUser.BorderRadius = borderRadius7;
-            this.pnlOverviewUser.BorderThickness = 0;
-            this.pnlOverviewUser.Controls.Add(this.lblOverviewUser);
-            this.pnlOverviewUser.Controls.Add(this.sataPictureBox1);
-            this.pnlOverviewUser.Controls.Add(this.lblOverview);
-            this.pnlOverviewUser.Location = new System.Drawing.Point(32, 23);
-            this.pnlOverviewUser.Name = "pnlOverviewUser";
-            this.pnlOverviewUser.Size = new System.Drawing.Size(1134, 54);
-            this.pnlOverviewUser.TabIndex = 23;
-            // 
-            // pnlLibraryUser
-            // 
-            this.pnlLibraryUser.BackColor2 = System.Drawing.Color.Transparent;
-            this.pnlLibraryUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius8.BottomLeft = 10;
-            borderRadius8.BottomRight = 10;
-            borderRadius8.TopLeft = 10;
-            borderRadius8.TopRight = 10;
-            this.pnlLibraryUser.BorderRadius = borderRadius8;
-            this.pnlLibraryUser.BorderThickness = 0;
-            this.pnlLibraryUser.Controls.Add(this.lblLibraryUser);
-            this.pnlLibraryUser.Controls.Add(this.sataPictureBox3);
-            this.pnlLibraryUser.Controls.Add(this.label16);
-            this.pnlLibraryUser.Location = new System.Drawing.Point(32, 23);
-            this.pnlLibraryUser.Name = "pnlLibraryUser";
-            this.pnlLibraryUser.Size = new System.Drawing.Size(1134, 54);
-            this.pnlLibraryUser.TabIndex = 24;
-            // 
-            // lblLibraryUser
-            // 
-            this.lblLibraryUser.AutoSize = true;
-            this.lblLibraryUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLibraryUser.Location = new System.Drawing.Point(205, 14);
-            this.lblLibraryUser.Name = "lblLibraryUser";
-            this.lblLibraryUser.Size = new System.Drawing.Size(74, 24);
-            this.lblLibraryUser.TabIndex = 21;
-            this.lblLibraryUser.Text = "user_1";
-            // 
-            // sataPictureBox3
-            // 
-            this.sataPictureBox3.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox3.BorderColor = System.Drawing.Color.Empty;
-            this.sataPictureBox3.BorderColor2 = System.Drawing.Color.Empty;
-            this.sataPictureBox3.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox3.BorderSize = 1;
-            this.sataPictureBox3.GradientAngle = 50F;
-            this.sataPictureBox3.Image = global::LogibForm.Properties.Resources.user;
-            this.sataPictureBox3.Location = new System.Drawing.Point(22, 3);
-            this.sataPictureBox3.Name = "sataPictureBox3";
-            this.sataPictureBox3.Padding = new System.Windows.Forms.Padding(90);
-            this.sataPictureBox3.Size = new System.Drawing.Size(46, 46);
-            this.sataPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.sataPictureBox3.TabIndex = 20;
-            this.sataPictureBox3.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(81, 14);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(133, 24);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Hello there, ";
-            // 
-            // pnlCartUser
-            // 
-            this.pnlCartUser.BackColor2 = System.Drawing.Color.Transparent;
-            this.pnlCartUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius9.BottomLeft = 10;
-            borderRadius9.BottomRight = 10;
-            borderRadius9.TopLeft = 10;
-            borderRadius9.TopRight = 10;
-            this.pnlCartUser.BorderRadius = borderRadius9;
-            this.pnlCartUser.BorderThickness = 0;
-            this.pnlCartUser.Controls.Add(this.lblCartUser);
-            this.pnlCartUser.Controls.Add(this.sataPictureBox2);
-            this.pnlCartUser.Controls.Add(this.label15);
-            this.pnlCartUser.Location = new System.Drawing.Point(32, 23);
-            this.pnlCartUser.Name = "pnlCartUser";
-            this.pnlCartUser.Size = new System.Drawing.Size(1134, 54);
-            this.pnlCartUser.TabIndex = 25;
-            // 
-            // lblCartUser
-            // 
-            this.lblCartUser.AutoSize = true;
-            this.lblCartUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCartUser.Location = new System.Drawing.Point(205, 14);
-            this.lblCartUser.Name = "lblCartUser";
-            this.lblCartUser.Size = new System.Drawing.Size(74, 24);
-            this.lblCartUser.TabIndex = 21;
-            this.lblCartUser.Text = "user_1";
-            // 
-            // sataPictureBox2
-            // 
-            this.sataPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox2.BorderColor = System.Drawing.Color.Empty;
-            this.sataPictureBox2.BorderColor2 = System.Drawing.Color.Empty;
-            this.sataPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox2.BorderSize = 1;
-            this.sataPictureBox2.GradientAngle = 50F;
-            this.sataPictureBox2.Image = global::LogibForm.Properties.Resources.user;
-            this.sataPictureBox2.Location = new System.Drawing.Point(22, 3);
-            this.sataPictureBox2.Name = "sataPictureBox2";
-            this.sataPictureBox2.Padding = new System.Windows.Forms.Padding(90);
-            this.sataPictureBox2.Size = new System.Drawing.Size(46, 46);
-            this.sataPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.sataPictureBox2.TabIndex = 20;
-            this.sataPictureBox2.TabStop = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(81, 14);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(133, 24);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Hello there, ";
-            // 
-            // pnlWishListUser
-            // 
-            this.pnlWishListUser.BackColor2 = System.Drawing.Color.Transparent;
-            this.pnlWishListUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius10.BottomLeft = 10;
-            borderRadius10.BottomRight = 10;
-            borderRadius10.TopLeft = 10;
-            borderRadius10.TopRight = 10;
-            this.pnlWishListUser.BorderRadius = borderRadius10;
-            this.pnlWishListUser.BorderThickness = 0;
-            this.pnlWishListUser.Controls.Add(this.lblWishListUser);
-            this.pnlWishListUser.Controls.Add(this.sataPictureBox4);
-            this.pnlWishListUser.Controls.Add(this.label18);
-            this.pnlWishListUser.Location = new System.Drawing.Point(32, 23);
-            this.pnlWishListUser.Name = "pnlWishListUser";
-            this.pnlWishListUser.Size = new System.Drawing.Size(1134, 54);
-            this.pnlWishListUser.TabIndex = 26;
-            // 
-            // lblWishListUser
-            // 
-            this.lblWishListUser.AutoSize = true;
-            this.lblWishListUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWishListUser.Location = new System.Drawing.Point(205, 14);
-            this.lblWishListUser.Name = "lblWishListUser";
-            this.lblWishListUser.Size = new System.Drawing.Size(74, 24);
-            this.lblWishListUser.TabIndex = 21;
-            this.lblWishListUser.Text = "user_1";
-            // 
-            // sataPictureBox4
-            // 
-            this.sataPictureBox4.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox4.BorderColor = System.Drawing.Color.Empty;
-            this.sataPictureBox4.BorderColor2 = System.Drawing.Color.Empty;
-            this.sataPictureBox4.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox4.BorderSize = 1;
-            this.sataPictureBox4.GradientAngle = 50F;
-            this.sataPictureBox4.Image = global::LogibForm.Properties.Resources.user;
-            this.sataPictureBox4.Location = new System.Drawing.Point(22, 3);
-            this.sataPictureBox4.Name = "sataPictureBox4";
-            this.sataPictureBox4.Padding = new System.Windows.Forms.Padding(90);
-            this.sataPictureBox4.Size = new System.Drawing.Size(46, 46);
-            this.sataPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.sataPictureBox4.TabIndex = 20;
-            this.sataPictureBox4.TabStop = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(81, 14);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(133, 24);
-            this.label18.TabIndex = 22;
-            this.label18.Text = "Hello there, ";
-            // 
-            // pnlGenreUser
-            // 
-            this.pnlGenreUser.BackColor2 = System.Drawing.Color.Transparent;
-            this.pnlGenreUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius11.BottomLeft = 10;
-            borderRadius11.BottomRight = 10;
-            borderRadius11.TopLeft = 10;
-            borderRadius11.TopRight = 10;
-            this.pnlGenreUser.BorderRadius = borderRadius11;
-            this.pnlGenreUser.BorderThickness = 0;
-            this.pnlGenreUser.Controls.Add(this.lblGenreUser);
-            this.pnlGenreUser.Controls.Add(this.sataPictureBox5);
-            this.pnlGenreUser.Controls.Add(this.label20);
-            this.pnlGenreUser.Location = new System.Drawing.Point(32, 23);
-            this.pnlGenreUser.Name = "pnlGenreUser";
-            this.pnlGenreUser.Size = new System.Drawing.Size(1134, 54);
-            this.pnlGenreUser.TabIndex = 24;
-            // 
-            // lblGenreUser
-            // 
-            this.lblGenreUser.AutoSize = true;
-            this.lblGenreUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenreUser.Location = new System.Drawing.Point(205, 14);
-            this.lblGenreUser.Name = "lblGenreUser";
-            this.lblGenreUser.Size = new System.Drawing.Size(74, 24);
-            this.lblGenreUser.TabIndex = 21;
-            this.lblGenreUser.Text = "user_1";
-            // 
-            // sataPictureBox5
-            // 
-            this.sataPictureBox5.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox5.BorderColor = System.Drawing.Color.Empty;
-            this.sataPictureBox5.BorderColor2 = System.Drawing.Color.Empty;
-            this.sataPictureBox5.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox5.BorderSize = 1;
-            this.sataPictureBox5.GradientAngle = 50F;
-            this.sataPictureBox5.Image = global::LogibForm.Properties.Resources.user;
-            this.sataPictureBox5.Location = new System.Drawing.Point(22, 3);
-            this.sataPictureBox5.Name = "sataPictureBox5";
-            this.sataPictureBox5.Padding = new System.Windows.Forms.Padding(90);
-            this.sataPictureBox5.Size = new System.Drawing.Size(46, 46);
-            this.sataPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.sataPictureBox5.TabIndex = 20;
-            this.sataPictureBox5.TabStop = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(81, 14);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(133, 24);
-            this.label20.TabIndex = 22;
-            this.label20.Text = "Hello there, ";
-            // 
-            // pnlnventoryUser
-            // 
-            this.pnlnventoryUser.BackColor2 = System.Drawing.Color.Transparent;
-            this.pnlnventoryUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius12.BottomLeft = 10;
-            borderRadius12.BottomRight = 10;
-            borderRadius12.TopLeft = 10;
-            borderRadius12.TopRight = 10;
-            this.pnlnventoryUser.BorderRadius = borderRadius12;
-            this.pnlnventoryUser.BorderThickness = 0;
-            this.pnlnventoryUser.Controls.Add(this.lblIventoryUser);
-            this.pnlnventoryUser.Controls.Add(this.sataPictureBox6);
-            this.pnlnventoryUser.Controls.Add(this.label22);
-            this.pnlnventoryUser.Location = new System.Drawing.Point(32, 23);
-            this.pnlnventoryUser.Name = "pnlnventoryUser";
-            this.pnlnventoryUser.Size = new System.Drawing.Size(1134, 54);
-            this.pnlnventoryUser.TabIndex = 24;
-            // 
-            // lblIventoryUser
-            // 
-            this.lblIventoryUser.AutoSize = true;
-            this.lblIventoryUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIventoryUser.Location = new System.Drawing.Point(205, 14);
-            this.lblIventoryUser.Name = "lblIventoryUser";
-            this.lblIventoryUser.Size = new System.Drawing.Size(74, 24);
-            this.lblIventoryUser.TabIndex = 21;
-            this.lblIventoryUser.Text = "user_1";
-            // 
-            // sataPictureBox6
-            // 
-            this.sataPictureBox6.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox6.BorderColor = System.Drawing.Color.Empty;
-            this.sataPictureBox6.BorderColor2 = System.Drawing.Color.Empty;
-            this.sataPictureBox6.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox6.BorderSize = 1;
-            this.sataPictureBox6.GradientAngle = 50F;
-            this.sataPictureBox6.Image = global::LogibForm.Properties.Resources.user;
-            this.sataPictureBox6.Location = new System.Drawing.Point(22, 3);
-            this.sataPictureBox6.Name = "sataPictureBox6";
-            this.sataPictureBox6.Padding = new System.Windows.Forms.Padding(90);
-            this.sataPictureBox6.Size = new System.Drawing.Size(46, 46);
-            this.sataPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.sataPictureBox6.TabIndex = 20;
-            this.sataPictureBox6.TabStop = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(81, 14);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(133, 24);
-            this.label22.TabIndex = 22;
-            this.label22.Text = "Hello there, ";
+            this.btnUpdateInventory.ButtonText = "Update Inventory";
+            this.btnUpdateInventory.CheckedBackground = System.Drawing.Color.DodgerBlue;
+            this.btnUpdateInventory.CheckedForeColor = System.Drawing.Color.White;
+            this.btnUpdateInventory.CheckedImageTint = System.Drawing.Color.White;
+            this.btnUpdateInventory.CheckedOutline = System.Drawing.Color.DodgerBlue;
+            this.btnUpdateInventory.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnUpdateInventory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateInventory.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnUpdateInventory.HoverForeColor = System.Drawing.Color.White;
+            this.btnUpdateInventory.HoverImage = null;
+            this.btnUpdateInventory.HoverImageTint = System.Drawing.Color.White;
+            this.btnUpdateInventory.HoverOutline = System.Drawing.Color.Empty;
+            this.btnUpdateInventory.Image = null;
+            this.btnUpdateInventory.ImageAutoCenter = true;
+            this.btnUpdateInventory.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnUpdateInventory.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnUpdateInventory.ImageTint = System.Drawing.Color.White;
+            this.btnUpdateInventory.IsToggleButton = false;
+            this.btnUpdateInventory.IsToggled = false;
+            this.btnUpdateInventory.Location = new System.Drawing.Point(514, 747);
+            this.btnUpdateInventory.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnUpdateInventory.Name = "btnUpdateInventory";
+            this.btnUpdateInventory.NormalBackground = System.Drawing.Color.DodgerBlue;
+            this.btnUpdateInventory.NormalForeColor = System.Drawing.Color.White;
+            this.btnUpdateInventory.NormalOutline = System.Drawing.Color.Empty;
+            this.btnUpdateInventory.OutlineThickness = 2F;
+            this.btnUpdateInventory.PressedBackground = System.Drawing.Color.RoyalBlue;
+            this.btnUpdateInventory.PressedForeColor = System.Drawing.Color.White;
+            this.btnUpdateInventory.PressedImageTint = System.Drawing.Color.White;
+            this.btnUpdateInventory.PressedOutline = System.Drawing.Color.Empty;
+            this.btnUpdateInventory.Rounding = new System.Windows.Forms.Padding(1);
+            this.btnUpdateInventory.Size = new System.Drawing.Size(178, 44);
+            this.btnUpdateInventory.TabIndex = 26;
+            this.btnUpdateInventory.TextAutoCenter = true;
+            this.btnUpdateInventory.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // StaffDashBoard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1425, 842);
-            this.Controls.Add(this.overviewPanel);
             this.Controls.Add(this.inventoryPanel);
+            this.Controls.Add(this.overviewPanel);
             this.Controls.Add(this.selectGenrePanel);
             this.Controls.Add(this.wishListPanel);
             this.Controls.Add(this.cartPanel);
@@ -2228,11 +2278,14 @@
             this.Controls.Add(this.StaffGradienrPanel);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StaffDashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library";
             this.Load += new System.EventHandler(this.StaffDashBoard_Load);
             this.overviewPanel.ResumeLayout(false);
+            this.pnlOverviewUser.ResumeLayout(false);
+            this.pnlOverviewUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -2272,29 +2325,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.inventoryPanel.ResumeLayout(false);
             this.inventoryPanel.PerformLayout();
-            this.selectGenrePanel.ResumeLayout(false);
-            this.wishListPanel.ResumeLayout(false);
-            this.libraryPanel.ResumeLayout(false);
-            this.cartPanel.ResumeLayout(false);
-            this.StaffGradienrPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlOverviewUser.ResumeLayout(false);
-            this.pnlOverviewUser.PerformLayout();
-            this.pnlLibraryUser.ResumeLayout(false);
-            this.pnlLibraryUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox3)).EndInit();
-            this.pnlCartUser.ResumeLayout(false);
-            this.pnlCartUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).EndInit();
-            this.pnlWishListUser.ResumeLayout(false);
-            this.pnlWishListUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox4)).EndInit();
-            this.pnlGenreUser.ResumeLayout(false);
-            this.pnlGenreUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.pnlnventoryUser.ResumeLayout(false);
             this.pnlnventoryUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox6)).EndInit();
+            this.selectGenrePanel.ResumeLayout(false);
+            this.pnlGenreUser.ResumeLayout(false);
+            this.pnlGenreUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox5)).EndInit();
+            this.wishListPanel.ResumeLayout(false);
+            this.pnlWishListUser.ResumeLayout(false);
+            this.pnlWishListUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox4)).EndInit();
+            this.libraryPanel.ResumeLayout(false);
+            this.pnlLibraryUser.ResumeLayout(false);
+            this.pnlLibraryUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox3)).EndInit();
+            this.cartPanel.ResumeLayout(false);
+            this.pnlCartUser.ResumeLayout(false);
+            this.pnlCartUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).EndInit();
+            this.StaffGradienrPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2403,5 +2455,7 @@
         private System.Windows.Forms.Label lblIventoryUser;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox6;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DataGridView dgvInventory;
+        private FrameworkTest.SATAButton btnUpdateInventory;
     }
 }
