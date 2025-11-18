@@ -20,18 +20,6 @@ namespace LogibForm
             btnOverView.CheckedBackground = Color.Transparent;
             btnOverView.NormalBackground = Color.Transparent;
 
-            btnGenre.CheckedBackground = Color.Transparent;
-            btnGenre.NormalBackground = Color.Transparent;
-
-            btnWishlist.CheckedBackground = Color.Transparent;
-            btnWishlist.NormalBackground = Color.Transparent;
-
-            btnLibrary.CheckedBackground = Color.Transparent;
-            btnLibrary.NormalBackground = Color.Transparent;
-
-            btnCart.CheckedBackground = Color.Transparent;
-            btnCart.NormalBackground = Color.Transparent;
-
             btnLogout.CheckedBackground = Color.Transparent;
             btnLogout.NormalBackground = Color.Transparent;
 
@@ -51,38 +39,15 @@ namespace LogibForm
 
         }
 
-        private void btnCart_MouseHover(object sender, EventArgs e)
-        {
-            btnCart.Cursor = Cursors.Hand;
-        }
-
         private void btnLogout_MouseHover(object sender, EventArgs e)
         {
             btnLogout.Cursor= Cursors.Hand;
         }
 
-        private void btnWishlist_MouseHover(object sender, EventArgs e)
-        {
-            btnWishlist.Cursor= Cursors.Hand;
-        }
-
-        private void btnLibrary_MouseHover(object sender, EventArgs e)
-        {
-            btnLibrary.Cursor = Cursors.Hand;
-        }
-
-        private void btnGenre_MouseHover(object sender, EventArgs e)
-        {
-            btnGenre.Cursor= Cursors.Hand;
-        }
         private void showPanel(Panel panelToShow)
         {
             overviewPanel.Visible = false;
             inventoryPanel.Visible = false;
-            selectGenrePanel.Visible = false;
-            wishListPanel.Visible = false;
-            libraryPanel.Visible = false;
-            cartPanel.Visible = false;
 
             panelToShow.Visible = true;
             panelToShow.BringToFront();
@@ -98,25 +63,6 @@ namespace LogibForm
             showPanel(inventoryPanel);
         }
 
-        private void btnGenre_Click(object sender, EventArgs e)
-        {
-            showPanel(selectGenrePanel);
-        }
-
-        private void btnWishlist_Click(object sender, EventArgs e)
-        {
-            showPanel(wishListPanel);
-        }
-
-        private void btnLibrary_Click(object sender, EventArgs e)
-        {
-            showPanel(libraryPanel);
-        }
-
-        private void btnCart_Click(object sender, EventArgs e)
-        {
-            showPanel(cartPanel);
-        }
         private void loadInventoryGrid()
         {
             dgvInventory.Rows.Clear();

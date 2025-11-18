@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius8 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius7 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius9 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius10 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius11 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius12 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDashBoard));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.overviewPanel = new System.Windows.Forms.Panel();
@@ -102,43 +98,19 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.inventoryPanel = new System.Windows.Forms.Panel();
+            this.btnUpdateInventory = new FrameworkTest.SATAButton();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.pnlnventoryUser = new SATAUiFramework.SATAPanel();
             this.lblIventoryUser = new System.Windows.Forms.Label();
             this.sataPictureBox6 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label22 = new System.Windows.Forms.Label();
             this.lblInventory = new System.Windows.Forms.Label();
-            this.selectGenrePanel = new System.Windows.Forms.Panel();
-            this.pnlGenreUser = new SATAUiFramework.SATAPanel();
-            this.lblGenreUser = new System.Windows.Forms.Label();
-            this.sataPictureBox5 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.wishListPanel = new System.Windows.Forms.Panel();
-            this.pnlWishListUser = new SATAUiFramework.SATAPanel();
-            this.lblWishListUser = new System.Windows.Forms.Label();
-            this.sataPictureBox4 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.libraryPanel = new System.Windows.Forms.Panel();
-            this.pnlLibraryUser = new SATAUiFramework.SATAPanel();
-            this.lblLibraryUser = new System.Windows.Forms.Label();
-            this.sataPictureBox3 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.cartPanel = new System.Windows.Forms.Panel();
-            this.pnlCartUser = new SATAUiFramework.SATAPanel();
-            this.lblCartUser = new System.Windows.Forms.Label();
-            this.sataPictureBox2 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.StaffGradienrPanel = new LogibForm.gradientPanel();
             this.btnInventory = new FrameworkTest.SATAButton();
-            this.btnGenre = new FrameworkTest.SATAButton();
             this.btnLogout = new FrameworkTest.SATAButton();
-            this.btnCart = new FrameworkTest.SATAButton();
-            this.btnLibrary = new FrameworkTest.SATAButton();
-            this.btnWishlist = new FrameworkTest.SATAButton();
             this.btnOverView = new FrameworkTest.SATAButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.overViewSidePanel = new System.Windows.Forms.Panel();
-            this.btnUpdateInventory = new FrameworkTest.SATAButton();
             this.overviewPanel.SuspendLayout();
             this.pnlOverviewUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
@@ -170,18 +142,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.pnlnventoryUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox6)).BeginInit();
-            this.selectGenrePanel.SuspendLayout();
-            this.pnlGenreUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox5)).BeginInit();
-            this.wishListPanel.SuspendLayout();
-            this.pnlWishListUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox4)).BeginInit();
-            this.libraryPanel.SuspendLayout();
-            this.pnlLibraryUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox3)).BeginInit();
-            this.cartPanel.SuspendLayout();
-            this.pnlCartUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).BeginInit();
             this.StaffGradienrPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -217,11 +177,11 @@
             // 
             this.pnlOverviewUser.BackColor2 = System.Drawing.Color.Transparent;
             this.pnlOverviewUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius8.BottomLeft = 10;
-            borderRadius8.BottomRight = 10;
-            borderRadius8.TopLeft = 10;
-            borderRadius8.TopRight = 10;
-            this.pnlOverviewUser.BorderRadius = borderRadius8;
+            borderRadius2.BottomLeft = 10;
+            borderRadius2.BottomRight = 10;
+            borderRadius2.TopLeft = 10;
+            borderRadius2.TopRight = 10;
+            this.pnlOverviewUser.BorderRadius = borderRadius2;
             this.pnlOverviewUser.BorderThickness = 0;
             this.pnlOverviewUser.Controls.Add(this.lblOverviewUser);
             this.pnlOverviewUser.Controls.Add(this.sataPictureBox1);
@@ -1565,6 +1525,44 @@
             this.inventoryPanel.Size = new System.Drawing.Size(1196, 842);
             this.inventoryPanel.TabIndex = 2;
             // 
+            // btnUpdateInventory
+            // 
+            this.btnUpdateInventory.ButtonText = "Update Inventory";
+            this.btnUpdateInventory.CheckedBackground = System.Drawing.Color.DodgerBlue;
+            this.btnUpdateInventory.CheckedForeColor = System.Drawing.Color.White;
+            this.btnUpdateInventory.CheckedImageTint = System.Drawing.Color.White;
+            this.btnUpdateInventory.CheckedOutline = System.Drawing.Color.DodgerBlue;
+            this.btnUpdateInventory.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnUpdateInventory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateInventory.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnUpdateInventory.HoverForeColor = System.Drawing.Color.White;
+            this.btnUpdateInventory.HoverImage = null;
+            this.btnUpdateInventory.HoverImageTint = System.Drawing.Color.White;
+            this.btnUpdateInventory.HoverOutline = System.Drawing.Color.Empty;
+            this.btnUpdateInventory.Image = null;
+            this.btnUpdateInventory.ImageAutoCenter = true;
+            this.btnUpdateInventory.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnUpdateInventory.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnUpdateInventory.ImageTint = System.Drawing.Color.White;
+            this.btnUpdateInventory.IsToggleButton = false;
+            this.btnUpdateInventory.IsToggled = false;
+            this.btnUpdateInventory.Location = new System.Drawing.Point(514, 747);
+            this.btnUpdateInventory.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnUpdateInventory.Name = "btnUpdateInventory";
+            this.btnUpdateInventory.NormalBackground = System.Drawing.Color.DodgerBlue;
+            this.btnUpdateInventory.NormalForeColor = System.Drawing.Color.White;
+            this.btnUpdateInventory.NormalOutline = System.Drawing.Color.Empty;
+            this.btnUpdateInventory.OutlineThickness = 2F;
+            this.btnUpdateInventory.PressedBackground = System.Drawing.Color.RoyalBlue;
+            this.btnUpdateInventory.PressedForeColor = System.Drawing.Color.White;
+            this.btnUpdateInventory.PressedImageTint = System.Drawing.Color.White;
+            this.btnUpdateInventory.PressedOutline = System.Drawing.Color.Empty;
+            this.btnUpdateInventory.Rounding = new System.Windows.Forms.Padding(1);
+            this.btnUpdateInventory.Size = new System.Drawing.Size(178, 44);
+            this.btnUpdateInventory.TabIndex = 26;
+            this.btnUpdateInventory.TextAutoCenter = true;
+            this.btnUpdateInventory.TextOffset = new System.Drawing.Point(0, 0);
+            // 
             // dgvInventory
             // 
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1577,11 +1575,11 @@
             // 
             this.pnlnventoryUser.BackColor2 = System.Drawing.Color.Transparent;
             this.pnlnventoryUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius7.BottomLeft = 10;
-            borderRadius7.BottomRight = 10;
-            borderRadius7.TopLeft = 10;
-            borderRadius7.TopRight = 10;
-            this.pnlnventoryUser.BorderRadius = borderRadius7;
+            borderRadius1.BottomLeft = 10;
+            borderRadius1.BottomRight = 10;
+            borderRadius1.TopLeft = 10;
+            borderRadius1.TopRight = 10;
+            this.pnlnventoryUser.BorderRadius = borderRadius1;
             this.pnlnventoryUser.BorderThickness = 0;
             this.pnlnventoryUser.Controls.Add(this.lblIventoryUser);
             this.pnlnventoryUser.Controls.Add(this.sataPictureBox6);
@@ -1638,275 +1636,11 @@
             this.lblInventory.TabIndex = 1;
             this.lblInventory.Text = "Inventory";
             // 
-            // selectGenrePanel
-            // 
-            this.selectGenrePanel.BackColor = System.Drawing.Color.Transparent;
-            this.selectGenrePanel.Controls.Add(this.pnlGenreUser);
-            this.selectGenrePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.selectGenrePanel.Location = new System.Drawing.Point(229, 0);
-            this.selectGenrePanel.Name = "selectGenrePanel";
-            this.selectGenrePanel.Size = new System.Drawing.Size(1196, 842);
-            this.selectGenrePanel.TabIndex = 3;
-            // 
-            // pnlGenreUser
-            // 
-            this.pnlGenreUser.BackColor2 = System.Drawing.Color.Transparent;
-            this.pnlGenreUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius9.BottomLeft = 10;
-            borderRadius9.BottomRight = 10;
-            borderRadius9.TopLeft = 10;
-            borderRadius9.TopRight = 10;
-            this.pnlGenreUser.BorderRadius = borderRadius9;
-            this.pnlGenreUser.BorderThickness = 0;
-            this.pnlGenreUser.Controls.Add(this.lblGenreUser);
-            this.pnlGenreUser.Controls.Add(this.sataPictureBox5);
-            this.pnlGenreUser.Controls.Add(this.label20);
-            this.pnlGenreUser.Location = new System.Drawing.Point(32, 23);
-            this.pnlGenreUser.Name = "pnlGenreUser";
-            this.pnlGenreUser.Size = new System.Drawing.Size(1134, 54);
-            this.pnlGenreUser.TabIndex = 24;
-            // 
-            // lblGenreUser
-            // 
-            this.lblGenreUser.AutoSize = true;
-            this.lblGenreUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenreUser.Location = new System.Drawing.Point(205, 14);
-            this.lblGenreUser.Name = "lblGenreUser";
-            this.lblGenreUser.Size = new System.Drawing.Size(74, 24);
-            this.lblGenreUser.TabIndex = 21;
-            this.lblGenreUser.Text = "user_1";
-            // 
-            // sataPictureBox5
-            // 
-            this.sataPictureBox5.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox5.BorderColor = System.Drawing.Color.Empty;
-            this.sataPictureBox5.BorderColor2 = System.Drawing.Color.Empty;
-            this.sataPictureBox5.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox5.BorderSize = 1;
-            this.sataPictureBox5.GradientAngle = 50F;
-            this.sataPictureBox5.Image = global::LogibForm.Properties.Resources.user;
-            this.sataPictureBox5.Location = new System.Drawing.Point(22, 3);
-            this.sataPictureBox5.Name = "sataPictureBox5";
-            this.sataPictureBox5.Padding = new System.Windows.Forms.Padding(90);
-            this.sataPictureBox5.Size = new System.Drawing.Size(46, 46);
-            this.sataPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.sataPictureBox5.TabIndex = 20;
-            this.sataPictureBox5.TabStop = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(81, 14);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(133, 24);
-            this.label20.TabIndex = 22;
-            this.label20.Text = "Hello there, ";
-            // 
-            // wishListPanel
-            // 
-            this.wishListPanel.BackColor = System.Drawing.Color.Transparent;
-            this.wishListPanel.Controls.Add(this.pnlWishListUser);
-            this.wishListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wishListPanel.Location = new System.Drawing.Point(229, 0);
-            this.wishListPanel.Name = "wishListPanel";
-            this.wishListPanel.Size = new System.Drawing.Size(1196, 842);
-            this.wishListPanel.TabIndex = 4;
-            // 
-            // pnlWishListUser
-            // 
-            this.pnlWishListUser.BackColor2 = System.Drawing.Color.Transparent;
-            this.pnlWishListUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius10.BottomLeft = 10;
-            borderRadius10.BottomRight = 10;
-            borderRadius10.TopLeft = 10;
-            borderRadius10.TopRight = 10;
-            this.pnlWishListUser.BorderRadius = borderRadius10;
-            this.pnlWishListUser.BorderThickness = 0;
-            this.pnlWishListUser.Controls.Add(this.lblWishListUser);
-            this.pnlWishListUser.Controls.Add(this.sataPictureBox4);
-            this.pnlWishListUser.Controls.Add(this.label18);
-            this.pnlWishListUser.Location = new System.Drawing.Point(32, 23);
-            this.pnlWishListUser.Name = "pnlWishListUser";
-            this.pnlWishListUser.Size = new System.Drawing.Size(1134, 54);
-            this.pnlWishListUser.TabIndex = 26;
-            // 
-            // lblWishListUser
-            // 
-            this.lblWishListUser.AutoSize = true;
-            this.lblWishListUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWishListUser.Location = new System.Drawing.Point(205, 14);
-            this.lblWishListUser.Name = "lblWishListUser";
-            this.lblWishListUser.Size = new System.Drawing.Size(74, 24);
-            this.lblWishListUser.TabIndex = 21;
-            this.lblWishListUser.Text = "user_1";
-            // 
-            // sataPictureBox4
-            // 
-            this.sataPictureBox4.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox4.BorderColor = System.Drawing.Color.Empty;
-            this.sataPictureBox4.BorderColor2 = System.Drawing.Color.Empty;
-            this.sataPictureBox4.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox4.BorderSize = 1;
-            this.sataPictureBox4.GradientAngle = 50F;
-            this.sataPictureBox4.Image = global::LogibForm.Properties.Resources.user;
-            this.sataPictureBox4.Location = new System.Drawing.Point(22, 3);
-            this.sataPictureBox4.Name = "sataPictureBox4";
-            this.sataPictureBox4.Padding = new System.Windows.Forms.Padding(90);
-            this.sataPictureBox4.Size = new System.Drawing.Size(46, 46);
-            this.sataPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.sataPictureBox4.TabIndex = 20;
-            this.sataPictureBox4.TabStop = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(81, 14);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(133, 24);
-            this.label18.TabIndex = 22;
-            this.label18.Text = "Hello there, ";
-            // 
-            // libraryPanel
-            // 
-            this.libraryPanel.BackColor = System.Drawing.Color.Transparent;
-            this.libraryPanel.Controls.Add(this.pnlLibraryUser);
-            this.libraryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.libraryPanel.Location = new System.Drawing.Point(229, 0);
-            this.libraryPanel.Name = "libraryPanel";
-            this.libraryPanel.Size = new System.Drawing.Size(1196, 842);
-            this.libraryPanel.TabIndex = 5;
-            // 
-            // pnlLibraryUser
-            // 
-            this.pnlLibraryUser.BackColor2 = System.Drawing.Color.Transparent;
-            this.pnlLibraryUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius11.BottomLeft = 10;
-            borderRadius11.BottomRight = 10;
-            borderRadius11.TopLeft = 10;
-            borderRadius11.TopRight = 10;
-            this.pnlLibraryUser.BorderRadius = borderRadius11;
-            this.pnlLibraryUser.BorderThickness = 0;
-            this.pnlLibraryUser.Controls.Add(this.lblLibraryUser);
-            this.pnlLibraryUser.Controls.Add(this.sataPictureBox3);
-            this.pnlLibraryUser.Controls.Add(this.label16);
-            this.pnlLibraryUser.Location = new System.Drawing.Point(32, 23);
-            this.pnlLibraryUser.Name = "pnlLibraryUser";
-            this.pnlLibraryUser.Size = new System.Drawing.Size(1134, 54);
-            this.pnlLibraryUser.TabIndex = 24;
-            // 
-            // lblLibraryUser
-            // 
-            this.lblLibraryUser.AutoSize = true;
-            this.lblLibraryUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLibraryUser.Location = new System.Drawing.Point(205, 14);
-            this.lblLibraryUser.Name = "lblLibraryUser";
-            this.lblLibraryUser.Size = new System.Drawing.Size(74, 24);
-            this.lblLibraryUser.TabIndex = 21;
-            this.lblLibraryUser.Text = "user_1";
-            // 
-            // sataPictureBox3
-            // 
-            this.sataPictureBox3.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox3.BorderColor = System.Drawing.Color.Empty;
-            this.sataPictureBox3.BorderColor2 = System.Drawing.Color.Empty;
-            this.sataPictureBox3.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox3.BorderSize = 1;
-            this.sataPictureBox3.GradientAngle = 50F;
-            this.sataPictureBox3.Image = global::LogibForm.Properties.Resources.user;
-            this.sataPictureBox3.Location = new System.Drawing.Point(22, 3);
-            this.sataPictureBox3.Name = "sataPictureBox3";
-            this.sataPictureBox3.Padding = new System.Windows.Forms.Padding(90);
-            this.sataPictureBox3.Size = new System.Drawing.Size(46, 46);
-            this.sataPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.sataPictureBox3.TabIndex = 20;
-            this.sataPictureBox3.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(81, 14);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(133, 24);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Hello there, ";
-            // 
-            // cartPanel
-            // 
-            this.cartPanel.BackColor = System.Drawing.Color.Transparent;
-            this.cartPanel.Controls.Add(this.pnlCartUser);
-            this.cartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cartPanel.Location = new System.Drawing.Point(229, 0);
-            this.cartPanel.Name = "cartPanel";
-            this.cartPanel.Size = new System.Drawing.Size(1196, 842);
-            this.cartPanel.TabIndex = 6;
-            // 
-            // pnlCartUser
-            // 
-            this.pnlCartUser.BackColor2 = System.Drawing.Color.Transparent;
-            this.pnlCartUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius12.BottomLeft = 10;
-            borderRadius12.BottomRight = 10;
-            borderRadius12.TopLeft = 10;
-            borderRadius12.TopRight = 10;
-            this.pnlCartUser.BorderRadius = borderRadius12;
-            this.pnlCartUser.BorderThickness = 0;
-            this.pnlCartUser.Controls.Add(this.lblCartUser);
-            this.pnlCartUser.Controls.Add(this.sataPictureBox2);
-            this.pnlCartUser.Controls.Add(this.label15);
-            this.pnlCartUser.Location = new System.Drawing.Point(32, 23);
-            this.pnlCartUser.Name = "pnlCartUser";
-            this.pnlCartUser.Size = new System.Drawing.Size(1134, 54);
-            this.pnlCartUser.TabIndex = 25;
-            // 
-            // lblCartUser
-            // 
-            this.lblCartUser.AutoSize = true;
-            this.lblCartUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCartUser.Location = new System.Drawing.Point(205, 14);
-            this.lblCartUser.Name = "lblCartUser";
-            this.lblCartUser.Size = new System.Drawing.Size(74, 24);
-            this.lblCartUser.TabIndex = 21;
-            this.lblCartUser.Text = "user_1";
-            // 
-            // sataPictureBox2
-            // 
-            this.sataPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox2.BorderColor = System.Drawing.Color.Empty;
-            this.sataPictureBox2.BorderColor2 = System.Drawing.Color.Empty;
-            this.sataPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox2.BorderSize = 1;
-            this.sataPictureBox2.GradientAngle = 50F;
-            this.sataPictureBox2.Image = global::LogibForm.Properties.Resources.user;
-            this.sataPictureBox2.Location = new System.Drawing.Point(22, 3);
-            this.sataPictureBox2.Name = "sataPictureBox2";
-            this.sataPictureBox2.Padding = new System.Windows.Forms.Padding(90);
-            this.sataPictureBox2.Size = new System.Drawing.Size(46, 46);
-            this.sataPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.sataPictureBox2.TabIndex = 20;
-            this.sataPictureBox2.TabStop = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(81, 14);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(133, 24);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Hello there, ";
-            // 
             // StaffGradienrPanel
             // 
             this.StaffGradienrPanel.BackColor = System.Drawing.Color.Transparent;
             this.StaffGradienrPanel.Controls.Add(this.btnInventory);
-            this.StaffGradienrPanel.Controls.Add(this.btnGenre);
             this.StaffGradienrPanel.Controls.Add(this.btnLogout);
-            this.StaffGradienrPanel.Controls.Add(this.btnCart);
-            this.StaffGradienrPanel.Controls.Add(this.btnLibrary);
-            this.StaffGradienrPanel.Controls.Add(this.btnWishlist);
             this.StaffGradienrPanel.Controls.Add(this.btnOverView);
             this.StaffGradienrPanel.Controls.Add(this.pictureBox1);
             this.StaffGradienrPanel.Controls.Add(this.overViewSidePanel);
@@ -1917,7 +1651,6 @@
             this.StaffGradienrPanel.Name = "StaffGradienrPanel";
             this.StaffGradienrPanel.Size = new System.Drawing.Size(229, 842);
             this.StaffGradienrPanel.TabIndex = 0;
-            this.StaffGradienrPanel.MouseHover += new System.EventHandler(this.btnCart_MouseHover);
             // 
             // btnInventory
             // 
@@ -1942,7 +1675,7 @@
             this.btnInventory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnInventory.IsToggleButton = false;
             this.btnInventory.IsToggled = false;
-            this.btnInventory.Location = new System.Drawing.Point(28, 281);
+            this.btnInventory.Location = new System.Drawing.Point(28, 291);
             this.btnInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.NormalBackground = System.Drawing.Color.DodgerBlue;
@@ -1959,48 +1692,6 @@
             this.btnInventory.TextAutoCenter = false;
             this.btnInventory.TextOffset = new System.Drawing.Point(15, 0);
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
-            // 
-            // btnGenre
-            // 
-            this.btnGenre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnGenre.ButtonText = "Select Genre";
-            this.btnGenre.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.btnGenre.CheckedForeColor = System.Drawing.Color.White;
-            this.btnGenre.CheckedImageTint = System.Drawing.Color.White;
-            this.btnGenre.CheckedOutline = System.Drawing.Color.Goldenrod;
-            this.btnGenre.CustomDialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnGenre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenre.HoverBackground = System.Drawing.Color.DodgerBlue;
-            this.btnGenre.HoverForeColor = System.Drawing.Color.White;
-            this.btnGenre.HoverImage = null;
-            this.btnGenre.HoverImageTint = System.Drawing.Color.White;
-            this.btnGenre.HoverOutline = System.Drawing.Color.Empty;
-            this.btnGenre.Image = global::LogibForm.Properties.Resources.target;
-            this.btnGenre.ImageAutoCenter = false;
-            this.btnGenre.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnGenre.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btnGenre.ImageTint = System.Drawing.Color.White;
-            this.btnGenre.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnGenre.IsToggleButton = false;
-            this.btnGenre.IsToggled = false;
-            this.btnGenre.Location = new System.Drawing.Point(28, 352);
-            this.btnGenre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGenre.Name = "btnGenre";
-            this.btnGenre.NormalBackground = System.Drawing.Color.DodgerBlue;
-            this.btnGenre.NormalForeColor = System.Drawing.Color.White;
-            this.btnGenre.NormalOutline = System.Drawing.Color.Empty;
-            this.btnGenre.OutlineThickness = 2F;
-            this.btnGenre.PressedBackground = System.Drawing.Color.RosyBrown;
-            this.btnGenre.PressedForeColor = System.Drawing.Color.White;
-            this.btnGenre.PressedImageTint = System.Drawing.Color.White;
-            this.btnGenre.PressedOutline = System.Drawing.Color.Empty;
-            this.btnGenre.Rounding = new System.Windows.Forms.Padding(0);
-            this.btnGenre.Size = new System.Drawing.Size(201, 48);
-            this.btnGenre.TabIndex = 7;
-            this.btnGenre.TextAutoCenter = false;
-            this.btnGenre.TextOffset = new System.Drawing.Point(15, 0);
-            this.btnGenre.Click += new System.EventHandler(this.btnGenre_Click);
-            this.btnGenre.MouseHover += new System.EventHandler(this.btnGenre_MouseHover);
             // 
             // btnLogout
             // 
@@ -2042,129 +1733,6 @@
             this.btnLogout.TextOffset = new System.Drawing.Point(15, 0);
             this.btnLogout.MouseHover += new System.EventHandler(this.btnLogout_MouseHover);
             // 
-            // btnCart
-            // 
-            this.btnCart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCart.ButtonText = "Cart";
-            this.btnCart.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.btnCart.CheckedForeColor = System.Drawing.Color.White;
-            this.btnCart.CheckedImageTint = System.Drawing.Color.White;
-            this.btnCart.CheckedOutline = System.Drawing.Color.Goldenrod;
-            this.btnCart.CustomDialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnCart.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCart.HoverBackground = System.Drawing.Color.DodgerBlue;
-            this.btnCart.HoverForeColor = System.Drawing.Color.White;
-            this.btnCart.HoverImage = null;
-            this.btnCart.HoverImageTint = System.Drawing.Color.White;
-            this.btnCart.HoverOutline = System.Drawing.Color.Empty;
-            this.btnCart.Image = global::LogibForm.Properties.Resources.logout_4;
-            this.btnCart.ImageAutoCenter = false;
-            this.btnCart.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnCart.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btnCart.ImageTint = System.Drawing.Color.White;
-            this.btnCart.IsToggleButton = false;
-            this.btnCart.IsToggled = false;
-            this.btnCart.Location = new System.Drawing.Point(28, 565);
-            this.btnCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCart.Name = "btnCart";
-            this.btnCart.NormalBackground = System.Drawing.Color.DodgerBlue;
-            this.btnCart.NormalForeColor = System.Drawing.Color.White;
-            this.btnCart.NormalOutline = System.Drawing.Color.Empty;
-            this.btnCart.OutlineThickness = 2F;
-            this.btnCart.PressedBackground = System.Drawing.Color.RosyBrown;
-            this.btnCart.PressedForeColor = System.Drawing.Color.White;
-            this.btnCart.PressedImageTint = System.Drawing.Color.White;
-            this.btnCart.PressedOutline = System.Drawing.Color.Empty;
-            this.btnCart.Rounding = new System.Windows.Forms.Padding(0);
-            this.btnCart.Size = new System.Drawing.Size(201, 48);
-            this.btnCart.TabIndex = 5;
-            this.btnCart.TextAutoCenter = false;
-            this.btnCart.TextOffset = new System.Drawing.Point(15, 0);
-            this.btnCart.Click += new System.EventHandler(this.btnCart_Click);
-            this.btnCart.MouseHover += new System.EventHandler(this.btnLogout_MouseHover);
-            // 
-            // btnLibrary
-            // 
-            this.btnLibrary.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnLibrary.ButtonText = "Library";
-            this.btnLibrary.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.btnLibrary.CheckedForeColor = System.Drawing.Color.White;
-            this.btnLibrary.CheckedImageTint = System.Drawing.Color.White;
-            this.btnLibrary.CheckedOutline = System.Drawing.Color.Goldenrod;
-            this.btnLibrary.CustomDialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnLibrary.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLibrary.HoverBackground = System.Drawing.Color.DodgerBlue;
-            this.btnLibrary.HoverForeColor = System.Drawing.Color.White;
-            this.btnLibrary.HoverImage = null;
-            this.btnLibrary.HoverImageTint = System.Drawing.Color.White;
-            this.btnLibrary.HoverOutline = System.Drawing.Color.Empty;
-            this.btnLibrary.Image = global::LogibForm.Properties.Resources.bookPainted;
-            this.btnLibrary.ImageAutoCenter = false;
-            this.btnLibrary.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnLibrary.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btnLibrary.ImageTint = System.Drawing.Color.White;
-            this.btnLibrary.IsToggleButton = false;
-            this.btnLibrary.IsToggled = false;
-            this.btnLibrary.Location = new System.Drawing.Point(28, 494);
-            this.btnLibrary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLibrary.Name = "btnLibrary";
-            this.btnLibrary.NormalBackground = System.Drawing.Color.DodgerBlue;
-            this.btnLibrary.NormalForeColor = System.Drawing.Color.White;
-            this.btnLibrary.NormalOutline = System.Drawing.Color.Empty;
-            this.btnLibrary.OutlineThickness = 2F;
-            this.btnLibrary.PressedBackground = System.Drawing.Color.RosyBrown;
-            this.btnLibrary.PressedForeColor = System.Drawing.Color.White;
-            this.btnLibrary.PressedImageTint = System.Drawing.Color.White;
-            this.btnLibrary.PressedOutline = System.Drawing.Color.Empty;
-            this.btnLibrary.Rounding = new System.Windows.Forms.Padding(0);
-            this.btnLibrary.Size = new System.Drawing.Size(201, 48);
-            this.btnLibrary.TabIndex = 4;
-            this.btnLibrary.TextAutoCenter = false;
-            this.btnLibrary.TextOffset = new System.Drawing.Point(15, 0);
-            this.btnLibrary.Click += new System.EventHandler(this.btnLibrary_Click);
-            this.btnLibrary.MouseHover += new System.EventHandler(this.btnLibrary_MouseHover);
-            // 
-            // btnWishlist
-            // 
-            this.btnWishlist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnWishlist.ButtonText = "Wishlist";
-            this.btnWishlist.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.btnWishlist.CheckedForeColor = System.Drawing.Color.White;
-            this.btnWishlist.CheckedImageTint = System.Drawing.Color.White;
-            this.btnWishlist.CheckedOutline = System.Drawing.Color.Goldenrod;
-            this.btnWishlist.CustomDialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnWishlist.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWishlist.HoverBackground = System.Drawing.Color.DodgerBlue;
-            this.btnWishlist.HoverForeColor = System.Drawing.Color.White;
-            this.btnWishlist.HoverImage = null;
-            this.btnWishlist.HoverImageTint = System.Drawing.Color.White;
-            this.btnWishlist.HoverOutline = System.Drawing.Color.Empty;
-            this.btnWishlist.Image = ((System.Drawing.Image)(resources.GetObject("btnWishlist.Image")));
-            this.btnWishlist.ImageAutoCenter = false;
-            this.btnWishlist.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnWishlist.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btnWishlist.ImageTint = System.Drawing.Color.White;
-            this.btnWishlist.IsToggleButton = false;
-            this.btnWishlist.IsToggled = false;
-            this.btnWishlist.Location = new System.Drawing.Point(28, 423);
-            this.btnWishlist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnWishlist.Name = "btnWishlist";
-            this.btnWishlist.NormalBackground = System.Drawing.Color.DodgerBlue;
-            this.btnWishlist.NormalForeColor = System.Drawing.Color.White;
-            this.btnWishlist.NormalOutline = System.Drawing.Color.Empty;
-            this.btnWishlist.OutlineThickness = 2F;
-            this.btnWishlist.PressedBackground = System.Drawing.Color.RosyBrown;
-            this.btnWishlist.PressedForeColor = System.Drawing.Color.White;
-            this.btnWishlist.PressedImageTint = System.Drawing.Color.White;
-            this.btnWishlist.PressedOutline = System.Drawing.Color.Empty;
-            this.btnWishlist.Rounding = new System.Windows.Forms.Padding(0);
-            this.btnWishlist.Size = new System.Drawing.Size(201, 48);
-            this.btnWishlist.TabIndex = 3;
-            this.btnWishlist.TextAutoCenter = false;
-            this.btnWishlist.TextOffset = new System.Drawing.Point(15, 0);
-            this.btnWishlist.Click += new System.EventHandler(this.btnWishlist_Click);
-            this.btnWishlist.MouseHover += new System.EventHandler(this.btnWishlist_MouseHover);
-            // 
             // btnOverView
             // 
             this.btnOverView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -2188,7 +1756,7 @@
             this.btnOverView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnOverView.IsToggleButton = false;
             this.btnOverView.IsToggled = false;
-            this.btnOverView.Location = new System.Drawing.Point(28, 210);
+            this.btnOverView.Location = new System.Drawing.Point(28, 220);
             this.btnOverView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOverView.Name = "btnOverView";
             this.btnOverView.NormalBackground = System.Drawing.Color.DodgerBlue;
@@ -2221,48 +1789,10 @@
             // 
             this.overViewSidePanel.BackColor = System.Drawing.Color.White;
             this.overViewSidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.overViewSidePanel.Location = new System.Drawing.Point(24, 224);
+            this.overViewSidePanel.Location = new System.Drawing.Point(24, 234);
             this.overViewSidePanel.Name = "overViewSidePanel";
             this.overViewSidePanel.Size = new System.Drawing.Size(5, 25);
             this.overViewSidePanel.TabIndex = 8;
-            // 
-            // btnUpdateInventory
-            // 
-            this.btnUpdateInventory.ButtonText = "Update Inventory";
-            this.btnUpdateInventory.CheckedBackground = System.Drawing.Color.DodgerBlue;
-            this.btnUpdateInventory.CheckedForeColor = System.Drawing.Color.White;
-            this.btnUpdateInventory.CheckedImageTint = System.Drawing.Color.White;
-            this.btnUpdateInventory.CheckedOutline = System.Drawing.Color.DodgerBlue;
-            this.btnUpdateInventory.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnUpdateInventory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateInventory.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnUpdateInventory.HoverForeColor = System.Drawing.Color.White;
-            this.btnUpdateInventory.HoverImage = null;
-            this.btnUpdateInventory.HoverImageTint = System.Drawing.Color.White;
-            this.btnUpdateInventory.HoverOutline = System.Drawing.Color.Empty;
-            this.btnUpdateInventory.Image = null;
-            this.btnUpdateInventory.ImageAutoCenter = true;
-            this.btnUpdateInventory.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnUpdateInventory.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnUpdateInventory.ImageTint = System.Drawing.Color.White;
-            this.btnUpdateInventory.IsToggleButton = false;
-            this.btnUpdateInventory.IsToggled = false;
-            this.btnUpdateInventory.Location = new System.Drawing.Point(514, 747);
-            this.btnUpdateInventory.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnUpdateInventory.Name = "btnUpdateInventory";
-            this.btnUpdateInventory.NormalBackground = System.Drawing.Color.DodgerBlue;
-            this.btnUpdateInventory.NormalForeColor = System.Drawing.Color.White;
-            this.btnUpdateInventory.NormalOutline = System.Drawing.Color.Empty;
-            this.btnUpdateInventory.OutlineThickness = 2F;
-            this.btnUpdateInventory.PressedBackground = System.Drawing.Color.RoyalBlue;
-            this.btnUpdateInventory.PressedForeColor = System.Drawing.Color.White;
-            this.btnUpdateInventory.PressedImageTint = System.Drawing.Color.White;
-            this.btnUpdateInventory.PressedOutline = System.Drawing.Color.Empty;
-            this.btnUpdateInventory.Rounding = new System.Windows.Forms.Padding(1);
-            this.btnUpdateInventory.Size = new System.Drawing.Size(178, 44);
-            this.btnUpdateInventory.TabIndex = 26;
-            this.btnUpdateInventory.TextAutoCenter = true;
-            this.btnUpdateInventory.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // StaffDashBoard
             // 
@@ -2271,10 +1801,6 @@
             this.ClientSize = new System.Drawing.Size(1425, 842);
             this.Controls.Add(this.inventoryPanel);
             this.Controls.Add(this.overviewPanel);
-            this.Controls.Add(this.selectGenrePanel);
-            this.Controls.Add(this.wishListPanel);
-            this.Controls.Add(this.cartPanel);
-            this.Controls.Add(this.libraryPanel);
             this.Controls.Add(this.StaffGradienrPanel);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -2329,22 +1855,6 @@
             this.pnlnventoryUser.ResumeLayout(false);
             this.pnlnventoryUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox6)).EndInit();
-            this.selectGenrePanel.ResumeLayout(false);
-            this.pnlGenreUser.ResumeLayout(false);
-            this.pnlGenreUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox5)).EndInit();
-            this.wishListPanel.ResumeLayout(false);
-            this.pnlWishListUser.ResumeLayout(false);
-            this.pnlWishListUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox4)).EndInit();
-            this.libraryPanel.ResumeLayout(false);
-            this.pnlLibraryUser.ResumeLayout(false);
-            this.pnlLibraryUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox3)).EndInit();
-            this.cartPanel.ResumeLayout(false);
-            this.pnlCartUser.ResumeLayout(false);
-            this.pnlCartUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).EndInit();
             this.StaffGradienrPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -2356,19 +1866,11 @@
         private SATAUiFramework.Controls.SATAEllipseControl sataEllipseControl1;
         private gradientPanel StaffGradienrPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private FrameworkTest.SATAButton btnCart;
-        private FrameworkTest.SATAButton btnLibrary;
-        private FrameworkTest.SATAButton btnWishlist;
         private FrameworkTest.SATAButton btnLogout;
-        private FrameworkTest.SATAButton btnGenre;
         private FrameworkTest.SATAButton btnOverView;
         private System.Windows.Forms.Panel overViewSidePanel;
         private FrameworkTest.SATAButton btnInventory;
         private System.Windows.Forms.Panel overviewPanel;
-        private System.Windows.Forms.Panel cartPanel;
-        private System.Windows.Forms.Panel libraryPanel;
-        private System.Windows.Forms.Panel wishListPanel;
-        private System.Windows.Forms.Panel selectGenrePanel;
         private System.Windows.Forms.Panel inventoryPanel;
         private System.Windows.Forms.Label lblInventory;
         private System.Windows.Forms.Panel panel7;
@@ -2435,22 +1937,6 @@
         private System.Windows.Forms.Label lblOverviewUser;
         private System.Windows.Forms.Label lblOverview;
         private SATAUiFramework.SATAPanel pnlOverviewUser;
-        private SATAUiFramework.SATAPanel pnlLibraryUser;
-        private System.Windows.Forms.Label lblLibraryUser;
-        private SATAUiFramework.Controls.SATAPictureBox sataPictureBox3;
-        private System.Windows.Forms.Label label16;
-        private SATAUiFramework.SATAPanel pnlCartUser;
-        private System.Windows.Forms.Label lblCartUser;
-        private SATAUiFramework.Controls.SATAPictureBox sataPictureBox2;
-        private System.Windows.Forms.Label label15;
-        private SATAUiFramework.SATAPanel pnlGenreUser;
-        private System.Windows.Forms.Label lblGenreUser;
-        private SATAUiFramework.Controls.SATAPictureBox sataPictureBox5;
-        private System.Windows.Forms.Label label20;
-        private SATAUiFramework.SATAPanel pnlWishListUser;
-        private System.Windows.Forms.Label lblWishListUser;
-        private SATAUiFramework.Controls.SATAPictureBox sataPictureBox4;
-        private System.Windows.Forms.Label label18;
         private SATAUiFramework.SATAPanel pnlnventoryUser;
         private System.Windows.Forms.Label lblIventoryUser;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox6;

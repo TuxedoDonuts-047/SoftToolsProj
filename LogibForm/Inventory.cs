@@ -67,7 +67,7 @@ namespace LogibForm
                            VALUES 
                            (:id, :name, :desc, :genre, :storage, :price, :inventory)";
 
-            using (OracleConnection conn = new OracleConnection(DBConnect.oradb))
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDBConnect.oradb))
             using (OracleCommand cmd = new OracleCommand(sql, conn))
             {
                 cmd.Parameters.Add(":id", GameID);
@@ -102,7 +102,7 @@ namespace LogibForm
                            GameInventory = :inv
                            WHERE GameID = :id";
 
-            using (OracleConnection conn = new OracleConnection(DBConnect.oradb))
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDBConnect.oradb))
             using (OracleCommand cmd = new OracleCommand(sql, conn))
             {
                 cmd.Parameters.Add(":name", GameName);
@@ -131,7 +131,7 @@ namespace LogibForm
                            SET GameInventory = GameInventory - :qty 
                            WHERE GameID = :id";
 
-            using (OracleConnection conn = new OracleConnection(DBConnect.oradb))
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDBConnect.oradb))
             using (OracleCommand cmd = new OracleCommand(sql, conn))
             {
                 cmd.Parameters.Add(":qty", qty);
@@ -158,7 +158,7 @@ namespace LogibForm
                            FROM VideoGames
                            ORDER BY GameID";
 
-            using (OracleConnection conn = new OracleConnection(DBConnect.oradb))
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDBConnect.oradb))
             using (OracleCommand cmd = new OracleCommand(sql, conn))
             {
                 OracleDataReader reader = null;
@@ -198,7 +198,7 @@ namespace LogibForm
         {
             string sql = "SELECT GameInventory FROM VideoGames WHERE GameID = :id";
 
-            using (OracleConnection conn = new OracleConnection(DBConnect.oradb))
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDBConnect.oradb))
             using (OracleCommand cmd = new OracleCommand(sql, conn))
             {
                 cmd.Parameters.Add(":id", gameID);

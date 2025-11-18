@@ -16,7 +16,7 @@ namespace LogibForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StaffDashBoard());
+            Application.Run(new MainMenu());
         }
     }
 }
