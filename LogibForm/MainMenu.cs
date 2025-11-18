@@ -28,5 +28,19 @@ namespace LogibForm
         {
             btnCustomer.Cursor = Cursors.Hand;
         }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerLoginForm customerLoginForm = new CustomerLoginForm();
+            customerLoginForm.Show();
+            this.Hide();
+        }
+
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            StaffLoginForm staffLoginForm = new StaffLoginForm();
+            staffLoginForm.Show();
+            this.Hide();
+        }
     }
 }

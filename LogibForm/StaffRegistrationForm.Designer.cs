@@ -44,6 +44,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.staffRegistration = new SATAUiFramework.Controls.SATAEllipseControl();
             this.panel1.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -193,17 +194,17 @@
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.gradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
             this.gradientPanel1.gradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(158)))));
-            this.gradientPanel1.Location = new System.Drawing.Point(1, 1);
+            this.gradientPanel1.Location = new System.Drawing.Point(-2, 0);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(410, 641);
+            this.gradientPanel1.Size = new System.Drawing.Size(413, 646);
             this.gradientPanel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LogibForm.Properties.Resources.cloud;
-            this.pictureBox1.Location = new System.Drawing.Point(240, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(243, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(207, 641);
+            this.pictureBox1.Size = new System.Drawing.Size(207, 647);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
@@ -231,6 +232,11 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "WELCOME to";
             // 
+            // staffRegistration
+            // 
+            this.staffRegistration.CornerRadius = 30;
+            this.staffRegistration.TargetControl = this;
+            // 
             // StaffRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,7 +249,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnRegister);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StaffRegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -276,6 +282,7 @@
         private loginTextBox txtEmail;
         private loginTextBox txtPassword;
         private loginTextBox txtConfirmPassword;
+        private SATAUiFramework.Controls.SATAEllipseControl staffRegistration;
     }
 }
 

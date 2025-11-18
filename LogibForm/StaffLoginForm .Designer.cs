@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.staffLogin = new SATAUiFramework.Controls.SATAEllipseControl();
             this.pnlLogin.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -137,9 +138,9 @@
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.gradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
             this.gradientPanel1.gradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(158)))));
-            this.gradientPanel1.Location = new System.Drawing.Point(1, 1);
+            this.gradientPanel1.Location = new System.Drawing.Point(-1, -2);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(410, 549);
+            this.gradientPanel1.Size = new System.Drawing.Size(412, 552);
             this.gradientPanel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -147,7 +148,7 @@
             this.pictureBox1.Image = global::LogibForm.Properties.Resources.cloud;
             this.pictureBox1.Location = new System.Drawing.Point(261, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 550);
+            this.pictureBox1.Size = new System.Drawing.Size(184, 552);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
@@ -175,6 +176,11 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "WELCOME Back";
             // 
+            // staffLogin
+            // 
+            this.staffLogin.CornerRadius = 30;
+            this.staffLogin.TargetControl = this;
+            // 
             // StaffLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,7 +193,7 @@
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnLogin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StaffLoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -215,6 +221,7 @@
         private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Label lblRegisterHere;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private SATAUiFramework.Controls.SATAEllipseControl staffLogin;
     }
 }
 
