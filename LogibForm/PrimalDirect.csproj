@@ -86,30 +86,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffRegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffRegistrationForm.Designer.cs">
+      <DependentUpon>StaffRegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffLoginForm .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffLoginForm .Designer.cs">
+      <DependentUpon>StaffLoginForm .cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomNumericUpdown.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomNumericUpdown.Designer.cs">
       <DependentUpon>CustomNumericUpdown.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBConnect.cs" />
+    <Compile Include="PrimalDirectDBConnect.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RegistrationForm.cs">
+    <Compile Include="CustomerRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrationForm.Designer.cs">
-      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    <Compile Include="CustomerRegistrationForm.Designer.cs">
+      <DependentUpon>CustomerRegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="CustomerLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="CustomerLoginForm.Designer.cs">
+      <DependentUpon>CustomerLoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="gradientPanel.cs">
       <SubType>Component</SubType>
@@ -122,20 +140,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomerDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerDashBoard.Designer.cs">
+      <DependentUpon>CustomerDashBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="StaffDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StaffDashBoard.Designer.cs">
       <DependentUpon>StaffDashBoard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffRegistrationForm.resx">
+      <DependentUpon>StaffRegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffLoginForm .resx">
+      <DependentUpon>StaffLoginForm .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomNumericUpdown.resx">
       <DependentUpon>CustomNumericUpdown.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrationForm.resx">
-      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerRegistrationForm.resx">
+      <DependentUpon>CustomerRegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerLoginForm.resx">
+      <DependentUpon>CustomerLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginTextBox.resx">
       <DependentUpon>loginTextBox.cs</DependentUpon>
@@ -144,6 +177,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerDashBoard.resx">
+      <DependentUpon>CustomerDashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffDashBoard.resx">
       <DependentUpon>StaffDashBoard.cs</DependentUpon>
