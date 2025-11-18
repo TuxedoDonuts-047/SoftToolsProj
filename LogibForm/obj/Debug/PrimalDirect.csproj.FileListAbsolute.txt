@@ -76,4 +76,3 @@ C:\Users\divin\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.exe
 C:\Users\divin\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.pdb
 C:\Users\divin\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.exe.config
 C:\Users\T00233163\Source\Repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.CustomNumericUpdown.resources
-C:\Users\T00233163\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.exe.config

@@ -38,7 +38,7 @@ namespace LogibForm
 
         private void loginTextBox_Paint(object sender, PaintEventArgs e)
         {
-            // Update the label text with the value from the property
+            // Updates the label text with the value from the property
             label1.Text = label;
             //check the textbox should act as a password field
             if (isPassword)
