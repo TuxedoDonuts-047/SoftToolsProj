@@ -184,6 +184,7 @@
             this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Sign Up";
             this.btnRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             this.btnRegister.MouseHover += new System.EventHandler(this.btnRegister_MouseHover);
             // 
             // gradientPanel1
