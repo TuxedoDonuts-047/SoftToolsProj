@@ -128,6 +128,7 @@
             this.btnLogin.TabIndex = 9;
             this.btnLogin.Text = "Login";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             this.btnLogin.MouseHover += new System.EventHandler(this.btnLogin_MouseHover);
             // 
             // gradientPanel1

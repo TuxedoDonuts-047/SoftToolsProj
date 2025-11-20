@@ -86,12 +86,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrimalDirectDB.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="Staff.cs" />
     <Compile Include="StaffRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
