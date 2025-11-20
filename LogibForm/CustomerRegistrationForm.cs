@@ -104,8 +104,10 @@ namespace LogibForm
                 return;
             }
 
-            Customer aCustomer = new Customer();
+            Customer aCustomer = new Customer(Customer.getNextAccountID(), txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPassword.Text, 0.00m, 2000.00m);
             aCustomer.addCustomer();
+
+            MessageBox.Show("Customer account has been created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.Close();
             CustomerLoginForm newForm = new CustomerLoginForm();

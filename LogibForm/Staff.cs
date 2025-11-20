@@ -81,7 +81,7 @@ namespace LogibForm
 
             conn.Open();
 
-            String sqlQuery = "INSERT INTO CustomerAccount VALUES (" +
+            String sqlQuery = "INSERT INTO StaffAccount VALUES (" +
                 this.StaffID + ", '" +
                 this.Forename + "', '" +
                 this.Surname + "', '" +
@@ -100,7 +100,7 @@ namespace LogibForm
 
             conn.Open();
 
-            String updateAccountSQL = "UPDATE CustomerAccount SET " +
+            String updateAccountSQL = "UPDATE StaffAccount SET " +
             "StaffID = '" + this.StaffID + "', " +
             "Forename = '" + this.Forename + "', " +
             "Surname = '" + this.Surname + "', " +
@@ -161,7 +161,7 @@ namespace LogibForm
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
             DataSet ds = new DataSet();
-            da.Fill(ds, "CustomerAccount");
+            da.Fill(ds, "StaffAccount");
 
             conn.Close();
 
@@ -180,13 +180,13 @@ namespace LogibForm
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
             DataSet ds = new DataSet();
-            da.Fill(ds, "CustomerAccount");
+            da.Fill(ds, "StaffAccount");
 
             conn.Close();
 
             return ds;
         }
-        public static int getNextAccountID()
+        public static int getNextStaffID()
         {
             OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb);
 
