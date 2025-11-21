@@ -277,5 +277,8 @@
   <ItemGroup>
     <Content Include="Resources\doble_back_white.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GameImages\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
