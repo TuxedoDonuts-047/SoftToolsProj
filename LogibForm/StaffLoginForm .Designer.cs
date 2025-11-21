@@ -136,7 +136,6 @@
             // gradientPanel1
             // 
             this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gradientPanel1.Controls.Add(this.staffLogBack);
             this.gradientPanel1.Controls.Add(this.pictureBox1);
             this.gradientPanel1.Controls.Add(this.pictureBox2);
             this.gradientPanel1.Controls.Add(this.label1);
@@ -188,7 +187,7 @@
             // staffLogBack
             // 
             this.staffLogBack.Image = ((System.Drawing.Image)(resources.GetObject("staffLogBack.Image")));
-            this.staffLogBack.Location = new System.Drawing.Point(3, 43);
+            this.staffLogBack.Location = new System.Drawing.Point(425, 78);
             this.staffLogBack.Name = "staffLogBack";
             this.staffLogBack.Size = new System.Drawing.Size(37, 23);
             this.staffLogBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -202,6 +201,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(864, 548);
+            this.Controls.Add(this.staffLogBack);
             this.Controls.Add(this.lblRegisterHere);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gradientPanel1);
