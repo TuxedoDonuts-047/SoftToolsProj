@@ -41,10 +41,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.staffLogin = new SATAUiFramework.Controls.SATAEllipseControl();
+            this.staffLogBack = new System.Windows.Forms.PictureBox();
             this.pnlLogin.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffLogBack)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -134,6 +136,7 @@
             // gradientPanel1
             // 
             this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.gradientPanel1.Controls.Add(this.staffLogBack);
             this.gradientPanel1.Controls.Add(this.pictureBox1);
             this.gradientPanel1.Controls.Add(this.pictureBox2);
             this.gradientPanel1.Controls.Add(this.label1);
@@ -182,6 +185,17 @@
             this.staffLogin.CornerRadius = 30;
             this.staffLogin.TargetControl = this;
             // 
+            // staffLogBack
+            // 
+            this.staffLogBack.Image = ((System.Drawing.Image)(resources.GetObject("staffLogBack.Image")));
+            this.staffLogBack.Location = new System.Drawing.Point(3, 43);
+            this.staffLogBack.Name = "staffLogBack";
+            this.staffLogBack.Size = new System.Drawing.Size(37, 23);
+            this.staffLogBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.staffLogBack.TabIndex = 15;
+            this.staffLogBack.TabStop = false;
+            this.staffLogBack.Click += new System.EventHandler(this.staffLogBack_Click);
+            // 
             // StaffLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +218,7 @@
             this.gradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffLogBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,6 +238,7 @@
         private System.Windows.Forms.Label lblRegisterHere;
         private System.Windows.Forms.PictureBox pictureBox1;
         private SATAUiFramework.Controls.SATAEllipseControl staffLogin;
+        private System.Windows.Forms.PictureBox staffLogBack;
     }
 }
 

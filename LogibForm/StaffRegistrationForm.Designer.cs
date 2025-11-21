@@ -41,14 +41,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Label();
             this.gradientPanel1 = new LogibForm.gradientPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.staffRegBack = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.staffRegistration = new SATAUiFramework.Controls.SATAEllipseControl();
             this.panel1.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffRegBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -62,7 +64,6 @@
             this.label2.Size = new System.Drawing.Size(327, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Register For An Account";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblLoginHere
             // 
@@ -91,7 +92,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(391, 425);
             this.panel1.TabIndex = 11;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtPassword
             // 
@@ -147,7 +147,6 @@
             this.txtFirstName.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtFirstName.Size = new System.Drawing.Size(335, 61);
             this.txtFirstName.TabIndex = 7;
-            this.txtFirstName.Load += new System.EventHandler(this.loginTextBox1_Load);
             // 
             // txtLastName
             // 
@@ -159,7 +158,6 @@
             this.txtLastName.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtLastName.Size = new System.Drawing.Size(335, 61);
             this.txtLastName.TabIndex = 8;
-            this.txtLastName.Load += new System.EventHandler(this.loginTextBox2_Load);
             // 
             // label4
             // 
@@ -190,25 +188,27 @@
             // gradientPanel1
             // 
             this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gradientPanel1.Controls.Add(this.pictureBox1);
+            this.gradientPanel1.Controls.Add(this.staffRegBack);
             this.gradientPanel1.Controls.Add(this.pictureBox2);
             this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.pictureBox1);
             this.gradientPanel1.gradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
             this.gradientPanel1.gradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(74)))), ((int)(((byte)(158)))));
             this.gradientPanel1.Location = new System.Drawing.Point(-2, 0);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(413, 646);
+            this.gradientPanel1.Size = new System.Drawing.Size(413, 644);
             this.gradientPanel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // staffRegBack
             // 
-            this.pictureBox1.Image = global::LogibForm.Properties.Resources.cloud;
-            this.pictureBox1.Location = new System.Drawing.Point(243, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(207, 647);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.staffRegBack.Image = ((System.Drawing.Image)(resources.GetObject("staffRegBack.Image")));
+            this.staffRegBack.Location = new System.Drawing.Point(6, 43);
+            this.staffRegBack.Name = "staffRegBack";
+            this.staffRegBack.Size = new System.Drawing.Size(37, 23);
+            this.staffRegBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.staffRegBack.TabIndex = 14;
+            this.staffRegBack.TabStop = false;
+            this.staffRegBack.Click += new System.EventHandler(this.staffRegBack_Click);
             // 
             // pictureBox2
             // 
@@ -227,11 +227,21 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(39, 40);
+            this.label1.Location = new System.Drawing.Point(49, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "WELCOME to";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LogibForm.Properties.Resources.cloud;
+            this.pictureBox1.Location = new System.Drawing.Point(243, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(207, 647);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // staffRegistration
             // 
@@ -255,12 +265,12 @@
             this.Name = "StaffRegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Staff Registration Form";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffRegBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,6 +294,7 @@
         private loginTextBox txtPassword;
         private loginTextBox txtConfirmPassword;
         private SATAUiFramework.Controls.SATAEllipseControl staffRegistration;
+        private System.Windows.Forms.PictureBox staffRegBack;
     }
 }
 

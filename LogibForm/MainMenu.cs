@@ -17,16 +17,11 @@ namespace LogibForm
             InitializeComponent();
         }
         
-        private void lblRegisterHere_Click(object sender, EventArgs e)
+        private void lblRegisterHere_Click1(object sender, EventArgs e)
         {
             CustomerRegistrationForm register = new CustomerRegistrationForm();
             register.Show();
             this.Hide();
-        }
-
-        private void btnLogin_MouseHover(object sender, EventArgs e)
-        {
-            btnCustomer.Cursor = Cursors.Hand;
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)

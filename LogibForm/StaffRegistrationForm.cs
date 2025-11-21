@@ -17,31 +17,6 @@ namespace LogibForm
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loginTextBox2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loginTextBox1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        
         private void label5_Click(object sender, EventArgs e)
         {
             StaffLoginForm login = new StaffLoginForm();
@@ -112,6 +87,13 @@ namespace LogibForm
             this.Close();
             StaffLoginForm newForm = new StaffLoginForm();
             newForm.Show();
+        }
+
+        private void staffRegBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            StaffLoginForm staffLoginForm = new StaffLoginForm();
+            staffLoginForm.Show();
         }
     }
 }

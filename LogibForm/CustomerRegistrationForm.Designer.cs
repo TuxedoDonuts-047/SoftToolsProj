@@ -45,10 +45,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CustomerRegistrationsataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
+            this.cstRegBack = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cstRegBack)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -190,6 +192,7 @@
             // gradientPanel1
             // 
             this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.gradientPanel1.Controls.Add(this.cstRegBack);
             this.gradientPanel1.Controls.Add(this.pictureBox1);
             this.gradientPanel1.Controls.Add(this.pictureBox2);
             this.gradientPanel1.Controls.Add(this.label1);
@@ -227,7 +230,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(39, 40);
+            this.label1.Location = new System.Drawing.Point(49, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 32);
             this.label1.TabIndex = 1;
@@ -237,6 +240,17 @@
             // 
             this.CustomerRegistrationsataEllipseControl1.CornerRadius = 40;
             this.CustomerRegistrationsataEllipseControl1.TargetControl = this;
+            // 
+            // cstRegBack
+            // 
+            this.cstRegBack.Image = ((System.Drawing.Image)(resources.GetObject("cstRegBack.Image")));
+            this.cstRegBack.Location = new System.Drawing.Point(6, 43);
+            this.cstRegBack.Name = "cstRegBack";
+            this.cstRegBack.Size = new System.Drawing.Size(37, 23);
+            this.cstRegBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cstRegBack.TabIndex = 16;
+            this.cstRegBack.TabStop = false;
+            this.cstRegBack.Click += new System.EventHandler(this.cstRegBack_Click);
             // 
             // CustomerRegistrationForm
             // 
@@ -261,6 +275,7 @@
             this.gradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cstRegBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,6 +299,7 @@
         private loginTextBox txtPassword;
         private loginTextBox txtConfirmPassword;
         private SATAUiFramework.Controls.SATAEllipseControl CustomerRegistrationsataEllipseControl1;
+        private System.Windows.Forms.PictureBox cstRegBack;
     }
 }
 
