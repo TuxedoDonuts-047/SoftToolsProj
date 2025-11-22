@@ -93,6 +93,7 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordEncryptDecrypt.cs" />
     <Compile Include="PrimalDirectDB.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Staff.cs" />

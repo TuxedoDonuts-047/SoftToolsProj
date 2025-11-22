@@ -45,22 +45,23 @@ namespace LogibForm
 
             if (string.IsNullOrWhiteSpace(txtUsername.Text))
             {
-                retryCount -= 1;
+                retryCount--;
                 MessageBox.Show("Please re-enter Username\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Focus();
                 return;
             }
             if (string.IsNullOrWhiteSpace(txtPassword.Text))
             {
-                retryCount -= 1;
+                retryCount--;
                 MessageBox.Show("Please re-enter Password\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPassword.Focus();
                 return;
             }
             if (retryCount == 0)
             {
-                MessageBox.Show("Sorry you have used all retry's", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sorry you have used all retrys", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
+                return;
             }
 
             try
@@ -75,9 +76,9 @@ namespace LogibForm
                     {
                         checkCmd.Parameters.Add(":email", email);
                         checkCmd.Parameters.Add(":password", password);
-                        int exists = Convert.ToInt32(checkCmd.ExecuteScalar());
+                        object results = checkCmd.ExecuteScalar();
 
-                        if (exists == 0)
+                        if (results == null)
                         {
                             MessageBox.Show("This username does not exist in the system", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtUsername.Focus();
@@ -85,22 +86,27 @@ namespace LogibForm
                         }
                         if (txtUsername.Text != email)
                         {
-                            retryCount -= 1;
+                            retryCount--;
                             MessageBox.Show("Please re-enter Username\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txtUsername.Focus();
                             return;
                         }
-                        if (txtPassword.Text != password)
+
+                        string encryptedPassword = results.ToString();
+                        string decryptedPassword = PasswordEncryptDecrypt.DecryptPassword(encryptedPassword);
+
+                        if (password != decryptedPassword)
                         {
-                            retryCount -= 1;
+                            retryCount--;
                             MessageBox.Show("Please re-enter Password\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txtPassword.Focus();
                             return;
                         }
                         if (retryCount == 0)
                         {
-                            MessageBox.Show("Sorry you have used all retry's", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Sorry you have used all retrys", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             Application.Exit();
+                            return;
                         }
                         else
                         {
