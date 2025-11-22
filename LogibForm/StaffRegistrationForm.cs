@@ -79,7 +79,9 @@ namespace LogibForm
                 return;
             }
 
-            Staff aStaff= new Staff(Staff.getNextStaffID(), txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPassword.Text);
+            string encryptPassword = PasswordEncryptDecrypt.EncryptPassword(txtPassword.Text);
+
+            Staff aStaff= new Staff(Staff.getNextStaffID(), txtFirstName.Text, txtLastName.Text, txtEmail.Text, encryptPassword);
             aStaff.addStaff();
 
             MessageBox.Show("Staff account has been created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
