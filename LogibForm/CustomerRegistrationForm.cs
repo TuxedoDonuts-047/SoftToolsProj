@@ -122,5 +122,10 @@ namespace LogibForm
             CustomerLoginForm form = new CustomerLoginForm();
             form.Show();
         }
+
+        private void cstRegBack_MouseHover(object sender, EventArgs e)
+        {
+            cstRegBack.Cursor = Cursors.Hand;
+        }
     }
 }

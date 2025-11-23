@@ -32,21 +32,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblRegisterHere = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
-            this.txtUsername = new LogibForm.loginTextBox();
-            this.txtPassword = new LogibForm.loginTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Label();
+            this.staffLogin = new SATAUiFramework.Controls.SATAEllipseControl();
+            this.staffLogBack = new System.Windows.Forms.PictureBox();
             this.gradientPanel1 = new LogibForm.gradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.staffLogin = new SATAUiFramework.Controls.SATAEllipseControl();
-            this.staffLogBack = new System.Windows.Forms.PictureBox();
+            this.txtUsername = new LogibForm.loginTextBox();
+            this.txtPassword = new LogibForm.loginTextBox();
             this.pnlLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staffLogBack)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffLogBack)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -57,7 +57,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(468, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(305, 32);
+            this.label2.Size = new System.Drawing.Size(545, 56);
             this.label2.TabIndex = 3;
             this.label2.Text = "Login To Your Account";
             // 
@@ -69,7 +69,7 @@
             this.lblRegisterHere.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
             this.lblRegisterHere.Location = new System.Drawing.Point(676, 367);
             this.lblRegisterHere.Name = "lblRegisterHere";
-            this.lblRegisterHere.Size = new System.Drawing.Size(97, 19);
+            this.lblRegisterHere.Size = new System.Drawing.Size(168, 30);
             this.lblRegisterHere.TabIndex = 12;
             this.lblRegisterHere.Text = "Register here";
             this.lblRegisterHere.Click += new System.EventHandler(this.lblRegisterHere_Click);
@@ -85,28 +85,6 @@
             this.pnlLogin.Size = new System.Drawing.Size(382, 182);
             this.pnlLogin.TabIndex = 11;
             // 
-            // txtUsername
-            // 
-            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtUsername.isPassword = false;
-            this.txtUsername.label = "Username";
-            this.txtUsername.Location = new System.Drawing.Point(32, 28);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.txtUsername.Size = new System.Drawing.Size(324, 61);
-            this.txtUsername.TabIndex = 7;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtPassword.isPassword = true;
-            this.txtPassword.label = "Password";
-            this.txtPassword.Location = new System.Drawing.Point(32, 95);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.txtPassword.Size = new System.Drawing.Size(324, 61);
-            this.txtPassword.TabIndex = 8;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -115,7 +93,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(499, 367);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 19);
+            this.label4.Size = new System.Drawing.Size(305, 30);
             this.label4.TabIndex = 10;
             this.label4.Text = "Don\'t have an account?";
             // 
@@ -132,6 +110,23 @@
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             this.btnLogin.MouseHover += new System.EventHandler(this.btnLogin_MouseHover);
+            // 
+            // staffLogin
+            // 
+            this.staffLogin.CornerRadius = 30;
+            this.staffLogin.TargetControl = this;
+            // 
+            // staffLogBack
+            // 
+            this.staffLogBack.Image = ((System.Drawing.Image)(resources.GetObject("staffLogBack.Image")));
+            this.staffLogBack.Location = new System.Drawing.Point(425, 78);
+            this.staffLogBack.Name = "staffLogBack";
+            this.staffLogBack.Size = new System.Drawing.Size(37, 23);
+            this.staffLogBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.staffLogBack.TabIndex = 15;
+            this.staffLogBack.TabStop = false;
+            this.staffLogBack.Click += new System.EventHandler(this.staffLogBack_Click);
+            this.staffLogBack.MouseHover += new System.EventHandler(this.staffLogBack_MouseHover);
             // 
             // gradientPanel1
             // 
@@ -175,25 +170,31 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(39, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 32);
+            this.label1.Size = new System.Drawing.Size(390, 56);
             this.label1.TabIndex = 1;
             this.label1.Text = "WELCOME Back";
             // 
-            // staffLogin
+            // txtUsername
             // 
-            this.staffLogin.CornerRadius = 30;
-            this.staffLogin.TargetControl = this;
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
+            this.txtUsername.isPassword = false;
+            this.txtUsername.label = "Username";
+            this.txtUsername.Location = new System.Drawing.Point(32, 28);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.txtUsername.Size = new System.Drawing.Size(324, 61);
+            this.txtUsername.TabIndex = 7;
             // 
-            // staffLogBack
+            // txtPassword
             // 
-            this.staffLogBack.Image = ((System.Drawing.Image)(resources.GetObject("staffLogBack.Image")));
-            this.staffLogBack.Location = new System.Drawing.Point(425, 78);
-            this.staffLogBack.Name = "staffLogBack";
-            this.staffLogBack.Size = new System.Drawing.Size(37, 23);
-            this.staffLogBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.staffLogBack.TabIndex = 15;
-            this.staffLogBack.TabStop = false;
-            this.staffLogBack.Click += new System.EventHandler(this.staffLogBack_Click);
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
+            this.txtPassword.isPassword = true;
+            this.txtPassword.label = "Password";
+            this.txtPassword.Location = new System.Drawing.Point(32, 95);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.txtPassword.Size = new System.Drawing.Size(324, 61);
+            this.txtPassword.TabIndex = 8;
             // 
             // StaffLoginForm
             // 
@@ -214,11 +215,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Staff Login Form";
             this.pnlLogin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.staffLogBack)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffLogBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

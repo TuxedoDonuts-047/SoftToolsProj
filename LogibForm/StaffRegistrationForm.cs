@@ -97,5 +97,10 @@ namespace LogibForm
             StaffLoginForm staffLoginForm = new StaffLoginForm();
             staffLoginForm.Show();
         }
+
+        private void staffRegBack_MouseHover(object sender, EventArgs e)
+        {
+            staffRegBack.Cursor = Cursors.Hand;            
+        }
     }
 }

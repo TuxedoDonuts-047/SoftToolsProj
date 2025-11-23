@@ -74,7 +74,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(39, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 32);
+            this.label1.Size = new System.Drawing.Size(316, 56);
             this.label1.TabIndex = 1;
             this.label1.Text = "WELCOME to";
             // 
@@ -104,9 +104,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.sataPictureBox1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(285, -4);
+            this.panel1.Location = new System.Drawing.Point(285, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(212, 254);
+            this.panel1.Size = new System.Drawing.Size(212, 212);
             this.panel1.TabIndex = 2;
             // 
             // panel2
@@ -205,7 +205,7 @@
             this.sataPictureBox1.BorderSize = 0;
             this.sataPictureBox1.GradientAngle = 50F;
             this.sataPictureBox1.Image = global::LogibForm.Properties.Resources.user;
-            this.sataPictureBox1.Location = new System.Drawing.Point(59, 9);
+            this.sataPictureBox1.Location = new System.Drawing.Point(59, 4);
             this.sataPictureBox1.Name = "sataPictureBox1";
             this.sataPictureBox1.Size = new System.Drawing.Size(95, 95);
             this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -216,9 +216,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(70, 121);
+            this.label2.Location = new System.Drawing.Point(70, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 33);
+            this.label2.Size = new System.Drawing.Size(127, 58);
             this.label2.TabIndex = 19;
             this.label2.Text = "Role";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

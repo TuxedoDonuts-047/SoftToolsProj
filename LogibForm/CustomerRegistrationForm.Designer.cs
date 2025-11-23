@@ -61,7 +61,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(448, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(327, 32);
+            this.label2.Size = new System.Drawing.Size(582, 56);
             this.label2.TabIndex = 3;
             this.label2.Text = "Register For An Account";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -74,7 +74,7 @@
             this.lblLoginHere.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
             this.lblLoginHere.Location = new System.Drawing.Point(662, 517);
             this.lblLoginHere.Name = "lblLoginHere";
-            this.lblLoginHere.Size = new System.Drawing.Size(80, 19);
+            this.lblLoginHere.Size = new System.Drawing.Size(138, 30);
             this.lblLoginHere.TabIndex = 12;
             this.lblLoginHere.Text = "Login here";
             this.lblLoginHere.Click += new System.EventHandler(this.label5_Click);
@@ -171,7 +171,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(471, 517);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(193, 19);
+            this.label4.Size = new System.Drawing.Size(328, 30);
             this.label4.TabIndex = 10;
             this.label4.Text = "Do you have an account?";
             // 
@@ -231,7 +231,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(49, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 32);
+            this.label1.Size = new System.Drawing.Size(316, 56);
             this.label1.TabIndex = 1;
             this.label1.Text = "WELCOME to";
             // 
@@ -250,6 +250,7 @@
             this.cstRegBack.TabIndex = 16;
             this.cstRegBack.TabStop = false;
             this.cstRegBack.Click += new System.EventHandler(this.cstRegBack_Click);
+            this.cstRegBack.MouseHover += new System.EventHandler(this.cstRegBack_MouseHover);
             // 
             // CustomerRegistrationForm
             // 
