@@ -115,7 +115,6 @@
     <Compile Include="CustomNumericUpdown.Designer.cs">
       <DependentUpon>CustomNumericUpdown.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrimalDirectDBConnect.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

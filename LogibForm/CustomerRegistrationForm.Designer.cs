@@ -96,7 +96,7 @@
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtPassword.isPassword = false;
+            this.txtPassword.isPassword = true;
             this.txtPassword.label = "Password";
             this.txtPassword.Location = new System.Drawing.Point(31, 285);
             this.txtPassword.Name = "txtPassword";
@@ -108,7 +108,7 @@
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtConfirmPassword.isPassword = false;
+            this.txtConfirmPassword.isPassword = true;
             this.txtConfirmPassword.label = "Confirm Password";
             this.txtConfirmPassword.Location = new System.Drawing.Point(31, 355);
             this.txtConfirmPassword.Name = "txtConfirmPassword";

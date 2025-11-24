@@ -39,17 +39,17 @@ namespace LogibForm
         {
             int retryCount = 3;
 
-            string email = txtUsername.Text.Trim();
-            string password = txtPassword.Text.Trim();
+            string user = txtUsername.TextValue.Trim();
+            string password = txtPassword.TextValue.Trim();
 
-            if (string.IsNullOrWhiteSpace(txtUsername.Text))
+            if (string.IsNullOrWhiteSpace(txtUsername.TextValue))
             {
                 retryCount--;
                 MessageBox.Show("Please re-enter Username\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            if (string.IsNullOrWhiteSpace(txtPassword.TextValue))
             {
                 retryCount--;
                 MessageBox.Show("Please re-enter Password\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -64,17 +64,19 @@ namespace LogibForm
 
             try
             {
-                using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb)) //Enter Database name here
+                using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
                 {
                     conn.Open();
 
-                    string checkLoginQuery = "SELECT COUNT(*) FROM StaffAccount WHERE EmailAddress = :email AND StaffPassword = :password";
+                    string checkLoginQuery = "SELECT COUNT(*) FROM StaffAccount WHERE Username = :suser AND StaffPassword = :password";
 
                     using (OracleCommand checkCmd = new OracleCommand(checkLoginQuery, conn))
                     {
-                        checkCmd.Parameters.Add(":email", email);
-                        checkCmd.Parameters.Add(":password", password);
+                        checkCmd.Parameters.Add(":suser", OracleDbType.Varchar2).Value = user;
+                        checkCmd.Parameters.Add(":password", OracleDbType.Varchar2).Value = password;
+
                         object results = checkCmd.ExecuteScalar();
+
 
                         if (results == null)
                         {
@@ -82,7 +84,7 @@ namespace LogibForm
                             txtUsername.Focus();
                             return;
                         }
-                        if (txtUsername.Text != email)
+                        if (txtUsername.TextValue != user)
                         {
                             retryCount -= 1;
                             MessageBox.Show("Please re-enter Username\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -90,7 +92,7 @@ namespace LogibForm
                             return;
                         }
 
-                        string encryptedPassword = results.ToString();
+                        string encryptedPassword = PasswordEncryptDecrypt.staffGetEncryptedPassword(user);
                         string decryptedPassword = PasswordEncryptDecrypt.DecryptPassword(encryptedPassword);
 
                         if (password != decryptedPassword)
@@ -107,9 +109,9 @@ namespace LogibForm
                         }
                         else
                         {
-                            Session.LoadStaffSession(email);
-                            Session.LoggedInStaffUser = email;
-                            MessageBox.Show("Welcome " + email, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Session.LoadStaffSession(user);
+                            Session.LoggedInStaffUser = user;
+                            MessageBox.Show("Welcome " + user, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             this.Close();
                             StaffDashBoard mainMenu = new StaffDashBoard();

@@ -44,17 +44,36 @@ namespace LogibForm
             }
             return new string(buffer);
         }
+        public static string staffGetEncryptedPassword(string username)
+        {
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
+
+                string getEncryptPassword = "SELECT StaffPassword FROM StaffAccount WHERE Username = :suser";
+
+
+                using (OracleCommand cmd = new OracleCommand(getEncryptPassword, conn))
+                {
+                    cmd.Parameters.Add(new OracleParameter("suser", username));
+
+                    object result = cmd.ExecuteScalar();
+
+                    return result?.ToString();
+                }
+            }
+        }
         public static string getEncryptedPassword(string username)
         {
             using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
             {
                 conn.Open();
 
-                string getEncryptPassword = "SELECT CustPassword FROM CustomerAccount WHERE EmailAddress = :user";
+                string getEncryptPassword = "SELECT CustPassword FROM CustomerAccount WHERE Username = :cuser";
 
                 using (OracleCommand cmd = new OracleCommand(getEncryptPassword, conn))
                 {
-                    cmd.Parameters.Add(new OracleParameter("user", username));
+                    cmd.Parameters.Add(new OracleParameter("cuser", username));
 
                     object result = cmd.ExecuteScalar();
 
