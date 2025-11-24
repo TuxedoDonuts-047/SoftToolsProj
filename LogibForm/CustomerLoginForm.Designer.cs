@@ -88,8 +88,7 @@
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtUsername.isPassword = false;
-            this.txtUsername.label = "Username";
+
             this.txtUsername.Location = new System.Drawing.Point(32, 28);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
@@ -99,8 +98,7 @@
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-            this.txtPassword.isPassword = true;
-            this.txtPassword.label = "Password";
+
             this.txtPassword.Location = new System.Drawing.Point(32, 95);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);

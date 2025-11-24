@@ -26,14 +26,27 @@ namespace LogibForm
         public string label
         {
             get { return _label; }
-            set { _label = value; }
+            set
+            {
+                _label = value;
+                label1.Text = _label;
+            }
         }
 
         //public properties to  get or set whether the textbox should act as a password field
         public bool isPassword
         {
             get { return _isPassword; }
-            set { _isPassword = value; }
+            set { 
+                _isPassword = value;
+                textBox1.UseSystemPasswordChar = _isPassword;
+            }
+        }
+
+        public string TextValue
+        {
+            get { return textBox1.Text; }
+            set { textBox1.Text = value; }
         }
 
         private void loginTextBox_Paint(object sender, PaintEventArgs e)

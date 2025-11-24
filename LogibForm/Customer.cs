@@ -1,11 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LogibForm
 {
@@ -13,7 +9,8 @@ namespace LogibForm
     {
         private int AccountID;
         private string Forename;
-        private string Surname;
+        private string Surname;    
+        private string Username;
         private string EmailAddress;
         private string Password;
         private decimal TotalStorageUsed;
@@ -24,222 +21,205 @@ namespace LogibForm
             this.AccountID = 0;
             this.Forename = "";
             this.Surname = "";
+            this.Username = "";
             this.EmailAddress = "";
             this.Password = "";
             this.TotalStorageUsed = 0.00m;
             this.TotalStorage = 2000.00m;
         }
-        public Customer(int accountID, string forename, string surname, string emailAddress, string password, decimal totalStorageUsed, decimal totalStorage)
-        {
-            AccountID = accountID;
-            Forename = forename;
-            Surname = surname;
-            EmailAddress = emailAddress;
-            Password = password;
-            TotalStorageUsed = totalStorageUsed;
-            TotalStorage = totalStorage;
-        }
 
-        public int getAccountID()
-        {
-            return this.AccountID;
-        }
-        public string getForename()
-        {
-            return this.Forename;
-        }
-        public string getSurname()
-        {
-            return this.Surname;
-        }
-        public string getEmailAddress()
-        {
-            return this.EmailAddress;
-        }
-        public string getPassword()
-        {
-            return this.Password;
-        }
-        public decimal getTotalStorageUsed()
-        {
-            return this.TotalStorageUsed;
-        }
-        public decimal getTotalStorage()
-        {
-            return this.TotalStorage;
-        }
-
-        public void setAccountID(int accountID)
+        public Customer(int accountID, string forename, string username, string surname, string emailAddress,
+                        string password, decimal totalStorageUsed, decimal totalStorage)
         {
             this.AccountID = accountID;
-        }
-        public void setForename(string forename)
-        {
             this.Forename = forename;
-        }
-        public void setSurname(string surname)
-        {
             this.Surname = surname;
-        }
-        public void setEmailAddress(string emailAddress)
-        {
+            this.Username = username;
             this.EmailAddress = emailAddress;
-        }
-        public void setPassword(string password)
-        {
             this.Password = password;
-        }
-        public void setTotalStorageUsed(decimal totalStorageUsed)
-        {
             this.TotalStorageUsed = totalStorageUsed;
-        }
-        public void setTotalStorage(decimal totalStorage)
-        {
             this.TotalStorage = totalStorage;
         }
 
+        public int getAccountID() => this.AccountID;
+        public string getForename() => this.Forename;
+        public string getSurname() => this.Surname;
+        public string getUsername() => this.Username;
+        public string getEmailAddress() => this.EmailAddress;
+        public string getPassword() => this.Password;
+        public decimal getTotalStorageUsed() => this.TotalStorageUsed;
+        public decimal getTotalStorage() => this.TotalStorage;
+
+        public void setAccountID(int id) => this.AccountID = id;
+        public void setForename(string f) => this.Forename = f;
+        public void setSurname(string s) => this.Surname = s;
+        public void setUsername(string u) => this.Username = u;
+        public void setEmailAddress(string email) => this.EmailAddress = email;
+        public void setPassword(string p) => this.Password = p;
+        public void setTotalStorageUsed(decimal used) => this.TotalStorageUsed = used;
+        public void setTotalStorage(decimal t) => this.TotalStorage = t;
+
         public void addCustomer()
         {
-            OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb);
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+                {
+                    conn.Open();
 
-            conn.Open();
+                    string sqlQuery =
+                        "INSERT INTO CustomerAccount " +
+                        "(CustomerID, Forename, Surname, Username, EmailAddress, CustPassword, StorageUsed, AvailableStorage) " +
+                        "VALUES (:id, :fn, :sn, :username, :email, :pwd, :used, :avail)";
 
-            String sqlQuery = "INSERT INTO CustomerAccount VALUES (" +
-                this.AccountID + ", '" +
-                this.Forename + "', '" +
-                this.Surname + "', '" +
-                this.EmailAddress + "', '" +
-                this.Password + "', '" +
-                this.TotalStorageUsed + "', '" +
-                this.TotalStorage + "')";
+                    using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
+                    {
+                        cmd.Parameters.Add(":id", OracleDbType.Int32).Value = AccountID;
+                        cmd.Parameters.Add(":fn", OracleDbType.Varchar2).Value = Forename;
+                        cmd.Parameters.Add(":sn", OracleDbType.Varchar2).Value = Surname;
+                        cmd.Parameters.Add(":username", OracleDbType.Varchar2).Value = Username;
+                        cmd.Parameters.Add(":email", OracleDbType.Varchar2).Value = EmailAddress;
+                        cmd.Parameters.Add(":pwd", OracleDbType.Varchar2).Value = Password;
+                        cmd.Parameters.Add(":used", OracleDbType.Decimal).Value = TotalStorageUsed;
+                        cmd.Parameters.Add(":avail", OracleDbType.Decimal).Value = TotalStorage;
 
-            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
-
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Oracle.ManagedDataAccess.Client.OracleException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
+
         public void UpdateAccount()
         {
-            OracleConnection conn = new OracleConnection();
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
 
-            conn.Open();
+                string updateSQL =
+                    "UPDATE CustomerAccount SET " +
+                    "Forename = :fn, " +
+                    "Surname = :sn, " +
+                    "EmailAddress = :email, " +
+                    "Username = :user, " +
+                    "CustPassword = :pwd, " +
+                    "StorageUsed = :used, " +
+                    "AvailableStorage = :avail " +
+                    "WHERE CustomerID = :id";
 
-            String updateAccountSQL = "UPDATE CustomerAccount SET " +
-            "CustomerID = '" + this.AccountID + "', " + 
-            "Forename = '" + this.Forename + "', " + 
-            "Surname = '" + this.Surname + "', " + 
-            "EmailAddress = '" + this.EmailAddress + "', " + 
-            "Password = '" + this.Password + "', " + 
-            "TotalStorageUsed = '" + this.TotalStorageUsed + "', " + 
-            "TotalStorage = '" + this.TotalStorage + "' " + 
-            "WHERE CustomerID = " + this.AccountID;
+                OracleCommand cmd = new OracleCommand(updateSQL, conn);
 
-            OracleCommand cmd = new OracleCommand(updateAccountSQL, conn);
+                cmd.Parameters.Add(":fn", Forename);
+                cmd.Parameters.Add(":sn", Surname);
+                cmd.Parameters.Add(":email", EmailAddress);
+                cmd.Parameters.Add(":user", Username);
+                cmd.Parameters.Add(":pwd", Password);
+                cmd.Parameters.Add(":used", TotalStorageUsed);
+                cmd.Parameters.Add(":avail", TotalStorage);
+                cmd.Parameters.Add(":id", AccountID);
 
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
+                cmd.ExecuteNonQuery();
+            }
         }
+
         public void removeAccount()
         {
-            OracleConnection conn = new OracleConnection();
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
 
-            conn.Open();
+                string deleteSQL = "DELETE FROM CustomerAccount WHERE CustomerID = :id";
 
-            String removeAccountSQL = "DELETE FROM CustomerAccounts WHERE CustomerID = " + this.AccountID;
+                OracleCommand cmd = new OracleCommand(deleteSQL, conn);
+                cmd.Parameters.Add(":id", AccountID);
 
-            OracleCommand cmd = new OracleCommand(removeAccountSQL, conn);
-
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
+                cmd.ExecuteNonQuery();
+            }
         }
 
-        public static DataSet findAccount(String AccountName)
+        public static DataSet findAccount(string name)
         {
-            OracleConnection conn = new OracleConnection();
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
 
-            conn.Open();
+                string sql = "SELECT * FROM CustomerAccount WHERE Forename LIKE :name ORDER BY CustomerID";
 
-            String findAccountSQL = "SELECT * FROM CustomerAccount " +
-            "WHERE Forename LIKE '%" + AccountName + "%' ORDER BY CustomerID";
+                OracleCommand cmd = new OracleCommand(sql, conn);
+                cmd.Parameters.Add(":name", "%" + name + "%");
 
-            OracleCommand cmd = new OracleCommand(findAccountSQL, conn);
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "CustomerAccount");
 
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "CustomerAccount");
-
-            conn.Close();
-
-            return ds;
+                return ds;
+            }
         }
 
         public static DataSet getAllAccounts()
         {
-            OracleConnection conn = new OracleConnection();
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
 
-            conn.Open();
+                string sql = "SELECT * FROM CustomerAccount ORDER BY CustomerID";
 
-            String allAccountsSQL = "SELECT * FROM CustomerAccount ORDER BY CustomerID";
+                OracleCommand cmd = new OracleCommand(sql, conn);
 
-            OracleCommand cmd = new OracleCommand(allAccountsSQL, conn);
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "CustomerAccount");
 
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "CustomerAccount");
-
-            conn.Close();
-
-            return ds;
+                return ds;
+            }
         }
-        public static DataSet getAccount(String accountName)
+
+        public static DataSet getAccount(string username)
         {
-            OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb);
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
 
-            conn.Open();
+                string sql = "SELECT * FROM CustomerAccount WHERE Username LIKE :u";
 
-            String userAccountSQL = "SELECT * FROM CustomerAccount " +
-            "WHERE LIKE '%" + accountName + "%'";
+                OracleCommand cmd = new OracleCommand(sql, conn);
+                cmd.Parameters.Add(":u", "%" + username + "%");
 
-            OracleCommand cmd = new OracleCommand(userAccountSQL, conn);
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "CustomerAccount");
 
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "CustomerAccount");
-
-            conn.Close();
-
-            return ds;
+                return ds;
+            }
         }
+
         public static int getNextAccountID()
         {
-            OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb);
-
-            conn.Open();
-
-            String sqlQuery = "SELECT MAX(CustomerID) FROM CustomerAccount";
-
-            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
-
-            OracleDataReader dr = cmd.ExecuteReader();
-
-            int nextID;
-            dr.Read();
-
-            if (dr.IsDBNull(0))
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
             {
-                nextID = 1;
-            }
-            else
-            {
-                nextID = dr.GetInt32(0) + 1;
-            }
+                conn.Open();
 
-            conn.Close();
+                string sql = "SELECT MAX(CustomerID) FROM CustomerAccount";
 
-            return nextID;
+                OracleCommand cmd = new OracleCommand(sql, conn);
+                OracleDataReader dr = cmd.ExecuteReader();
+
+                int nextID = 1;
+
+                if (dr.Read() && !dr.IsDBNull(0))
+                    nextID = dr.GetInt32(0) + 1;
+
+                return nextID;
+            }
         }
     }
 }
