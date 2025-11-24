@@ -57,7 +57,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(459, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(545, 56);
+            this.label2.Size = new System.Drawing.Size(305, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Login To Your Account";
             // 
@@ -69,7 +69,7 @@
             this.lblRegisterHere.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
             this.lblRegisterHere.Location = new System.Drawing.Point(667, 370);
             this.lblRegisterHere.Name = "lblRegisterHere";
-            this.lblRegisterHere.Size = new System.Drawing.Size(168, 30);
+            this.lblRegisterHere.Size = new System.Drawing.Size(97, 19);
             this.lblRegisterHere.TabIndex = 12;
             this.lblRegisterHere.Text = "Register here";
             this.lblRegisterHere.Click += new System.EventHandler(this.lblRegisterHere_Click);
@@ -88,22 +88,26 @@
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-
+            this.txtUsername.isPassword = false;
+            this.txtUsername.label = "Username";
             this.txtUsername.Location = new System.Drawing.Point(32, 28);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtUsername.Size = new System.Drawing.Size(324, 61);
             this.txtUsername.TabIndex = 7;
+            this.txtUsername.TextValue = "";
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
-
+            this.txtPassword.isPassword = true;
+            this.txtPassword.label = "Password";
             this.txtPassword.Location = new System.Drawing.Point(32, 95);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtPassword.Size = new System.Drawing.Size(324, 61);
             this.txtPassword.TabIndex = 8;
+            this.txtPassword.TextValue = "";
             // 
             // label4
             // 
@@ -113,7 +117,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(490, 370);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(305, 30);
+            this.label4.Size = new System.Drawing.Size(180, 19);
             this.label4.TabIndex = 10;
             this.label4.Text = "Don\'t have an account?";
             // 
@@ -173,7 +177,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(39, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(390, 56);
+            this.label1.Size = new System.Drawing.Size(221, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "WELCOME Back";
             // 

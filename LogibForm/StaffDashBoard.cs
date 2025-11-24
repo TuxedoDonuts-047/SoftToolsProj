@@ -97,5 +97,14 @@ namespace LogibForm
             // Make ID uneditable
             dgvInventory.Columns["GameID"].ReadOnly = true;
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.LoggedInStaffUser = "";
+            Session.LoggedInStaffID = 0;
+            StaffLoginForm form = new StaffLoginForm();
+            form.Show();
+            this.Close();
+        }
     }
 }

@@ -1,10 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LogibForm
 {
@@ -13,6 +9,7 @@ namespace LogibForm
         private int StaffID;
         private string Forename;
         private string Surname;
+        private string Username;
         private string EmailAddress;
         private string Password;
 
@@ -21,198 +18,182 @@ namespace LogibForm
             this.StaffID = 0;
             this.Forename = "";
             this.Surname = "";
+            this.Username = "";
             this.EmailAddress = "";
             this.Password = "";
         }
-        public Staff(int staffID, string forename, string surname, string emailAddress, string password)
-        {
-            StaffID = staffID;
-            Forename = forename;
-            Surname = surname;
-            EmailAddress = emailAddress;
-            Password = password;
-        }
 
-        public int getStaffID()
-        {
-            return this.StaffID;
-        }
-        public string getForename()
-        {
-            return this.Forename;
-        }
-        public string getSurname()
-        {
-            return this.Surname;
-        }
-        public string getEmailAddress()
-        {
-            return this.EmailAddress;
-        }
-        public string getPassword()
-        {
-            return this.Password;
-        }
-
-        public void setStaffID(int staffID)
+        public Staff(int staffID, string forename, string surname, string username,
+                     string emailAddress, string password)
         {
             this.StaffID = staffID;
-        }
-        public void setForename(string forename)
-        {
             this.Forename = forename;
-        }
-        public void setSurname(string surname)
-        {
             this.Surname = surname;
-        }
-        public void setEmailAddress(string emailAddress)
-        {
+            this.Username = username;
             this.EmailAddress = emailAddress;
-        }
-        public void setPassword(string password)
-        {
             this.Password = password;
         }
 
+        public int getStaffID() => this.StaffID;
+        public string getForename() => this.Forename;
+        public string getSurname() => this.Surname;
+        public string getUsername() => this.Username;
+        public string getEmailAddress() => this.EmailAddress;
+        public string getPassword() => this.Password;
+
+        public void setStaffID(int id) => this.StaffID = id;
+        public void setForename(string f) => this.Forename = f;
+        public void setSurname(string s) => this.Surname = s;
+        public void setUsername(string u) => this.Username = u;
+        public void setEmailAddress(string e) => this.EmailAddress = e;
+        public void setPassword(string p) => this.Password = p;
+
         public void addStaff()
         {
-            OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb);
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
 
-            conn.Open();
+                string sql =
+                    "INSERT INTO StaffAccount " +
+                    "(StaffID, Forename, Surname, Username, EmailAddress, StaffPassword) " +
+                    "VALUES (:id, :fn, :sn, :un, :email, :pwd)";
 
-            String sqlQuery = "INSERT INTO StaffAccount VALUES (" +
-                this.StaffID + ", '" +
-                this.Forename + "', '" +
-                this.Surname + "', '" +
-                this.EmailAddress + "', '" +
-                this.Password + "')";
+                using (OracleCommand cmd = new OracleCommand(sql, conn))
+                {
+                    cmd.Parameters.Add(":id", OracleDbType.Int32).Value = StaffID;
+                    cmd.Parameters.Add(":fn", OracleDbType.Varchar2).Value = Forename;
+                    cmd.Parameters.Add(":sn", OracleDbType.Varchar2).Value = Surname;
+                    cmd.Parameters.Add(":un", OracleDbType.Varchar2).Value = Username;
+                    cmd.Parameters.Add(":email", OracleDbType.Varchar2).Value = EmailAddress;
+                    cmd.Parameters.Add(":pwd", OracleDbType.Varchar2).Value = Password;
 
-            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
-
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
+
+
         public void UpdateAccount()
         {
-            OracleConnection conn = new OracleConnection();
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
 
-            conn.Open();
+                string sql =
+                    "UPDATE StaffAccount SET " +
+                    "Forename = :fn, Surname = :sn, Username = :un, " +
+                    "EmailAddress = :email, StaffPassword = :pwd " +
+                    "WHERE StaffID = :id";
 
-            String updateAccountSQL = "UPDATE StaffAccount SET " +
-            "StaffID = '" + this.StaffID + "', " +
-            "Forename = '" + this.Forename + "', " +
-            "Surname = '" + this.Surname + "', " +
-            "EmailAddress = '" + this.EmailAddress + "', " +
-            "Password = '" + this.Password + "' " +
-            "WHERE StaffID = " + this.StaffID;
+                OracleCommand cmd = new OracleCommand(sql, conn);
 
-            OracleCommand cmd = new OracleCommand(updateAccountSQL, conn);
+                cmd.Parameters.Add(":fn", Forename);
+                cmd.Parameters.Add(":sn", Surname);
+                cmd.Parameters.Add(":un", Username);
+                cmd.Parameters.Add(":email", EmailAddress);
+                cmd.Parameters.Add(":pwd", Password);
+                cmd.Parameters.Add(":id", StaffID);
 
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
+                cmd.ExecuteNonQuery();
+            }
         }
+
+
         public void removeAccount()
         {
-            OracleConnection conn = new OracleConnection();
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
 
-            conn.Open();
+                string sql = "DELETE FROM StaffAccount WHERE StaffID = :id";
 
-            String removeAccountSQL = "DELETE FROM StaffAccount WHERE StaffID = " + this.StaffID;
+                OracleCommand cmd = new OracleCommand(sql, conn);
+                cmd.Parameters.Add(":id", StaffID);
 
-            OracleCommand cmd = new OracleCommand(removeAccountSQL, conn);
-
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
+                cmd.ExecuteNonQuery();
+            }
         }
 
-        public static DataSet findAccount(String AccountName)
+        public static DataSet findAccount(string name)
         {
-            OracleConnection conn = new OracleConnection();
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
 
-            conn.Open();
+                string sql =
+                    "SELECT * FROM StaffAccount " +
+                    "WHERE Forename LIKE :name ORDER BY StaffID";
 
-            String findAccountSQL = "SELECT * FROM StaffAccount " +
-            "WHERE Forename LIKE '%" + AccountName + "%' ORDER BY StaffID";
+                OracleCommand cmd = new OracleCommand(sql, conn);
+                cmd.Parameters.Add(":name", "%" + name + "%");
 
-            OracleCommand cmd = new OracleCommand(findAccountSQL, conn);
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "StaffAccount");
 
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "StaffAccount");
-
-            conn.Close();
-
-            return ds;
+                return ds;
+            }
         }
 
         public static DataSet getAllAccounts()
         {
-            OracleConnection conn = new OracleConnection();
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
 
-            conn.Open();
+                string sql = "SELECT * FROM StaffAccount ORDER BY StaffID";
 
-            String allAccountsSQL = "SELECT * FROM StaffAccount ORDER BY StaffID";
+                OracleCommand cmd = new OracleCommand(sql, conn);
 
-            OracleCommand cmd = new OracleCommand(allAccountsSQL, conn);
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "StaffAccount");
 
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "StaffAccount");
-
-            conn.Close();
-
-            return ds;
+                return ds;
+            }
         }
-        public static DataSet getAccount(String accountName)
+
+        public static DataSet getAccount(string username)
         {
-            OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb);
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+            {
+                conn.Open();
 
-            conn.Open();
+                string sql =
+                    "SELECT * FROM StaffAccount WHERE Username LIKE :user";
 
-            String userAccountSQL = "SELECT * FROM StaffAccount " +
-            "WHERE LIKE '%" + accountName + "%'";
+                OracleCommand cmd = new OracleCommand(sql, conn);
+                cmd.Parameters.Add(":user", "%" + username + "%");
 
-            OracleCommand cmd = new OracleCommand(userAccountSQL, conn);
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "StaffAccount");
 
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "StaffAccount");
-
-            conn.Close();
-
-            return ds;
+                return ds;
+            }
         }
+
         public static int getNextStaffID()
         {
-            OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb);
-
-            conn.Open();
-
-            String sqlQuery = "SELECT MAX(StaffID) FROM StaffAccount";
-
-            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
-
-            OracleDataReader dr = cmd.ExecuteReader();
-
-            int nextID;
-            dr.Read();
-
-            if (dr.IsDBNull(0))
+            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
             {
-                nextID = 1;
-            }
-            else
-            {
-                nextID = dr.GetInt32(0) + 1;
-            }
+                conn.Open();
 
-            conn.Close();
+                string sql = "SELECT MAX(StaffID) FROM StaffAccount";
 
-            return nextID;
+                OracleCommand cmd = new OracleCommand(sql, conn);
+                OracleDataReader dr = cmd.ExecuteReader();
+
+                int nextID = 1;
+
+                if (dr.Read() && !dr.IsDBNull(0))
+                {
+                    nextID = dr.GetInt32(0) + 1;
+                }
+
+                return nextID;
+            }
         }
     }
 }

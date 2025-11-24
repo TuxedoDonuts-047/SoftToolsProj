@@ -36,59 +36,82 @@ namespace LogibForm
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (txtFirstName.Equals(""))
+            if (string.IsNullOrWhiteSpace(txtFirstName.TextValue))
             {
-                MessageBox.Show("First name must be entered, Please re-enter", "No input entered", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtFirstName.Focus();
-                return;
-            }
-            if (txtLastName.Equals(""))
-            {
-                MessageBox.Show("Last name must be entered, Please re-enter", "No input entered", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtFirstName.Focus();
-                return;
-            }
-            if (txtUsername.Equals(""))
-            {
-                MessageBox.Show("Username must be entered, Please re-enter", "No input entered", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtFirstName.Focus();
-                return;
-            }
-            if (txtEmail.Equals(""))
-            {
-                MessageBox.Show("Email address must be entered, Please re-enter", "No input entered", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtFirstName.Focus();
-                return;
-            }
-            if (txtPassword.Equals(""))
-            {
-                MessageBox.Show("Password must be entered, Please re-enter", "No input entered", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtFirstName.Focus();
-                return;
-            }
-            if (txtConfirmPassword.Equals(""))
-            {
-                MessageBox.Show("The same password above must be entered, Please re-enter", "No input entered", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtFirstName.Focus();
-                return;
-            }
-            if (txtConfirmPassword.Text != txtPassword.Text)
-            {
-                MessageBox.Show("Password entered above must be the same, Please re-enter", "No input entered", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("First name must be entered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtFirstName.Focus();
                 return;
             }
 
-            string encryptPassword = PasswordEncryptDecrypt.EncryptPassword(txtPassword.Text);
+            if (string.IsNullOrWhiteSpace(txtLastName.TextValue))
+            {
+                MessageBox.Show("Last name must be entered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtLastName.Focus();
+                return;
+            }
 
-            Staff aStaff= new Staff(Staff.getNextStaffID(), txtFirstName.Text, txtLastName.Text, txtEmail.Text, encryptPassword);
-            aStaff.addStaff();
+            if (string.IsNullOrWhiteSpace(txtUsername.TextValue))
+            {
+                MessageBox.Show("Username must be entered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsername.Focus();
+                return;
+            }
 
-            MessageBox.Show("Staff account has been created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (string.IsNullOrWhiteSpace(txtEmail.TextValue))
+            {
+                MessageBox.Show("Email address must be entered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
 
-            this.Close();
-            StaffLoginForm newForm = new StaffLoginForm();
-            newForm.Show();
+            if (string.IsNullOrWhiteSpace(txtPassword.TextValue))
+            {
+                MessageBox.Show("Password must be entered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtConfirmPassword.TextValue))
+            {
+                MessageBox.Show("Please confirm your password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtConfirmPassword.Focus();
+                return;
+            }
+
+            if (txtConfirmPassword.TextValue != txtPassword.TextValue)
+            {
+                MessageBox.Show("Passwords do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtConfirmPassword.Focus();
+                return;
+            }
+
+            string encryptedPassword = PasswordEncryptDecrypt.EncryptPassword(txtPassword.TextValue);
+
+            Staff aStaff = new Staff(
+                Staff.getNextStaffID(),
+                txtFirstName.TextValue,
+                txtLastName.TextValue,
+                txtUsername.TextValue,
+                txtEmail.TextValue,
+                encryptedPassword);
+
+            try
+            {
+                aStaff.addStaff();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Account creation failed.\n\n" + ex.Message,
+                                "Database Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show("Staff account created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Hide();
+            new StaffLoginForm().Show();
         }
 
         private void staffRegBack_Click(object sender, EventArgs e)

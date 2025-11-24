@@ -40,8 +40,8 @@ namespace LogibForm
         {
             int retryCount = 3;
 
-            string username = txtUsername.Text.Trim();
-            string password = txtPassword.Text.Trim();
+            string username = txtUsername.TextValue.Trim();
+            string password = txtPassword.TextValue.Trim();
 
             if (string.IsNullOrWhiteSpace(username))
             {
@@ -85,7 +85,7 @@ namespace LogibForm
                             return;
                         }
 
-                        string encryptedPassword = result.ToString();
+                        string encryptedPassword = PasswordEncryptDecrypt.getEncryptedPassword(username);
                         string decryptedPassword = PasswordEncryptDecrypt.DecryptPassword(encryptedPassword);
 
                         if (password != decryptedPassword)
@@ -112,7 +112,6 @@ namespace LogibForm
             {
                 MessageBox.Show("Login error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void custLogBack_Click(object sender, EventArgs e)
