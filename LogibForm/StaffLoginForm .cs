@@ -131,5 +131,10 @@ namespace LogibForm
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
         }
+
+        private void staffLogBack_MouseHover(object sender, EventArgs e)
+        {
+            staffLogBack.Cursor = Cursors.Hand;
+        }
     }
 }

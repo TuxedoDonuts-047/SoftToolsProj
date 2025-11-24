@@ -76,7 +76,6 @@
             this.Name = "loginTextBox";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.Size = new System.Drawing.Size(256, 67);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.loginTextBox_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

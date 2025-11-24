@@ -40,17 +40,17 @@ namespace LogibForm
         {
             int retryCount = 3;
 
-            string email = txtUsername.Text.Trim();
+            string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(txtUsername.Text))
+            if (string.IsNullOrWhiteSpace(username))
             {
                 retryCount--;
                 MessageBox.Show("Please re-enter Username\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            if (string.IsNullOrWhiteSpace(password))
             {
                 retryCount--;
                 MessageBox.Show("Please re-enter Password\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -59,66 +59,52 @@ namespace LogibForm
             }
             if (retryCount == 0)
             {
-                MessageBox.Show("Sorry you have used all retrys", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sorry you have used all retries", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
                 return;
             }
 
             try
             {
-                using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb)) //Enter Database name here
+                using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
                 {
                     conn.Open();
 
-                    string checkLoginQuery = "SELECT COUNT(*) FROM CustomerAccount WHERE EmailAddress = :email AND CustPassword = :password";
+                    string checkLoginQuery = "SELECT CustPassword FROM CustomerAccount WHERE Username = :username";
 
                     using (OracleCommand checkCmd = new OracleCommand(checkLoginQuery, conn))
                     {
-                        checkCmd.Parameters.Add(":email", email);
-                        checkCmd.Parameters.Add(":password", password);
-                        object results = checkCmd.ExecuteScalar();
+                        checkCmd.Parameters.Add(":username", username);
+                        object result = checkCmd.ExecuteScalar();
 
-                        if (results == null)
-                        {
-                            MessageBox.Show("This username does not exist in the system", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtUsername.Focus();
-                            return;
-                        }
-                        if (txtUsername.Text != email)
+                        if (result == null)
                         {
                             retryCount--;
-                            MessageBox.Show("Please re-enter Username\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("This username does not exist in the system\n\nYou have " + retryCount + " left", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtUsername.Focus();
                             return;
                         }
 
-                        string encryptedPassword = results.ToString();
+                        string encryptedPassword = result.ToString();
                         string decryptedPassword = PasswordEncryptDecrypt.DecryptPassword(encryptedPassword);
 
                         if (password != decryptedPassword)
                         {
                             retryCount--;
-                            MessageBox.Show("Please re-enter Password\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Incorrect password\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txtPassword.Focus();
                             return;
                         }
-                        if (retryCount == 0)
-                        {
-                            MessageBox.Show("Sorry you have used all retrys", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            Application.Exit();
-                            return;
-                        }
-                        else
-                        {
-                            Session.LoadCustomerSession(email);
-                            Session.LoggedInUser = email;
-                            MessageBox.Show("Welcome " + email, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            this.Close();
-                            CustomerDashBoard mainMenu = new CustomerDashBoard();
-                            mainMenu.Show();
-                        }
+                        Session.LoadCustomerSession(username);
+                        Session.LoggedInUser = username;
+                        MessageBox.Show("Welcome " + username, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        this.Close();
+                        CustomerDashBoard mainMenu = new CustomerDashBoard();
+                        mainMenu.Show();
                     }
+
                     conn.Close();
                 }
             }
@@ -134,6 +120,11 @@ namespace LogibForm
             this.Close();
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
+        }
+
+        private void custLogBack_MouseHover(object sender, EventArgs e)
+        {
+            custLogBack.Cursor = Cursors.Hand;
         }
     }
 }
