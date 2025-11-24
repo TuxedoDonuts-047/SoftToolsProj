@@ -13,6 +13,8 @@ namespace LogibForm
 {
     public partial class StaffLoginForm: Form
     {
+        private int retryCount = 3;
+
         public StaffLoginForm()
         {
             InitializeComponent();
@@ -37,29 +39,32 @@ namespace LogibForm
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            int retryCount = 3;
-
-            string user = txtUsername.TextValue.Trim();
+            string username = txtUsername.TextValue.Trim();
             string password = txtPassword.TextValue.Trim();
 
-            if (string.IsNullOrWhiteSpace(txtUsername.TextValue))
+            if (string.IsNullOrWhiteSpace(username))
             {
                 retryCount--;
-                MessageBox.Show("Please re-enter Username\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Please re-enter Username\n\nYou have {retryCount} left", "Input Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtPassword.TextValue))
+
+            if (string.IsNullOrWhiteSpace(password))
             {
                 retryCount--;
-                MessageBox.Show("Please re-enter Password\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Please re-enter Password\n\nYou have {retryCount} left", "Input Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPassword.Focus();
                 return;
             }
+
             if (retryCount == 0)
             {
-                MessageBox.Show("Sorry you have used all retry's", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sorry you have used all retries", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
+                return;
             }
 
             try
@@ -68,67 +73,54 @@ namespace LogibForm
                 {
                     conn.Open();
 
-                    string checkLoginQuery = "SELECT COUNT(*) FROM StaffAccount WHERE Username = :suser AND StaffPassword = :password";
+                    string loginQuery = "SELECT StaffPassword FROM StaffAccount WHERE Username = :username";
 
-                    using (OracleCommand checkCmd = new OracleCommand(checkLoginQuery, conn))
+                    using (OracleCommand cmd = new OracleCommand(loginQuery, conn))
                     {
-                        checkCmd.Parameters.Add(":suser", OracleDbType.Varchar2).Value = user;
-                        checkCmd.Parameters.Add(":password", OracleDbType.Varchar2).Value = password;
+                        cmd.Parameters.Add(":username", username);
+                        object result = cmd.ExecuteScalar();
 
-                        object results = checkCmd.ExecuteScalar();
-
-
-                        if (results == null)
+                        if (result == null)
                         {
-                            MessageBox.Show("This username does not exist in the system", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtUsername.Focus();
-                            return;
-                        }
-                        if (txtUsername.TextValue != user)
-                        {
-                            retryCount -= 1;
-                            MessageBox.Show("Please re-enter Username\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            retryCount--;
+                            MessageBox.Show($"This username does not exist\n\nYou have {retryCount} left",
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtUsername.Focus();
                             return;
                         }
 
-                        string encryptedPassword = PasswordEncryptDecrypt.staffGetEncryptedPassword(user);
+                        string encryptedPassword = PasswordEncryptDecrypt.staffGetEncryptedPassword(username);
                         string decryptedPassword = PasswordEncryptDecrypt.DecryptPassword(encryptedPassword);
 
                         if (password != decryptedPassword)
                         {
                             retryCount--;
-                            MessageBox.Show("Please re-enter Password\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show($"Incorrect password\n\nYou have {retryCount} left",
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txtPassword.Focus();
                             return;
                         }
-                        if (retryCount == 0)
-                        {
-                            MessageBox.Show("Sorry you have used all retry's", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            Application.Exit();
-                        }
-                        else
-                        {
-                            Session.LoadStaffSession(user);
-                            Session.LoggedInStaffUser = user;
-                            MessageBox.Show("Welcome " + user, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            this.Close();
-                            StaffDashBoard mainMenu = new StaffDashBoard();
-                            mainMenu.Show();
-                        }
+                        Session.LoadStaffSession(username);
+                        Session.LoggedInStaffUser = username;
+
+                        this.Hide();
+                        StaffDashBoard dashboard = new StaffDashBoard(username);
+                        dashboard.Show();
                     }
-                    conn.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Login error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Login error: " + ex.Message, "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void staffLogBack_Click(object sender, EventArgs e)
         {
+            Session.LoggedInStaffUser = "";
+            Session.LoggedInStaffID = 0;
             this.Close();
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();

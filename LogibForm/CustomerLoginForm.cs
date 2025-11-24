@@ -14,6 +14,7 @@ namespace LogibForm
 {
     public partial class CustomerLoginForm : Form
     {
+        private int retryCount = 3;
         public CustomerLoginForm()
         {
             InitializeComponent();
@@ -38,28 +39,31 @@ namespace LogibForm
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            int retryCount = 3;
-
             string username = txtUsername.TextValue.Trim();
             string password = txtPassword.TextValue.Trim();
 
             if (string.IsNullOrWhiteSpace(username))
             {
                 retryCount--;
-                MessageBox.Show("Please re-enter Username\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Please re-enter Username\n\nYou have {retryCount} left",
+                                "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Focus();
                 return;
             }
+
             if (string.IsNullOrWhiteSpace(password))
             {
                 retryCount--;
-                MessageBox.Show("Please re-enter Password\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Please re-enter Password\n\nYou have {retryCount} left",
+                                "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPassword.Focus();
                 return;
             }
+
             if (retryCount == 0)
             {
-                MessageBox.Show("Sorry you have used all retries", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sorry you have used all retries", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
                 return;
             }
@@ -70,17 +74,18 @@ namespace LogibForm
                 {
                     conn.Open();
 
-                    string checkLoginQuery = "SELECT CustPassword FROM CustomerAccount WHERE Username = :username";
+                    string loginQuery = "SELECT CustPassword FROM CustomerAccount WHERE Username = :username";
 
-                    using (OracleCommand checkCmd = new OracleCommand(checkLoginQuery, conn))
+                    using (OracleCommand cmd = new OracleCommand(loginQuery, conn))
                     {
-                        checkCmd.Parameters.Add(":username", username);
-                        object result = checkCmd.ExecuteScalar();
+                        cmd.Parameters.Add(":username", username);
+                        object result = cmd.ExecuteScalar();
 
                         if (result == null)
                         {
                             retryCount--;
-                            MessageBox.Show("This username does not exist in the system\n\nYou have " + retryCount + " left", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show($"This username does not exist\n\nYou have {retryCount} left",
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtUsername.Focus();
                             return;
                         }
@@ -91,31 +96,33 @@ namespace LogibForm
                         if (password != decryptedPassword)
                         {
                             retryCount--;
-                            MessageBox.Show("Incorrect password\n\nYou have " + retryCount + " left", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show($"Incorrect password\n\nYou have {retryCount} left",
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txtPassword.Focus();
                             return;
                         }
 
                         Session.LoadCustomerSession(username);
                         Session.LoggedInUser = username;
-                        MessageBox.Show("Welcome " + username, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        this.Close();
-                        CustomerDashBoard mainMenu = new CustomerDashBoard();
-                        mainMenu.Show();
+                        this.Hide();
+                        CustomerDashBoard dashboard = new CustomerDashBoard(username);
+                        dashboard.Show();
                     }
-
-                    conn.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Login error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Login error: " + ex.Message, "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
         private void custLogBack_Click(object sender, EventArgs e)
         {
+            Session.LoggedInUser = "";
+            Session.LoggedInAccountID = 0;
             this.Close();
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();

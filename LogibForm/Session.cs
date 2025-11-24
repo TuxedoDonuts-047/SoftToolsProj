@@ -21,11 +21,11 @@ namespace LogibForm
             {
                 conn.Open();
 
-                string IDloginSQL = "SELECT * FROM CustomerAccount WHERE EmailAddress = :email";
+                string sql = "SELECT CustomerID FROM CustomerAccount WHERE Username = :username";
 
-                using (OracleCommand cmd = new OracleCommand(IDloginSQL, conn))
+                using (OracleCommand cmd = new OracleCommand(sql, conn))
                 {
-                    cmd.Parameters.Add("email", email);
+                    cmd.Parameters.Add("username", email);
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -41,22 +41,17 @@ namespace LogibForm
             using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
             {
                 conn.Open();
-
-                string IDloginSQL = "SELECT * FROM StaffAccount WHERE EmailAddress = :email";
-
-                using (OracleCommand cmd = new OracleCommand(IDloginSQL, conn))
+                string sql = "SELECT StaffID FROM StaffAccount WHERE Username = :username";
+                using (OracleCommand cmd = new OracleCommand(sql, conn))
                 {
-                    cmd.Parameters.Add("email", email);
+                    cmd.Parameters.Add("username", email);
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
-                        {
-                            Session.LoggedInAccountID = Convert.ToInt32(reader["StaffID"]);
-                        }
+                            LoggedInStaffID = Convert.ToInt32(reader["StaffID"]);
                     }
                 }
             }
         }
-
     }
 }

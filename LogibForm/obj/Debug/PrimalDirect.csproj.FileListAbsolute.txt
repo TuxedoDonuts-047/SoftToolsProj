@@ -172,5 +172,4 @@ C:\Users\divin\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.StaffLog
 C:\Users\divin\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.CustomerRegistrationForm.resources
 C:\Users\divin\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.CustomerLoginForm.resources
 C:\Users\divin\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.CustomerDashBoard.resources
-C:\Users\divin\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.exe.config
 C:\Users\T00233163\Source\Repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.exe.config

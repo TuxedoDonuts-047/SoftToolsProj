@@ -1822,6 +1822,7 @@
             this.btnLogout.TabIndex = 6;
             this.btnLogout.TextAutoCenter = false;
             this.btnLogout.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             this.btnLogout.MouseHover += new System.EventHandler(this.btnLogout_MouseHover);
             // 
             // btnCart

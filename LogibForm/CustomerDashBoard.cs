@@ -6,9 +6,15 @@ namespace LogibForm
 {
     public partial class CustomerDashBoard : Form
     {
-        public CustomerDashBoard()
+        private string _username;
+        public CustomerDashBoard(string username)
         {
             InitializeComponent();
+            _username = username;
+            lblOverviewUser.Text = _username;
+            lblLibraryUser.Text = _username;
+            lblCartUser.Text = _username;
+            lblGenreUser.Text = _username;
             // Makes the SATA UI Button transparent to match the gradient panel
             btnOverView.CheckedBackground = Color.Transparent;
             btnOverView.NormalBackground = Color.Transparent;
@@ -85,6 +91,19 @@ namespace LogibForm
         private void btnCart_Click(object sender, EventArgs e)
         {
             showPanel(cartPanel);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.LoggedInAccountID = 0;
+            Session.LoggedInUser = "";
+            lblOverviewUser.Text = "user_1";
+            lblLibraryUser.Text = "user_1";
+            lblCartUser.Text = "user_1";
+            lblGenreUser.Text = "user_1";
+            CustomerLoginForm form = new CustomerLoginForm();
+            form.Show();
+            this.Close();
         }
     }
 }
