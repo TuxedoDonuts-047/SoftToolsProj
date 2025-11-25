@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDashBoard));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.overviewPanel = new System.Windows.Forms.Panel();
@@ -177,11 +177,11 @@
             // 
             this.pnlOverviewUser.BackColor2 = System.Drawing.Color.Transparent;
             this.pnlOverviewUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius4.BottomLeft = 10;
-            borderRadius4.BottomRight = 10;
-            borderRadius4.TopLeft = 10;
-            borderRadius4.TopRight = 10;
-            this.pnlOverviewUser.BorderRadius = borderRadius4;
+            borderRadius2.BottomLeft = 10;
+            borderRadius2.BottomRight = 10;
+            borderRadius2.TopLeft = 10;
+            borderRadius2.TopRight = 10;
+            this.pnlOverviewUser.BorderRadius = borderRadius2;
             this.pnlOverviewUser.BorderThickness = 0;
             this.pnlOverviewUser.Controls.Add(this.lblOverviewUser);
             this.pnlOverviewUser.Controls.Add(this.sataPictureBox1);
@@ -1576,11 +1576,11 @@
             // 
             this.pnlnventoryUser.BackColor2 = System.Drawing.Color.Transparent;
             this.pnlnventoryUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius3.BottomLeft = 10;
-            borderRadius3.BottomRight = 10;
-            borderRadius3.TopLeft = 10;
-            borderRadius3.TopRight = 10;
-            this.pnlnventoryUser.BorderRadius = borderRadius3;
+            borderRadius1.BottomLeft = 10;
+            borderRadius1.BottomRight = 10;
+            borderRadius1.TopLeft = 10;
+            borderRadius1.TopRight = 10;
+            this.pnlnventoryUser.BorderRadius = borderRadius1;
             this.pnlnventoryUser.BorderThickness = 0;
             this.pnlnventoryUser.Controls.Add(this.lblInventoryUser);
             this.pnlnventoryUser.Controls.Add(this.sataPictureBox6);
