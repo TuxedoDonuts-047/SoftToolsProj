@@ -173,3 +173,4 @@ C:\Users\divin\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.Customer
 C:\Users\divin\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.CustomerLoginForm.resources
 C:\Users\divin\source\repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.CustomerDashBoard.resources
 C:\Users\T00233163\Source\Repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.exe.config
+C:\Users\divin\Source\Repos\SoftToolsProj\LogibForm\obj\Debug\LogibForm.exe.config

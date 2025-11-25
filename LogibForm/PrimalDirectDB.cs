@@ -10,5 +10,6 @@ namespace LogibForm
     {
         //public const String oradb = "Data Source = studentoracle.students.ittralee.ie/orcl; User Id = T00247209; Password = b7v7bt#w76Ej;";
         public const String oradb = "Data Source = localhost/orcl; User Id = C##User1; Password = 123456;";
-    }
+        
+    }       
 }

@@ -1,4 +1,5 @@
 ﻿using FrameworkTest;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -141,6 +142,68 @@ namespace LogibForm
             StaffLoginForm form = new StaffLoginForm();
             form.Show();
             this.Close();
+        }
+
+        private void btnUpdateInventory_Click(object sender, EventArgs e)
+        {
+            int rowsUpdatedCount = 0;
+
+            if (MessageBox.Show("Are you sure you want to update the inventory in the DB?", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+                {
+                    conn.Open();
+
+                    using (OracleTransaction transaction = conn.BeginTransaction())
+                    {
+                        try
+                        {
+                            foreach (DataGridViewRow row in dgvInventory.Rows)
+                            {
+                                if (!row.IsNewRow)
+                                {
+                                    try
+                                    {
+                                        Inventory item = new Inventory(
+                                            Convert.ToInt32(row.Cells["GameID"].Value),
+                                            row.Cells["GameName"].Value?.ToString(),
+                                            row.Cells["GameGenre"].Value?.ToString(),
+                                            row.Cells["GameDescription"].Value?.ToString(),
+                                            Convert.ToDecimal(row.Cells["GameStorage"].Value),
+                                            Convert.ToDecimal(row.Cells["GameBuyPrice"].Value),
+                                            Convert.ToInt32(row.Cells["GameInventory"].Value)
+                                        );
+
+                                        bool updated = item.updateGame(conn, transaction);
+                                        if (updated) rowsUpdatedCount++;
+                                    }
+                                    catch (Exception exRow)
+                                    {
+                                        MessageBox.Show($"Error processing row {row.Index}: {exRow.Message}", "Row Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                            }
+
+                            transaction.Commit();
+                            MessageBox.Show($"Inventory update finished.\nRows successfully updated: {rowsUpdatedCount}", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception exTransaction)
+                        {
+                            transaction.Rollback();
+                            MessageBox.Show($"Transaction failed and was rolled back: {exTransaction.Message}", "Transaction Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+
+                loadInventoryGrid();
+            }
+            catch (Exception exConnection)
+            {
+                MessageBox.Show($"Database connection failed: {exConnection.Message}", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -30,13 +30,13 @@ namespace LogibForm
             GameInventory = 0;
         }
 
-        public Inventory(int id, string name, string genre, string desc,
+        public Inventory(int id, string name, string genre, string descp,
                          decimal storage, decimal price, int inventory)
         {
             GameID = id;
             GameName = name;
             GameGenre = genre;
-            GameDescription = desc;
+            GameDescription = descp;
             GameStorage = storage;
             GameBuyPrice = price;
             GameInventory = inventory;
@@ -59,95 +59,54 @@ namespace LogibForm
         public void setGameBuyPrice(decimal price) { GameBuyPrice = price; }
         public void setGameInventory(int inv) { GameInventory = inv; }
 
-        public void insertGame()
+        public bool updateGame(OracleConnection conn, OracleTransaction transaction)
         {
-            string sql = @"INSERT INTO VideoGames 
-                           (GameID, GameName, GameDescription, GameGenre, 
-                            GameStorage, GameBuyPrice, GameInventory)
-                           VALUES 
-                           (:id, :name, :desc, :genre, :storage, :price, :inventory)";
+            string updateSql = @"UPDATE VideoGames 
+                         SET GAMENAME = :name, 
+                             GAMEGENRE = :genre, 
+                             GAMEDESCRIPTION = :description, 
+                             GAMESTORAGE = :storage, 
+                             GAMEBUYPRICE = :price, 
+                             GAMEINVENTORY = :inventory
+                         WHERE GAMEID = :id";
 
-            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
-            using (OracleCommand cmd = new OracleCommand(sql, conn))
+            try
             {
-                cmd.Parameters.Add(":id", GameID);
-                cmd.Parameters.Add(":name", GameName);
-                cmd.Parameters.Add(":desc", GameDescription);
-                cmd.Parameters.Add(":genre", GameGenre);
-                cmd.Parameters.Add(":storage", GameStorage);
-                cmd.Parameters.Add(":price", GameBuyPrice);
-                cmd.Parameters.Add(":inventory", GameInventory);
+                using (OracleCommand cmd = new OracleCommand(updateSql, conn))
+                {
+                    cmd.Transaction = transaction;
+                    cmd.BindByName = true;
 
-                try
-                {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Game successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cmd.Parameters.Add("name", OracleDbType.Varchar2).Value = this.GameName ?? "";
+                    cmd.Parameters.Add("genre", OracleDbType.Varchar2).Value = this.GameGenre ?? "";
+                    cmd.Parameters.Add("description", OracleDbType.Varchar2).Value = this.GameDescription ?? "";
+                    cmd.Parameters.Add("storage", OracleDbType.Decimal).Value = this.GameStorage;
+                    cmd.Parameters.Add("price", OracleDbType.Decimal).Value = this.GameBuyPrice;
+                    cmd.Parameters.Add("inventory", OracleDbType.Int32).Value = this.GameInventory;
+                    cmd.Parameters.Add("id", OracleDbType.Int32).Value = this.GameID;
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected == 0)
+                    {
+                        Console.WriteLine($"Warning: no row updated for GameID {this.GameID}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Updated GameID {this.GameID}, rows affected: {rowsAffected}");
+                    }
+
+                    return rowsAffected > 0;
                 }
-                catch (OracleException ex)
-                {
-                    MessageBox.Show("Oracle Error: " + ex.Message, "Error");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating GameID {this.GameID}: {ex.Message}", "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
 
-        public void updateGame()
-        {
-            string sql = @"UPDATE VideoGames SET 
-                           GameName = :name,
-                           GameGenre = :genre,
-                           GameDescription = :desc,
-                           GameStorage = :storage,
-                           GameBuyPrice = :price,
-                           GameInventory = :inv
-                           WHERE GameID = :id";
 
-            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
-            using (OracleCommand cmd = new OracleCommand(sql, conn))
-            {
-                cmd.Parameters.Add(":name", GameName);
-                cmd.Parameters.Add(":genre", GameGenre);
-                cmd.Parameters.Add(":desc", GameDescription);
-                cmd.Parameters.Add(":storage", GameStorage);
-                cmd.Parameters.Add(":price", GameBuyPrice);
-                cmd.Parameters.Add(":inv", GameInventory);
-                cmd.Parameters.Add(":id", GameID);
 
-                try
-                {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-                catch (OracleException ex)
-                {
-                    MessageBox.Show("Oracle Error: " + ex.Message);
-                }
-            }
-        }
-
-        public static void reduceStock(int gameID, int qty)
-        {
-            string sql = @"UPDATE VideoGames 
-                           SET GameInventory = GameInventory - :qty 
-                           WHERE GameID = :id";
-
-            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
-            using (OracleCommand cmd = new OracleCommand(sql, conn))
-            {
-                cmd.Parameters.Add(":qty", qty);
-                cmd.Parameters.Add(":id", gameID);
-
-                try
-                {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-                catch (OracleException ex)
-                {
-                    MessageBox.Show("Oracle Error: " + ex.Message);
-                }
-            }
-        }
 
         public static List<Inventory> getAllInventory()
         {
@@ -192,34 +151,6 @@ namespace LogibForm
             }
 
             return items;
-        }
-
-        public static bool hasStock(int gameID, int qty)
-        {
-            string sql = "SELECT GameInventory FROM VideoGames WHERE GameID = :id";
-
-            using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
-            using (OracleCommand cmd = new OracleCommand(sql, conn))
-            {
-                cmd.Parameters.Add(":id", gameID);
-
-                try
-                {
-                    conn.Open();
-                    object result = cmd.ExecuteScalar();
-
-                    if (result == null)
-                        return false;
-
-                    return Convert.ToInt32(result) >= qty;
-                }
-                catch (OracleException ex)
-                {
-                    MessageBox.Show("Oracle Error: " + ex.Message);
-                }
-            }
-
-            return false;
         }
     }
 }
