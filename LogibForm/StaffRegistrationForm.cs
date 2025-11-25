@@ -108,8 +108,6 @@ namespace LogibForm
                 return;
             }
 
-            MessageBox.Show("Staff account created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             this.Hide();
             new StaffLoginForm().Show();
         }

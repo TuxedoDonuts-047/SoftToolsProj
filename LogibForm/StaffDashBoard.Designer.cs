@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDashBoard));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.overviewPanel = new System.Windows.Forms.Panel();
@@ -101,7 +101,7 @@
             this.btnUpdateInventory = new FrameworkTest.SATAButton();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.pnlnventoryUser = new SATAUiFramework.SATAPanel();
-            this.lblIventoryUser = new System.Windows.Forms.Label();
+            this.lblInventoryUser = new System.Windows.Forms.Label();
             this.sataPictureBox6 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label22 = new System.Windows.Forms.Label();
             this.lblInventory = new System.Windows.Forms.Label();
@@ -177,11 +177,11 @@
             // 
             this.pnlOverviewUser.BackColor2 = System.Drawing.Color.Transparent;
             this.pnlOverviewUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius2.BottomLeft = 10;
-            borderRadius2.BottomRight = 10;
-            borderRadius2.TopLeft = 10;
-            borderRadius2.TopRight = 10;
-            this.pnlOverviewUser.BorderRadius = borderRadius2;
+            borderRadius4.BottomLeft = 10;
+            borderRadius4.BottomRight = 10;
+            borderRadius4.TopLeft = 10;
+            borderRadius4.TopRight = 10;
+            this.pnlOverviewUser.BorderRadius = borderRadius4;
             this.pnlOverviewUser.BorderThickness = 0;
             this.pnlOverviewUser.Controls.Add(this.lblOverviewUser);
             this.pnlOverviewUser.Controls.Add(this.sataPictureBox1);
@@ -1562,6 +1562,7 @@
             this.btnUpdateInventory.TabIndex = 26;
             this.btnUpdateInventory.TextAutoCenter = true;
             this.btnUpdateInventory.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnUpdateInventory.Click += new System.EventHandler(this.btnUpdateInventory_Click);
             // 
             // dgvInventory
             // 
@@ -1575,13 +1576,13 @@
             // 
             this.pnlnventoryUser.BackColor2 = System.Drawing.Color.Transparent;
             this.pnlnventoryUser.BorderColor = System.Drawing.Color.DarkGray;
-            borderRadius1.BottomLeft = 10;
-            borderRadius1.BottomRight = 10;
-            borderRadius1.TopLeft = 10;
-            borderRadius1.TopRight = 10;
-            this.pnlnventoryUser.BorderRadius = borderRadius1;
+            borderRadius3.BottomLeft = 10;
+            borderRadius3.BottomRight = 10;
+            borderRadius3.TopLeft = 10;
+            borderRadius3.TopRight = 10;
+            this.pnlnventoryUser.BorderRadius = borderRadius3;
             this.pnlnventoryUser.BorderThickness = 0;
-            this.pnlnventoryUser.Controls.Add(this.lblIventoryUser);
+            this.pnlnventoryUser.Controls.Add(this.lblInventoryUser);
             this.pnlnventoryUser.Controls.Add(this.sataPictureBox6);
             this.pnlnventoryUser.Controls.Add(this.label22);
             this.pnlnventoryUser.Location = new System.Drawing.Point(32, 23);
@@ -1589,15 +1590,15 @@
             this.pnlnventoryUser.Size = new System.Drawing.Size(1134, 54);
             this.pnlnventoryUser.TabIndex = 24;
             // 
-            // lblIventoryUser
+            // lblInventoryUser
             // 
-            this.lblIventoryUser.AutoSize = true;
-            this.lblIventoryUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIventoryUser.Location = new System.Drawing.Point(205, 14);
-            this.lblIventoryUser.Name = "lblIventoryUser";
-            this.lblIventoryUser.Size = new System.Drawing.Size(74, 24);
-            this.lblIventoryUser.TabIndex = 21;
-            this.lblIventoryUser.Text = "user_1";
+            this.lblInventoryUser.AutoSize = true;
+            this.lblInventoryUser.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInventoryUser.Location = new System.Drawing.Point(205, 14);
+            this.lblInventoryUser.Name = "lblInventoryUser";
+            this.lblInventoryUser.Size = new System.Drawing.Size(74, 24);
+            this.lblInventoryUser.TabIndex = 21;
+            this.lblInventoryUser.Text = "user_1";
             // 
             // sataPictureBox6
             // 
@@ -1939,7 +1940,7 @@
         private System.Windows.Forms.Label lblOverview;
         private SATAUiFramework.SATAPanel pnlOverviewUser;
         private SATAUiFramework.SATAPanel pnlnventoryUser;
-        private System.Windows.Forms.Label lblIventoryUser;
+        private System.Windows.Forms.Label lblInventoryUser;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox6;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.DataGridView dgvInventory;
