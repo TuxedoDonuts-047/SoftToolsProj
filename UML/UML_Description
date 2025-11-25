@@ -1,0 +1,8 @@
+The following is a representartion of the user flow, where it starts the application, showing a login screen, 
+once logged it brings you to a UI page where you can select Library to view already rented or purchased movies/shows 
+or you can select store where ti brings you to a store full of non purchased/rented movies/shows. From here the user 
+can select a mvoie to watch or view transaction history (the library) or if the dstore is chosen the user is broguht 
+to the dtore to rent or buy a movie or show. Then once selected the user brought to the checkout where they can purchase 
+or rent the selevted movie, and/or return to the store page to add more. Once checkout is selected the user is brought 
+to a checkout page where they can purchase or rent the selection and once complete the user is broguht back to the store page.
+If the user is staff however, the above is the same except they have access to an edit store page where they can edit pricing and or/other elements.
