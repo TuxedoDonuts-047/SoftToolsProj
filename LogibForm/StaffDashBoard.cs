@@ -15,13 +15,17 @@ namespace LogibForm
     public partial class StaffDashBoard : Form
     {
         private string _username;
+        private DataTable inventoryTable;
+        private OracleDataAdapter inventoryAdapter;
+        private OracleConnection inventoryConnection;
+
         public StaffDashBoard(string username)
         {
             InitializeComponent();
             _username = username;
             lblInventoryUser.Text = _username;
             lblOverviewUser.Text = _username;
-            
+
             // Makes the SATA UI Button transparent to match the gradient panel
             btnOverView.CheckedBackground = Color.Transparent;
             btnOverView.NormalBackground = Color.Transparent;
@@ -39,7 +43,7 @@ namespace LogibForm
             showPanel(overviewPanel);
 
         }
-        
+
         private void btnOverView_MouseHover(object sender, EventArgs e)
         {
             btnOverView.Cursor = Cursors.Hand;
@@ -48,7 +52,7 @@ namespace LogibForm
 
         private void btnLogout_MouseHover(object sender, EventArgs e)
         {
-            btnLogout.Cursor= Cursors.Hand;
+            btnLogout.Cursor = Cursors.Hand;
         }
 
         private void showPanel(Panel panelToShow)
@@ -72,65 +76,78 @@ namespace LogibForm
 
         private void loadInventoryGrid()
         {
-            dgvInventory.Rows.Clear();
-            dgvInventory.Columns.Clear();
-
-            dgvInventory.BackgroundColor = Color.White;
-            dgvInventory.DefaultCellStyle.BackColor = Color.White;
-            dgvInventory.DefaultCellStyle.ForeColor = Color.Black;
-            dgvInventory.DefaultCellStyle.SelectionBackColor = Color.FromArgb(33, 145, 245);
-            dgvInventory.DefaultCellStyle.SelectionForeColor = Color.White;
-
-            dgvInventory.DefaultCellStyle.Font = new Font("Century Gothic", 12);
-            dgvInventory.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 14, FontStyle.Bold);
-
-            dgvInventory.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(33, 145, 245);
-            dgvInventory.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvInventory.EnableHeadersVisualStyles = false;
-
-            // Create Columns
-            dgvInventory.Columns.Add("GameID", "Game ID");
-            dgvInventory.Columns.Add("GameName", "Name");
-            dgvInventory.Columns.Add("GameGenre", "Genre");
-            dgvInventory.Columns.Add("GameDescription", "Description");
-            dgvInventory.Columns.Add("GameStorage", "Storage (GB)");
-            dgvInventory.Columns.Add("GameBuyPrice", "Price (€)");
-            dgvInventory.Columns.Add("GameInventory", "Stock");
-
-            // Auto size columns for better display
-            dgvInventory.Columns["GameID"].Width = 50;
-            dgvInventory.Columns["GameName"].Width = 200;
-            dgvInventory.Columns["GameGenre"].Width = 180;
-            dgvInventory.Columns["GameDescription"].Width = 400;
-            dgvInventory.Columns["GameStorage"].Width = 85;
-            dgvInventory.Columns["GameBuyPrice"].Width = 85;
-            dgvInventory.Columns["GameInventory"].Width = 70;
-
-            // Wrap text in Description column
-            dgvInventory.Columns["GameDescription"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dgvInventory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-
-            // Get all inventory items from DB
-            List<Inventory> items = Inventory.getAllInventory();
-
-            // Populate Grid
-            foreach (Inventory item in items)
+            try
             {
-                dgvInventory.Rows.Add(
-                    item.getGameID(),
-                    item.getGameName(),
-                    item.getGameGenre(),
-                    item.getGameDescription(),
-                    item.getGameStorage(),
-                    item.getGameBuyPrice(),
-                    item.getGameInventory()
-                );
+                inventoryTable = new DataTable();
+
+                // Create class-level connection
+                inventoryConnection = new OracleConnection(PrimalDirectDB.oradb);
+
+                // Fill adapter
+                inventoryAdapter = new OracleDataAdapter("SELECT * FROM VideoGames", inventoryConnection);
+                inventoryAdapter.Fill(inventoryTable);
+
+                // Set primary key
+                if (inventoryTable.Columns.Contains("GameID"))
+                    inventoryTable.PrimaryKey = new DataColumn[] { inventoryTable.Columns["GameID"] };
+                else
+                    throw new Exception("GameID column missing from the DataTable.");
+
+                // Manual UpdateCommand to avoid CommandBuilder issues
+                OracleCommand updateCommand = new OracleCommand(
+                    @"UPDATE VideoGames SET
+                      GameName = :GameName,
+                      GameDescription = :GameDescription,
+                      GameGenre = :GameGenre,
+                      GameStorage = :GameStorage,
+                      GameBuyPrice = :GameBuyPrice,
+                      GameInventory = :GameInventory
+                      WHERE GameID = :GameID", inventoryConnection);
+
+                updateCommand.Parameters.Add("GameName", OracleDbType.Varchar2, 255, "GameName");
+                updateCommand.Parameters.Add("GameDescription", OracleDbType.Varchar2, 1000, "GameDescription");
+                updateCommand.Parameters.Add("GameGenre", OracleDbType.Varchar2, 500, "GameGenre");
+                updateCommand.Parameters.Add("GameStorage", OracleDbType.Decimal, 9, "GameStorage");
+                updateCommand.Parameters.Add("GameBuyPrice", OracleDbType.Decimal, 6, "GameBuyPrice");
+                updateCommand.Parameters.Add("GameInventory", OracleDbType.Int32, 0, "GameInventory");
+                updateCommand.Parameters.Add("GameID", OracleDbType.Int32, 0, "GameID");
+
+                inventoryAdapter.UpdateCommand = updateCommand;
+
+                // Bind table to DataGridView
+                dgvInventory.DataSource = inventoryTable;
+
+                // Apply styling
+                dgvInventory.Columns["GameID"].ReadOnly = true;
+                dgvInventory.Columns["GameName"].Width = 200;
+                dgvInventory.Columns["GameGenre"].Width = 180;
+                dgvInventory.Columns["GameDescription"].Width = 400;
+                dgvInventory.Columns["GameStorage"].Width = 85;
+                dgvInventory.Columns["GameBuyPrice"].Width = 85;
+                dgvInventory.Columns["GameInventory"].Width = 70;
+
+                dgvInventory.Columns["GameDescription"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dgvInventory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+                dgvInventory.BackgroundColor = Color.White;
+                dgvInventory.DefaultCellStyle.BackColor = Color.White;
+                dgvInventory.DefaultCellStyle.ForeColor = Color.Black;
+                dgvInventory.DefaultCellStyle.SelectionBackColor = Color.FromArgb(33, 145, 245);
+                dgvInventory.DefaultCellStyle.SelectionForeColor = Color.White;
+                dgvInventory.DefaultCellStyle.Font = new Font("Century Gothic", 12);
+
+                dgvInventory.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 14, FontStyle.Bold);
+                dgvInventory.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(33, 145, 245);
+                dgvInventory.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvInventory.EnableHeadersVisualStyles = false;
+
+                dgvInventory.RowsDefaultCellStyle.BackColor = Color.White;
+                dgvInventory.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
             }
-
-            dgvInventory.Columns["GameID"].ReadOnly = true;
-
-            dgvInventory.RowsDefaultCellStyle.BackColor = Color.White;
-            dgvInventory.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading inventory: " + ex.Message);
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -146,63 +163,42 @@ namespace LogibForm
 
         private void btnUpdateInventory_Click(object sender, EventArgs e)
         {
-            int rowsUpdatedCount = 0;
-
-            if (MessageBox.Show("Are you sure you want to update the inventory in the DB?", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                return;
-
             try
             {
-                using (OracleConnection conn = new OracleConnection(PrimalDirectDB.oradb))
+                if (inventoryAdapter == null || inventoryTable == null)
                 {
-                    conn.Open();
-
-                    using (OracleTransaction transaction = conn.BeginTransaction())
-                    {
-                        try
-                        {
-                            foreach (DataGridViewRow row in dgvInventory.Rows)
-                            {
-                                if (!row.IsNewRow)
-                                {
-                                    try
-                                    {
-                                        Inventory item = new Inventory(
-                                            Convert.ToInt32(row.Cells["GameID"].Value),
-                                            row.Cells["GameName"].Value?.ToString(),
-                                            row.Cells["GameGenre"].Value?.ToString(),
-                                            row.Cells["GameDescription"].Value?.ToString(),
-                                            Convert.ToDecimal(row.Cells["GameStorage"].Value),
-                                            Convert.ToDecimal(row.Cells["GameBuyPrice"].Value),
-                                            Convert.ToInt32(row.Cells["GameInventory"].Value)
-                                        );
-
-                                        bool updated = item.updateGame(conn, transaction);
-                                        if (updated) rowsUpdatedCount++;
-                                    }
-                                    catch (Exception exRow)
-                                    {
-                                        MessageBox.Show($"Error processing row {row.Index}: {exRow.Message}", "Row Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    }
-                                }
-                            }
-
-                            transaction.Commit();
-                            MessageBox.Show($"Inventory update finished.\nRows successfully updated: {rowsUpdatedCount}", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        catch (Exception exTransaction)
-                        {
-                            transaction.Rollback();
-                            MessageBox.Show($"Transaction failed and was rolled back: {exTransaction.Message}", "Transaction Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
+                    MessageBox.Show("Inventory not loaded. Cannot update.");
+                    return;
                 }
 
-                loadInventoryGrid();
+                // Commit any edits in the grid
+                dgvInventory.EndEdit();
+                dgvInventory.CurrentCell = null; // commit current cell
+
+                // Ensure primary key is set
+                if (inventoryTable.PrimaryKey.Length == 0)
+                    inventoryTable.PrimaryKey = new DataColumn[] { inventoryTable.Columns["GameID"] };
+
+                // Open connection if not already open
+                if (inventoryConnection.State != ConnectionState.Open)
+                    inventoryConnection.Open();
+
+                int updatedRows = inventoryAdapter.Update(inventoryTable);
+                MessageBox.Show($"{updatedRows} row(s) updated successfully!");
+
+                loadInventoryGrid(); // refresh grid from DB
             }
-            catch (Exception exConnection)
+            catch (OracleException ex)
             {
-                MessageBox.Show($"Database connection failed: {exConnection.Message}", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Oracle error while updating inventory: " + ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show("Operation not valid: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error: " + ex.Message);
             }
         }
     }

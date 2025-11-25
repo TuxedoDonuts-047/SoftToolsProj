@@ -120,7 +120,7 @@
             this.btnCart = new FrameworkTest.SATAButton();
             this.btnLibrary = new FrameworkTest.SATAButton();
             this.btnOverView = new FrameworkTest.SATAButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picPrimalDirect = new System.Windows.Forms.PictureBox();
             this.overViewSidePanel = new System.Windows.Forms.Panel();
             this.overviewPanel.SuspendLayout();
             this.pnlOverviewUser.SuspendLayout();
@@ -159,7 +159,7 @@
             this.pnlCartUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).BeginInit();
             this.StaffGradienrPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPrimalDirect)).BeginInit();
             this.SuspendLayout();
             // 
             // sataEllipseControl1
@@ -1731,7 +1731,7 @@
             this.StaffGradienrPanel.Controls.Add(this.btnCart);
             this.StaffGradienrPanel.Controls.Add(this.btnLibrary);
             this.StaffGradienrPanel.Controls.Add(this.btnOverView);
-            this.StaffGradienrPanel.Controls.Add(this.pictureBox1);
+            this.StaffGradienrPanel.Controls.Add(this.picPrimalDirect);
             this.StaffGradienrPanel.Controls.Add(this.overViewSidePanel);
             this.StaffGradienrPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.StaffGradienrPanel.gradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(145)))), ((int)(((byte)(245)))));
@@ -1949,15 +1949,15 @@
             this.btnOverView.Click += new System.EventHandler(this.btnOverView_Click);
             this.btnOverView.MouseHover += new System.EventHandler(this.btnOverView_MouseHover);
             // 
-            // pictureBox1
+            // picPrimalDirect
             // 
-            this.pictureBox1.Image = global::LogibForm.Properties.Resources.primal_direct_high_resolution_logo_transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 111);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picPrimalDirect.Image = global::LogibForm.Properties.Resources.primal_direct_high_resolution_logo_transparent;
+            this.picPrimalDirect.Location = new System.Drawing.Point(40, 23);
+            this.picPrimalDirect.Name = "picPrimalDirect";
+            this.picPrimalDirect.Size = new System.Drawing.Size(150, 111);
+            this.picPrimalDirect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPrimalDirect.TabIndex = 0;
+            this.picPrimalDirect.TabStop = false;
             // 
             // overViewSidePanel
             // 
@@ -1984,7 +1984,7 @@
             this.Name = "CustomerDashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library";
-            this.Load += new System.EventHandler(this.StaffDashBoard_Load);
+            this.Load += new System.EventHandler(this.CustomerDashBoard_Load);
             this.overviewPanel.ResumeLayout(false);
             this.pnlOverviewUser.ResumeLayout(false);
             this.pnlOverviewUser.PerformLayout();
@@ -2038,7 +2038,7 @@
             this.pnlCartUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).EndInit();
             this.StaffGradienrPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPrimalDirect)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2047,7 +2047,7 @@
 
         private SATAUiFramework.Controls.SATAEllipseControl sataEllipseControl1;
         private gradientPanel StaffGradienrPanel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picPrimalDirect;
         private FrameworkTest.SATAButton btnCart;
         private FrameworkTest.SATAButton btnLibrary;
         private FrameworkTest.SATAButton btnLogout;
